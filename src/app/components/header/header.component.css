@@ -1,0 +1,43 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  height: 12%;
+}
+
+img {
+  height: 12rem;
+  padding-top: 5%;
+
+}
+
+p {
+  font-size: 8px;
+}
+
+.buttonHeader {
+  align-items: center;
+  margin-left: 1.5rem;
+  background-color:transparent;
+	border-radius:50px;
+	border: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#0571b7;
+	font-family:Arial;
+	font-size:15px;
+	padding:7px 8px;
+	text-decoration:none;
+
+}
+
+.buttonHeader:hover {
+	background-color:transparent;
+  color:#000;
+}
+
+.buttonHeader:active {
+	position:relative;
+	top:1px;
+}
