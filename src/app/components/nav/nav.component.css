@@ -1,20 +1,35 @@
 .container {
-  height: 85%;
-
+  height: 84%;
 }
 
-i {
-  padding-right: .6rem;
+a  {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 8px;
+  text-decoration: none;
 }
 
 .side {
-  width: 12%;
+  width: 6%;
+  background-color: #DFF2EA;
 }
 
-mat-nav-list {
-  justify-content: center;
+
+mat-icon{
+  color: #0571b7;
 }
 
-.nav {
-  width: 50%;
+span {
+  color: #0571b7;
+  font-size: .7em;
 }
+
+@media screen and (max-width: 768px) {
+  mat-sidenav {
+    display: none;
+  }
+}
+

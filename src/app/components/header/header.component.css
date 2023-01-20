@@ -4,6 +4,7 @@
 
 mat-toolbar {
   height: 12%;
+  background-color: #DFF2EA;
 }
 
 img {
@@ -16,9 +17,10 @@ p {
   font-size: 8px;
 }
 
+
 .buttonHeader {
   align-items: center;
-  margin-left: 1.5rem;
+  margin-left: 1.2rem;
   background-color:transparent;
 	border-radius:50px;
 	border: none;
@@ -27,7 +29,7 @@ p {
 	color:#0571b7;
 	font-family:Arial;
 	font-size:15px;
-	padding:7px 8px;
+  /* padding:7px 8px; */
 	text-decoration:none;
 
 }
@@ -37,7 +39,4 @@ p {
   color:#000;
 }
 
-.buttonHeader:active {
-	position:relative;
-	top:1px;
-}
+

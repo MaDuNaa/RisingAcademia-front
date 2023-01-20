@@ -1,15 +1,28 @@
+
 <mat-sidenav-container class="container">
+
   <mat-sidenav class="side" mode="side" opened>
-      <mat-nav-list >
-          <a routerLink="" mat-list-item>
-              <i class="material-icons">home</i>
-              Home
-          </a>
-          <a routerLink="/categorias" mat-list-item>
-              <i class="material-icons">menu_book</i>
-              Categorias
-          </a>
-      </mat-nav-list>
+
+      <div class="mat-list__navegacao">
+
+        <a class="mat-list-item" routerLink="">
+          <mat-icon>home</mat-icon>
+          <span> Home </span>
+        </a>
+        <a class="mat-list-item" routerLink="/categorias">
+          <mat-icon>menu_book</mat-icon>
+          <span> Categoria </span>
+        </a>
+        <a class="mat-list-item" routerLink="">
+          <mat-icon>space_dashboard</mat-icon>
+          <span> Dashboard </span>
+        </a>
+        <a class="mat-list-item" routerLink="">
+          <mat-icon>settings</mat-icon>
+          <span> Config </span>
+        </a>
+      </div>
+
   </mat-sidenav>
 
   <mat-sidenav-content>
