@@ -10,12 +10,16 @@ import {MatIconModule} from '@angular/material/icon';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { NavComponent } from './components/nav/nav.component';
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatListModule } from "@angular/material/list";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,10 @@ import {MatMenuModule} from '@angular/material/menu';
     NoopAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
