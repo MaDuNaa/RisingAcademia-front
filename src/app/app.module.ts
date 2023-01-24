@@ -19,6 +19,15 @@ import { CategoriaReadComponent } from './components/views/categoria/categoria-r
 import {MatTableModule} from '@angular/material/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button';
+import { ConfigComponent } from './components/views/config/config.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
+import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
+import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +37,10 @@ import {MatButtonModule} from '@angular/material/button';
     NavComponent,
     HomeComponent,
     CategoriaReadComponent,
+    ConfigComponent,
+    CategoriaCreateComponent,
+    CategoriaDeleteComponent,
+    CategoriaUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +54,13 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatTableModule,
     MatSnackBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+
+
 
   ],
   providers: [],

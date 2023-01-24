@@ -7,6 +7,10 @@ mat-toolbar {
   background-color: #DFF2EA;
 }
 
+span {
+  cursor: pointer;
+}
+
 img {
   height: 12rem;
   padding-top: 5%;
