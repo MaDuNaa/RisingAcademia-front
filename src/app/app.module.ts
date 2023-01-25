@@ -27,6 +27,10 @@ import { CategoriaDeleteComponent } from './components/views/categoria/categoria
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { AlunoReadComponent } from './components/views/aluno/aluno-read/aluno-read.component';
+import { AlunoDeleteComponent } from './components/views/aluno/aluno-delete/aluno-delete.component';
+import { AlunoCreateComponent } from './components/views/aluno/aluno-create/aluno-create.component';
+import { AlunoUpdateComponent } from './components/views/aluno/aluno-update/aluno-update.component';
 
 
 @NgModule({
@@ -41,6 +45,10 @@ import {MatInputModule} from '@angular/material/input';
     CategoriaCreateComponent,
     CategoriaDeleteComponent,
     CategoriaUpdateComponent,
+    AlunoReadComponent,
+    AlunoDeleteComponent,
+    AlunoCreateComponent,
+    AlunoUpdateComponent,
   ],
   imports: [
     BrowserModule,
