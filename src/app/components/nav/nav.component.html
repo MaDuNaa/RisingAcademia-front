@@ -9,14 +9,32 @@
           <mat-icon>home</mat-icon>
           <span> Home </span>
         </a>
-        <a class="mat-list-item" routerLink="/alunos">
-          <mat-icon>menu_book</mat-icon>
-          <span> Produtos </span>
+
+        <a class="mat-list-item"  [matMenuTriggerFor]="menu">
+          <mat-icon>manage_accounts</mat-icon>
+          <span> Alunos </span>
         </a>
-        <a class="mat-list-item" routerLink="/categorias">
+
+        <a class="mat-list-item"  [matMenuTriggerFor]="menu1">
+          <mat-icon>bolt</mat-icon>
+          <span> Treinos </span>
+        </a>
+
+        <a class="mat-list-item"  [matMenuTriggerFor]="menu2">
+          <mat-icon>content_paste_search</mat-icon>
+          <span> Administração </span>
+        </a>
+
+        <!-- <a class="mat-list-item" routerLink="/categorias">
           <mat-icon>space_dashboard</mat-icon>
           <span> TESTE </span>
+        </a> -->
+
+        <a class="mat-list-item" routerLink="/config">
+          <mat-icon>output</mat-icon>
+          <span> Sair </span>
         </a>
+
         <a class="mat-list-item" routerLink="/config">
           <mat-icon>settings</mat-icon>
           <span> Config </span>
@@ -30,3 +48,40 @@
   </mat-sidenav-content>
 
 </mat-sidenav-container>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/alunos/create">
+    <mat-icon>add</mat-icon>
+    <span>Matricular Aluno</span>
+  </button>
+  <button mat-menu-item routerLink="/alunos">
+    <mat-icon>list</mat-icon>
+    <span>Mostrar Alunos</span>
+  </button>
+</mat-menu>
+
+<mat-menu #menu1="matMenu">
+  <button mat-menu-item routerLink="/alunos/create">
+    <mat-icon>offline_bolt</mat-icon>
+    <span>Ver Treinos</span>
+  </button>
+  <button mat-menu-item routerLink="/alunos">
+    <mat-icon>bookmark_add</mat-icon>
+    <span>Adicionar Treino</span>
+  </button>
+</mat-menu>
+
+<mat-menu #menu2="matMenu">
+  <button mat-menu-item routerLink="/alunos/create">
+    <mat-icon>description</mat-icon>
+    <span>Relatorios</span>
+  </button>
+  <button mat-menu-item routerLink="/alunos">
+    <mat-icon>perm_identity</mat-icon>
+    <span>Funcionario</span>
+  </button>
+  <button mat-menu-item routerLink="/alunos">
+    <mat-icon>supervisor_account</mat-icon>
+    <span>Novo Funcionario</span>
+  </button>
+</mat-menu>
