@@ -11,7 +11,8 @@ import { AlunoService } from 'src/app/services/aluno.service';
 export class AlunoReadComponent implements OnInit {
 
   alunos: Aluno[] = [];
-  displayedColumns: string[] = ["id", "nome", "telefone", "acoes"];
+  displayedColumns: string[] = ["id", "nome", "telefone",  "objetivo",
+   "acoes"];
 
   constructor(private service: AlunoService, private router: Router) { }
 

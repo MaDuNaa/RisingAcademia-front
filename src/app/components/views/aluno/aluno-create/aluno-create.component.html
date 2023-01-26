@@ -1,1 +1,74 @@
-<p>aluno-create works!</p>
+<h1>CRIANDO NOVO ALUNO</h1>
+
+<mat-form-field class="form">
+  <mat-icon>account_circle</mat-icon>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="aluno.nome" type="text" name="nome" placeholder="Ex. Matheus">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+  <mat-icon>call</mat-icon>
+    <mat-label>Telefone</mat-label>
+    <input matInput [(ngModel)]="aluno.telefone" type="text" name="nome" placeholder="Ex. Matheus">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+  <mat-icon>rocket_launch</mat-icon>
+  <mat-label>Objetivo</mat-label>
+  <input matInput [(ngModel)]="aluno.objetivo" type="text" name="descricao" placeholder="Ex. Perde Peso">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>forum</mat-icon>
+<mat-label>Email</mat-label>
+<input matInput [(ngModel)]="aluno.email" type="text" name="descricao" placeholder="Ex. seuemail@hotmail.com">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>price_check</mat-icon>
+<mat-label>Mensalidade</mat-label>
+<input matInput [(ngModel)]="aluno.mensalidade" type="text" name="descricao" placeholder="Ex. 300,00">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>calendar_month</mat-icon>
+<mat-label>Dia de Vencimento</mat-label>
+<input matInput [(ngModel)]="aluno.diaVencimento" type="text" name="descricao" placeholder="Ex. 30">
+</mat-form-field>
+
+
+<!-- <mat-form-field class="form">
+<mat-icon>room</mat-icon>
+<mat-label>Endereço</mat-label>
+<input matInput [(ngModel)]="aluno.endereco" type="text" name="descricao" placeholder="Ex. Rua Silva Jorge">
+</mat-form-field> -->
+
+<!-- <mat-form-field class="form">
+<mat-icon>home</mat-icon>
+<mat-label>Numero</mat-label>
+<input matInput [(ngModel)]="aluno.endereco" type="text" name="descricao" placeholder="Ex. Rua Silva Jorge">
+</mat-form-field>
+
+<mat-form-field class="form">
+<mat-icon>directions</mat-icon>
+<mat-label>Bairro</mat-label>
+<input matInput [(ngModel)]="aluno.endereco" type="text" name="descricao" placeholder="Ex. Rua Silva Jorge">
+</mat-form-field> -->
+
+
+<mat-form-field class="form">
+<mat-icon>favorite</mat-icon>
+<mat-label>Data de Nascimento</mat-label>
+<input matInput [(ngModel)]="aluno.dataNasci" type="text" name="descricao" placeholder="Ex. 01/05/1999">
+</mat-form-field>
+
+
+<div class="buttons">
+    <button (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary"> CRIAR </button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn"> CANCELAR </button>
+</div>
