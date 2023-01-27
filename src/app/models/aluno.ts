@@ -1,3 +1,4 @@
+
 export interface Aluno {
    id?: String;
    nome: String;
@@ -6,6 +7,10 @@ export interface Aluno {
    email: String;
    mensalidade: String;
    diaVencimento: Number;
-   endereco: String;
+   endereco:  {
+     rua: String,
+     numero: String,
+     bairro: String,
+   }
    dataNasci: Number;
 }

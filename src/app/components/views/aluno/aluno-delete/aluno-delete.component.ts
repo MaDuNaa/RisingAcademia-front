@@ -18,7 +18,11 @@ export class AlunoDeleteComponent implements OnInit {
     email: "",
     mensalidade: "",
     diaVencimento: 0,
-    endereco: "",
+    endereco: {
+      rua: "",
+      numero: "",
+      bairro: "",
+    },
     dataNasci: 0,
   };
 
