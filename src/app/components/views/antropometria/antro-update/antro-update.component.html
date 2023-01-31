@@ -1,0 +1,92 @@
+<h1>ATUALIZANDO ANTROPOMETRIA</h1>
+
+<mat-form-field class="form">
+  <mat-icon>accessibility</mat-icon>
+    <mat-label>Torax</mat-label>
+    <input matInput [(ngModel)]="antropometria.torax" type="text" name="nome" placeholder="Ex. 20">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+  <mat-icon>accessibility</mat-icon>
+    <mat-label>Cintura</mat-label>
+    <input matInput [(ngModel)]="antropometria.cintura" type="text" name="nome" placeholder="Ex. 25">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+  <mat-icon>accessibility</mat-icon>
+  <mat-label>Quadril</mat-label>
+  <input matInput [(ngModel)]="antropometria.quadril" type="text" name="descricao" placeholder="Ex. 30">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>accessibility</mat-icon>
+<mat-label>Antebraço Direito</mat-label>
+<input matInput [(ngModel)]="antropometria.antebracoDireito" type="text" name="descricao" placeholder="Ex. 25">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>accessibility</mat-icon>
+<mat-label>Antebraço Esquerdo</mat-label>
+<input matInput [(ngModel)]="antropometria.antebracoEsquerdo" type="text" name="descricao" placeholder="Ex. 20">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>accessibility</mat-icon>
+<mat-label>Braço Direito</mat-label>
+<input matInput [(ngModel)]="antropometria.bracoDireito" type="text" name="descricao" placeholder="Ex. 30">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>accessibility</mat-icon>
+<mat-label>Braço Esquerdo</mat-label>
+<input matInput [(ngModel)]="antropometria.bracoEsquerdo" type="text" name="descricao" placeholder="Ex. 15">
+</mat-form-field>
+
+<mat-form-field class="form">
+<mat-icon>accessibility</mat-icon>
+<mat-label>Coxa Direita</mat-label>
+<input matInput [(ngModel)]="antropometria.coxaDireita" type="text" name="descricao" placeholder="Ex. 27">
+</mat-form-field>
+
+<mat-form-field class="form">
+<mat-icon>accessibility</mat-icon>
+<mat-label>Coxa Esquerda</mat-label>
+<input matInput [(ngModel)]="antropometria.coxaEsquerda" type="text" name="descricao" placeholder="Ex. 25">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-icon>accessibility</mat-icon>
+<mat-label>Pandorilha Direita</mat-label>
+<input matInput [(ngModel)]="antropometria.pantorilhaDireita" type="text" name="descricao" placeholder="Ex. 20">
+</mat-form-field>
+
+<mat-form-field class="form">
+  <mat-icon>accessibility</mat-icon>
+  <mat-label>Pandorilha Esquerda</mat-label>
+  <input matInput [(ngModel)]="antropometria.pantorilhaEsquerda" type="text" name="descricao" placeholder="Ex. 22">
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-icon>accessibility</mat-icon>
+    <mat-label>Estatura</mat-label>
+    <input matInput [(ngModel)]="antropometria.estatura" type="text" name="descricao" placeholder="Ex. 1.70">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+      <mat-icon>accessibility</mat-icon>
+      <mat-label>Peso</mat-label>
+      <input matInput [(ngModel)]="antropometria.peso" type="text" name="descricao" placeholder="Ex. 80kg">
+      </mat-form-field>
+
+
+<div class="buttons">
+    <button (click)="update()" class="mat-elevation-z8" mat-stroked-button color="primary"> ATUALIZAR </button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn"> CANCELAR </button>
+</div>

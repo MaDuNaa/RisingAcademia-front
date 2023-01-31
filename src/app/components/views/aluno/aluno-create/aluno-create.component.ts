@@ -12,16 +12,16 @@ export class AlunoCreateComponent implements OnInit {
 
   aluno: Aluno = {
     id: "",
-    nome: "",
-    telefone: "",
-    objetivo: "",
-    email: "",
-    mensalidade: "",
+    nome: " ",
+    telefone: " ",
+    objetivo: " ",
+    email: " ",
+    mensalidade: " ",
     diaVencimento: 0,
     endereco: {
-      rua: "",
-      numero: "",
-      bairro: "",
+      rua: " ",
+      numero: " ",
+      bairro: " ",
     },
     dataNasci: 0,
   };
@@ -33,7 +33,7 @@ export class AlunoCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.aluno).subscribe((resposta) => {
-      this.router.navigate(['alunos'])
+      this.router.navigate(['antropometrias/create'])
       this.service.mensagem('Aluno criado com sucesso!');
     }, err => {
       for(let i = 0; i < err.error.errors.length; i++) {

@@ -4,6 +4,10 @@ import { AlunoCreateComponent } from './components/views/aluno/aluno-create/alun
 import { AlunoDeleteComponent } from './components/views/aluno/aluno-delete/aluno-delete.component';
 import { AlunoReadComponent } from './components/views/aluno/aluno-read/aluno-read.component';
 import { AlunoUpdateComponent } from './components/views/aluno/aluno-update/aluno-update.component';
+import { AntroCreateComponent } from './components/views/antropometria/antro-create/antro-create.component';
+import { AntroDeleteComponent } from './components/views/antropometria/antro-delete/antro-delete.component';
+import { AntroReadComponent } from './components/views/antropometria/antro-read/antro-read.component';
+import { AntroUpdateComponent } from './components/views/antropometria/antro-update/antro-update.component';
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
 import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
@@ -23,6 +27,11 @@ const routes: Routes = [
     {path: 'alunos/create', component: AlunoCreateComponent},
     {path: 'alunos/delete/:id', component: AlunoDeleteComponent},
     {path: 'alunos/update/:id',component: AlunoUpdateComponent},
+
+    {path: 'antropometrias', component: AntroReadComponent},
+    {path: 'antropometrias/create', component: AntroCreateComponent},
+    {path: 'antropometrias/delete/:id', component: AntroDeleteComponent},
+    {path: 'antropometrias/update/:id',component: AntroUpdateComponent},
 
     {path: 'config', component: ConfigComponent},
 

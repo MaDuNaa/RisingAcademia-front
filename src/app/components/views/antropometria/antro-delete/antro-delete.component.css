@@ -15,7 +15,7 @@ h1 {
   font-weight: 500;
   margin-bottom: 3rem;
   text-align: center;
-  margin: 3rem auto 2rem auto;
+  margin: 3rem auto 3rem auto;
 }
 
 .form {
@@ -36,4 +36,3 @@ button {
   padding-right: 2rem;
   padding-left: 2rem;
 }
-

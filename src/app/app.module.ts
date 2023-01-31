@@ -31,6 +31,10 @@ import { AlunoReadComponent } from './components/views/aluno/aluno-read/aluno-re
 import { AlunoDeleteComponent } from './components/views/aluno/aluno-delete/aluno-delete.component';
 import { AlunoCreateComponent } from './components/views/aluno/aluno-create/aluno-create.component';
 import { AlunoUpdateComponent } from './components/views/aluno/aluno-update/aluno-update.component';
+import { AntroReadComponent } from './components/views/antropometria/antro-read/antro-read.component';
+import { AntroCreateComponent } from './components/views/antropometria/antro-create/antro-create.component';
+import { AntroUpdateComponent } from './components/views/antropometria/antro-update/antro-update.component';
+import { AntroDeleteComponent } from './components/views/antropometria/antro-delete/antro-delete.component';
 
 
 @NgModule({
@@ -49,6 +53,10 @@ import { AlunoUpdateComponent } from './components/views/aluno/aluno-update/alun
     AlunoDeleteComponent,
     AlunoCreateComponent,
     AlunoUpdateComponent,
+    AntroReadComponent,
+    AntroCreateComponent,
+    AntroUpdateComponent,
+    AntroDeleteComponent,
   ],
   imports: [
     BrowserModule,
