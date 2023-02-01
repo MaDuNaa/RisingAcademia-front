@@ -1,0 +1,63 @@
+
+  <h1>ATUALIZANDO FUNCIONARIO</h1>
+
+  <mat-form-field class="form">
+    <mat-icon>account_circle</mat-icon>
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="funcionario.nome" type="text" name="nome" placeholder="Ex. Matheus">
+  </mat-form-field>
+
+
+  <mat-form-field class="form">
+    <mat-icon>call</mat-icon>
+      <mat-label>Telefone</mat-label>
+      <input matInput [(ngModel)]="funcionario.telefone" type="text" name="nome" placeholder="Ex. Matheus">
+  </mat-form-field>
+
+
+
+<mat-form-field class="form">
+  <mat-icon>forum</mat-icon>
+  <mat-label>Email</mat-label>
+  <input matInput [(ngModel)]="funcionario.email" type="text" name="descricao" placeholder="Ex. seuemail@hotmail.com">
+</mat-form-field>
+
+
+<mat-form-field class="form" >
+  <mat-icon>room</mat-icon>
+  <mat-label>Endereço</mat-label>
+  <input matInput [(ngModel)]="funcionario.endereco.rua" type="text" name="descricao" placeholder="Ex. Rua Silva Jorge">
+</mat-form-field>
+
+<mat-form-field class="form">
+  <mat-icon>home</mat-icon>
+  <mat-label>Numero</mat-label>
+  <input matInput [(ngModel)]="funcionario.endereco.numero" type="text" name="descricao" placeholder="Ex. Rua Silva Jorge">
+</mat-form-field>
+
+<mat-form-field class="form">
+  <mat-icon>directions</mat-icon>
+  <mat-label>Bairro</mat-label>
+  <input matInput [(ngModel)]="funcionario.endereco.bairro" type="text" name="descricao" placeholder="Ex. Rua Silva Jorge">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+  <mat-icon>favorite</mat-icon>
+  <mat-label>Data de Nascimento</mat-label>
+  <input matInput [(ngModel)]="funcionario.dataNasci" type="text" name="descricao" placeholder="Ex. 01/05/1999">
+</mat-form-field>
+
+<mat-form-field class="form">
+  <mat-icon>build</mat-icon>
+  <mat-label>Função</mat-label>
+  <input matInput [(ngModel)]="funcionario.funcao" type="text" name="descricao" placeholder="Ex. Faxina">
+</mat-form-field>
+
+
+  <div class="buttons">
+      <button (click)="update()" class="mat-elevation-z8" mat-stroked-button color="primary"> ATUALIZAR </button>
+      <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn"> CANCELAR </button>
+  </div>
+
+

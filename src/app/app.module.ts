@@ -35,6 +35,10 @@ import { AntroReadComponent } from './components/views/antropometria/antro-read/
 import { AntroCreateComponent } from './components/views/antropometria/antro-create/antro-create.component';
 import { AntroUpdateComponent } from './components/views/antropometria/antro-update/antro-update.component';
 import { AntroDeleteComponent } from './components/views/antropometria/antro-delete/antro-delete.component';
+import { FuncionarioReadComponent } from './components/views/funcionario/funcionario-read/funcionario-read.component';
+import { FuncionarioCreateComponent } from './components/views/funcionario/funcionario-create/funcionario-create.component';
+import { FuncionarioDeleteComponent } from './components/views/funcionario/funcionario-delete/funcionario-delete.component';
+import { FuncionarioUpdateComponent } from './components/views/funcionario/funcionario-update/funcionario-update.component';
 
 
 @NgModule({
@@ -57,6 +61,10 @@ import { AntroDeleteComponent } from './components/views/antropometria/antro-del
     AntroCreateComponent,
     AntroUpdateComponent,
     AntroDeleteComponent,
+    FuncionarioReadComponent,
+    FuncionarioCreateComponent,
+    FuncionarioDeleteComponent,
+    FuncionarioUpdateComponent,
   ],
   imports: [
     BrowserModule,

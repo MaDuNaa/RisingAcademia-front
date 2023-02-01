@@ -13,6 +13,10 @@ import { CategoriaDeleteComponent } from './components/views/categoria/categoria
 import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { ConfigComponent } from './components/views/config/config.component';
+import { FuncionarioCreateComponent } from './components/views/funcionario/funcionario-create/funcionario-create.component';
+import { FuncionarioDeleteComponent } from './components/views/funcionario/funcionario-delete/funcionario-delete.component';
+import { FuncionarioReadComponent } from './components/views/funcionario/funcionario-read/funcionario-read.component';
+import { FuncionarioUpdateComponent } from './components/views/funcionario/funcionario-update/funcionario-update.component';
 import { HomeComponent } from './components/views/home/home.component';
 
 const routes: Routes = [
@@ -32,6 +36,11 @@ const routes: Routes = [
     {path: 'antropometrias/create', component: AntroCreateComponent},
     {path: 'antropometrias/delete/:id', component: AntroDeleteComponent},
     {path: 'antropometrias/update/:id',component: AntroUpdateComponent},
+
+    {path: 'funcionarios', component: FuncionarioReadComponent},
+    {path: 'funcionarios/create', component: FuncionarioCreateComponent},
+    {path: 'funcionarios/delete/:id', component: FuncionarioDeleteComponent},
+    {path: 'funcionarios/update/:id',component: FuncionarioUpdateComponent},
 
     {path: 'config', component: ConfigComponent},
 
