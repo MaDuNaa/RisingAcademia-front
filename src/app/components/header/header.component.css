@@ -19,6 +19,12 @@ img {
 
 p {
   font-size: 8px;
+  margin-top: -20px;
+
+}
+
+.MoverTextoIcone {
+  margin-left: -9px;
 }
 
 
@@ -33,7 +39,6 @@ p {
 	color:#0571b7;
 	font-family:Arial;
 	font-size:15px;
-  /* padding:7px 8px; */
 	text-decoration:none;
 
 }

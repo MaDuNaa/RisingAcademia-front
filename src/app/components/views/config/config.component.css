@@ -3,7 +3,7 @@
 
 .container {
   width: 100%;
-  margin-top: 9vh;
+  margin-top: 7vh;
   height: 71vh;
   background: var(--background1);
   display: flex;
@@ -13,14 +13,19 @@
   flex-wrap: wrap;
 }
 
+.router {
+  text-decoration: none;
+}
+
 .flex{
   display:flex;
   flex-wrap: wrap;
   max-width: 1000px;
   margin: 0 auto;
+  align-items: center;
   flex-direction:row;
   background: var(--background1);
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .flex > div {
@@ -64,7 +69,6 @@
  text-align: left;
  padding-top: 12px;
  padding-left: 20px;
- text-decoration: none;
 }
 
 .font-boxes1 {
@@ -76,7 +80,6 @@
   display: flex;
   padding-top: 10px;
   padding-left: 15px;
-  text-decoration: none;
 }
 
 .box2 > mat-button{

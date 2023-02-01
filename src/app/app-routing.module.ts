@@ -18,6 +18,7 @@ import { FuncionarioDeleteComponent } from './components/views/funcionario/funci
 import { FuncionarioReadComponent } from './components/views/funcionario/funcionario-read/funcionario-read.component';
 import { FuncionarioUpdateComponent } from './components/views/funcionario/funcionario-update/funcionario-update.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { PerfilUsuarioComponent } from './components/views/perfil/perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
 
@@ -41,6 +42,8 @@ const routes: Routes = [
     {path: 'funcionarios/create', component: FuncionarioCreateComponent},
     {path: 'funcionarios/delete/:id', component: FuncionarioDeleteComponent},
     {path: 'funcionarios/update/:id',component: FuncionarioUpdateComponent},
+
+    {path: 'perfils', component: PerfilUsuarioComponent},
 
     {path: 'config', component: ConfigComponent},
 

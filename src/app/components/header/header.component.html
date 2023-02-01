@@ -6,10 +6,10 @@
 
   <button mat-icon-button class="buttonHeader" aria-label="Example icon-button with heart icon">
     <mat-icon>account_circle</mat-icon>
-    <p>Entrar/Cadastrar</p>
+    <p class="MoverTextoIcone">Entrar/Cadastrar</p>
   </button>
 
-  <button routerLink="antropometrias" mat-icon-button class="buttonHeader" aria-label="Example icon-button with share icon">
+  <button routerLink="" mat-icon-button class="buttonHeader" aria-label="Example icon-button with share icon">
     <mat-icon>shopping_cart</mat-icon>
     <p>Carrinho</p>
   </button>
@@ -20,49 +20,53 @@
   </button>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+    <button mat-menu-item routerLink="">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
     </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
-    </button>
-    <button mat-menu-item>
+    <button mat-menu-item routerLink="">
       <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
+      <span>Produtos</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+    <button mat-menu-item routerLink="/alunos">
+      <mat-icon>manage_accounts</mat-icon>
+      <span>Alunos</span>
     </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
+    <button mat-menu-item routerLink="/alunos/create">
+      <mat-icon>add</mat-icon>
+      <span>Matricular Alunos</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
+    <button mat-menu-item routerLink="">
+      <mat-icon>offline_bolt</mat-icon>
+      <span>Treinos</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+    <button mat-menu-item routerLink="">
+      <mat-icon>bookmark_add</mat-icon>
+      <span>Adicionar Treinos</span>
     </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
+    <button mat-menu-item routerLink="/funcionarios">
+      <mat-icon>perm_identity</mat-icon>
+      <span>Funcionario</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
+    <button mat-menu-item routerLink="/funcionarios/create">
+      <mat-icon>supervisor_account</mat-icon>
+      <span>Novo Funcionario</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+    <button mat-menu-item routerLink="">
+      <mat-icon>shopping_cart</mat-icon>
+      <span>Carinho</span>
     </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
+    <button mat-menu-item routerLink="/perfils">
+      <mat-icon>account_circle</mat-icon>
+      <span>Perfil</span>
+    </button>
+    <button mat-menu-item routerLink="">
+      <mat-icon>output</mat-icon>
+      <span>Sair</span>
+    </button>
+    <button mat-menu-item routerLink="/config">
+      <mat-icon>settings</mat-icon>
+      <span>Configuração</span>
     </button>
   </mat-menu>
 

@@ -37,7 +37,17 @@ button {
 
 .delete {
   color: rgb(228, 56, 56);
-  margin-left: .5rem;
+  margin-left: .2rem;
+}
+
+.create {
+  color: var(--corpadrao);
+  margin-left: .2rem;
+}
+
+.nome {
+  color: var(--corpadrao);
+  cursor: pointer;
 }
 
 .mat-header {

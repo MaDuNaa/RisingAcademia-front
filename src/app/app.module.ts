@@ -39,6 +39,7 @@ import { FuncionarioReadComponent } from './components/views/funcionario/funcion
 import { FuncionarioCreateComponent } from './components/views/funcionario/funcionario-create/funcionario-create.component';
 import { FuncionarioDeleteComponent } from './components/views/funcionario/funcionario-delete/funcionario-delete.component';
 import { FuncionarioUpdateComponent } from './components/views/funcionario/funcionario-update/funcionario-update.component';
+import { PerfilUsuarioComponent } from './components/views/perfil/perfil-usuario/perfil-usuario.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { FuncionarioUpdateComponent } from './components/views/funcionario/funci
     FuncionarioCreateComponent,
     FuncionarioDeleteComponent,
     FuncionarioUpdateComponent,
+    PerfilUsuarioComponent,
   ],
   imports: [
     BrowserModule,
