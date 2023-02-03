@@ -18,6 +18,21 @@ export class AlunoCreateComponent implements OnInit {
     email: " ",
     mensalidade: " ",
     diaVencimento: 0,
+    antropometria: {
+      torax: " ",
+      cintura: " ",
+      quadril: " ",
+      antebracoDireito: " ",
+      antebracoEsquerdo: " ",
+      bracoDireito: " ",
+      bracoEsquerdo: " ",
+      coxaDireita: " ",
+      coxaEsquerda: " ",
+      pantorilhaDireita: " ",
+      pantorilhaEsquerda: " ",
+      estatura: " ",
+      peso: " ",
+    },
     endereco: {
       rua: " ",
       numero: " ",
@@ -36,13 +51,17 @@ export class AlunoCreateComponent implements OnInit {
       this.router.navigate(['antropometrias/create'])
       this.service.mensagem('Aluno criado com sucesso!');
     }, err => {
-      for(let i = 0; i < err.error.errors.length; i++) {
+      for (let i = 0; i < err.error.errors.length; i++) {
         this.service.mensagem(err.error.errors[i].message)
       }
     })
 
     // this.router.navigate(['/antropometria/create'], {state: {data:{this.aluno}}} )
 
+  }
+
+  navigateByState(): void {
+    this.router.navigateByUrl('/antropometrias/create', { state: this.aluno })
   }
 
   cancel(): void {
