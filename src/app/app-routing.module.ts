@@ -19,6 +19,10 @@ import { FuncionarioReadComponent } from './components/views/funcionario/funcion
 import { FuncionarioUpdateComponent } from './components/views/funcionario/funcionario-update/funcionario-update.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { PerfilUsuarioComponent } from './components/views/perfil/perfil-usuario/perfil-usuario.component';
+import { TreinoCreateComponent } from './components/views/treino/treino-create/treino-create.component';
+import { TreinoDeleteComponent } from './components/views/treino/treino-delete/treino-delete.component';
+import { TreinoReadComponent } from './components/views/treino/treino-read/treino-read.component';
+import { TreinoUpdateComponent } from './components/views/treino/treino-update/treino-update.component';
 
 const routes: Routes = [
 
@@ -42,6 +46,11 @@ const routes: Routes = [
     {path: 'funcionarios/create', component: FuncionarioCreateComponent},
     {path: 'funcionarios/delete/:id', component: FuncionarioDeleteComponent},
     {path: 'funcionarios/update/:id',component: FuncionarioUpdateComponent},
+
+    {path: 'treinos', component: TreinoReadComponent},
+    {path: 'treinos/create', component: TreinoCreateComponent},
+    {path: 'treinos/delete/:id', component: TreinoDeleteComponent},
+    {path: 'treinos/update/:id',component: TreinoUpdateComponent},
 
     {path: 'perfils', component: PerfilUsuarioComponent},
 

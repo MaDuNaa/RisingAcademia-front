@@ -40,6 +40,12 @@ import { FuncionarioCreateComponent } from './components/views/funcionario/funci
 import { FuncionarioDeleteComponent } from './components/views/funcionario/funcionario-delete/funcionario-delete.component';
 import { FuncionarioUpdateComponent } from './components/views/funcionario/funcionario-update/funcionario-update.component';
 import { PerfilUsuarioComponent } from './components/views/perfil/perfil-usuario/perfil-usuario.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { TreinoReadComponent } from './components/views/treino/treino-read/treino-read.component';
+import { TreinoCreateComponent } from './components/views/treino/treino-create/treino-create.component';
+import { TreinoUpdateComponent } from './components/views/treino/treino-update/treino-update.component';
+import { TreinoDeleteComponent } from './components/views/treino/treino-delete/treino-delete.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -67,6 +73,10 @@ import { PerfilUsuarioComponent } from './components/views/perfil/perfil-usuario
     FuncionarioDeleteComponent,
     FuncionarioUpdateComponent,
     PerfilUsuarioComponent,
+    TreinoReadComponent,
+    TreinoCreateComponent,
+    TreinoUpdateComponent,
+    TreinoDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +95,8 @@ import { PerfilUsuarioComponent } from './components/views/perfil/perfil-usuario
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-
+    MatPaginatorModule,
+    MatSelectModule,
 
 
   ],

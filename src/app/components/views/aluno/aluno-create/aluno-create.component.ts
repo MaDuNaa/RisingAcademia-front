@@ -40,6 +40,9 @@ export class AlunoCreateComponent implements OnInit {
         this.service.mensagem(err.error.errors[i].message)
       }
     })
+
+    // this.router.navigate(['/antropometria/create'], {state: {data:{this.aluno}}} )
+
   }
 
   cancel(): void {

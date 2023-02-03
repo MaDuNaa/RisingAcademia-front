@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Aluno } from 'src/app/models/aluno';
 import { Antropometria } from 'src/app/models/antropometria';
 import { AntropometriaService } from 'src/app/services/antropometria.service';
 

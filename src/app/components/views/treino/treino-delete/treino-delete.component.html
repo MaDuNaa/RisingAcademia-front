@@ -1,0 +1,31 @@
+<h1>DELETANDO TREINO</h1>
+
+<mat-form-field class="form">
+    <mat-label>Dia da Semana</mat-label>
+    <input matInput [(ngModel)]="treino.dia" type="text" name="nome" disabled>
+</mat-form-field>
+
+
+<mat-form-field class="form">
+    <mat-label>Treino</mat-label>
+    <input matInput [(ngModel)]="treino.treino" type="text" name="nome"disabled>
+</mat-form-field>
+
+
+<mat-form-field class="form">
+  <mat-label>Serie</mat-label>
+  <input matInput [(ngModel)]="treino.serie" type="text" name="descricao" disabled>
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-label>Repetição</mat-label>
+<input matInput [(ngModel)]="treino.repeticao" type="text" name="descricao" disabled>
+</mat-form-field>
+
+
+<div class="buttons">
+    <button (click)="delete()" class="mat-elevation-z8" mat-stroked-button color="primary"> DELETAR </button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn"> CANCELAR </button>
+</div>
+

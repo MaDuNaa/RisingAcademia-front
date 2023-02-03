@@ -1,0 +1,30 @@
+<h1>CRIANDO NOVO TREINO</h1>
+
+<mat-form-field class="form">
+    <mat-label>Dia da Semana</mat-label>
+    <input matInput [(ngModel)]="treino.dia" type="text" name="nome" placeholder="Ex. Segunda-Feira">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+    <mat-label>Treino</mat-label>
+    <input matInput [(ngModel)]="treino.treino" type="text" name="nome" placeholder="Ex. Supino">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+  <mat-label>Serie</mat-label>
+  <input matInput [(ngModel)]="treino.serie" type="number" name="descricao" placeholder="Ex. 3">
+</mat-form-field>
+
+
+<mat-form-field class="form">
+<mat-label>Repetição</mat-label>
+<input matInput [(ngModel)]="treino.repeticao" type="number" name="descricao" placeholder="Ex. 30">
+</mat-form-field>
+
+
+<div class="buttons">
+    <button (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary"> CRIAR </button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn"> CANCELAR </button>
+</div>
