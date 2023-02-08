@@ -46,6 +46,7 @@ import { TreinoCreateComponent } from './components/views/treino/treino-create/t
 import { TreinoUpdateComponent } from './components/views/treino/treino-update/treino-update.component';
 import { TreinoDeleteComponent } from './components/views/treino/treino-delete/treino-delete.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -97,6 +98,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatPaginatorModule,
     MatSelectModule,
+    MatCardModule,
 
 
   ],
