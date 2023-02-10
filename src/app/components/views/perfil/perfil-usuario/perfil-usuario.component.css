@@ -21,7 +21,7 @@ h1 {
 	padding-top: 5px;
 	padding-bottom: 5px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--corpadrao);
 
 }
@@ -30,6 +30,7 @@ h1 {
   display: flex;
   justify-content: flex-start;
   margin-left: 130px;
+  font-weight: 550;
   font-size: 1.5rem;
 
 }

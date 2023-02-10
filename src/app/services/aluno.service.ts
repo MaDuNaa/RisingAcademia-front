@@ -35,6 +35,8 @@ export class AlunoService {
   }
 
   update(aluno: Aluno):Observable<void> {
+    console.log('dentro do service ')
+    console.log(aluno)
     const url = `${this.baseUrl}/alunos/${aluno.id}`
     return this.http.put<void>(url, aluno)
   }

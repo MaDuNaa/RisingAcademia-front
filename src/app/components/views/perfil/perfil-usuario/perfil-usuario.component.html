@@ -1,7 +1,7 @@
 <mat-card>
 <div class="centralizar">
    <h1>
-    MATHEUS NASCIMENTO
+    {{ aluno.alunoIndividual.nome }}
    </h1>
   <img class="avatar" src="assets/logoRising.png" alt="Avatar">
 </div>
@@ -9,18 +9,18 @@
 <div class="detalhes">
   <p class="aumentarLetra">Informações pessoais:</p>
 
-    <p class="horizontal"> <mat-icon>home</mat-icon> (15) 99568154184</p>
-    <p class="horizontal">  <mat-icon>home</mat-icon> Rua Silva , centro , 250</p>
-    <p class="horizontal"> <mat-icon>home</mat-icon> math@hotmail.com</p>
-    <p class="horizontal"> <mat-icon>home</mat-icon> VENCIMENTO: 20</p>
-    <p class="horizontal"> <mat-icon>home</mat-icon> MENSALIDADE: 250</p>
+    <p class="horizontal"> <mat-icon>call</mat-icon> {{  aluno.alunoIndividual.telefone }} </p>
+    <p class="horizontal">  <mat-icon>room</mat-icon> {{  aluno.alunoIndividual.endereco.rua }}, {{ aluno.alunoIndividual.endereco.numero }} </p>
+    <p class="horizontal"> <mat-icon>forum</mat-icon> {{  aluno.alunoIndividual.email }} </p>
+    <p class="horizontal"> <mat-icon>calendar_month</mat-icon> {{  aluno.alunoIndividual.diaVencimento }}</p>
+    <p class="horizontal"> <mat-icon>price_check</mat-icon> {{  aluno.alunoIndividual.mensalidade }} </p>
 
     <div class="buttons">
       <button class="mat-elevation-z1" mat-stroked-button color="primary"> MENSALIDADES </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="warn"> DELETAR </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary"> EDITAR </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary"> TREINOS </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary"> ANTROPOMETRIA </button>
+      <button class="mat-elevation-z1" mat-stroked-button color="warn" routerLink="/alunos/delete/:id"> DELETAR </button>
+      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/alunos/update/:id"> EDITAR </button>
+      <button class="mat-elevation-z1" mat-stroked-button color="primary" (click)="adicionarTreino()"> TREINOS </button>
+      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/antropometrias"> ANTROPOMETRIA </button>
     </div>
 
 </div>

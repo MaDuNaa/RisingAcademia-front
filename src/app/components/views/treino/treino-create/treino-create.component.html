@@ -1,6 +1,18 @@
-<h1>CRIANDO NOVO TREINO</h1>
+<h1>CRIANDO NOVO TREINO {{aluno.alunoIndividual.nome.toUpperCase()}} </h1>
 
 <mat-form-field class="form">
+  <mat-label>Treino</mat-label>
+  <mat-select>
+     <mat-option *ngFor="let treino of treinos" [value]="treino.id" (click)="setId(treino.id)"> {{ treino.treino }} </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngFor="let treinosAluno of aluno.alunoIndividual.treino">
+     <h5>{{ treinosAluno.dia }}</h5>
+     <h5>{{ treinosAluno.treino }}</h5>
+</div>
+
+<!-- <mat-form-field class="form">
     <mat-label>Dia da Semana</mat-label>
     <input matInput [(ngModel)]="treino.dia" type="text" name="nome" placeholder="Ex. Segunda-Feira">
 </mat-form-field>
@@ -21,10 +33,10 @@
 <mat-form-field class="form">
 <mat-label>Repetição</mat-label>
 <input matInput [(ngModel)]="treino.repeticao" type="number" name="descricao" placeholder="Ex. 30">
-</mat-form-field>
+</mat-form-field> -->
 
 
 <div class="buttons">
-    <button (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary"> CRIAR </button>
+    <button (click)="adicionarTreino()" class="mat-elevation-z8" mat-stroked-button color="primary"> CRIAR </button>
     <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn"> CANCELAR </button>
 </div>

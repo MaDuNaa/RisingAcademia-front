@@ -30,11 +30,23 @@ export class AlunoReadComponent implements OnInit {
       console.log(resposta);
       this.alunos = resposta;
     });
-    this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
   }
 
   navegarParaCategoriaCreate() {
     this.router.navigate(["alunos/create"])
+  }
+
+  redirect(id: String) {
+   let alunoIndividual = null;
+    this.alunos.forEach(a => {
+      if(a.id == id) {
+         alunoIndividual = a;
+      }
+    })
+
+    this.router.navigateByUrl('/perfils', { state: {alunoIndividual} });
+
   }
 
 }

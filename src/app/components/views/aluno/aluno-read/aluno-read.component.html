@@ -16,7 +16,7 @@
 
       <ng-container matColumnDef="nome">
         <th mat-header-cell *matHeaderCellDef>NOME</th>
-        <td mat-cell class="nome" *matCellDef="let row" routerLink="/perfils">{{ row.nome }}</td>
+        <td mat-cell class="nome" *matCellDef="let row"> <a (click)="redirect(row.id)" >{{row.nome}}</a> </td>
       </ng-container>
 
       <ng-container matColumnDef="telefone">

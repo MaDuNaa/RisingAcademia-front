@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Treino } from 'src/app/models/treino';
+import { AlunoService } from 'src/app/services/aluno.service';
 import { TreinoService } from 'src/app/services/treino.service';
 
 @Component({
@@ -11,6 +12,10 @@ import { TreinoService } from 'src/app/services/treino.service';
 })
 export class TreinoCreateComponent implements OnInit {
 
+  aluno: any;
+
+  treinos: Treino[] = [];
+
   treino: Treino = {
     id: "",
     dia: "",
@@ -19,10 +24,22 @@ export class TreinoCreateComponent implements OnInit {
     repeticao: 0,
   };
 
-  constructor(private service: TreinoService, private router: Router) { }
+  treinoId: any;
+
+  constructor(private service: TreinoService, private router: Router,
+    private alunoService: AlunoService) {
+      const nav = this.router.getCurrentNavigation();
+       this.aluno = nav?.extras.state;
+      this.service.findAll().subscribe((resposta) => {
+        console.log(resposta);
+        this.treinos = resposta;
+      });
+  }
 
   ngOnInit(): void {
   }
+
+
 
   create(): void {
     this.service.create(this.treino).subscribe((resposta) => {
@@ -37,6 +54,24 @@ export class TreinoCreateComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['treinos'])
+  }
+
+  adicionarTreino() {
+     this.treinos.forEach(t => {
+        if(t.id == this.treinoId) {
+            this.aluno.alunoIndividual.treino.push(t);
+            console.log(this.aluno);
+              this.alunoService.update(this.aluno.alunoIndividual).subscribe(
+                success => console.log(),
+                error => console.error('error'),
+                () => window.location.reload()
+              )
+        }
+     })
+  }
+
+  setId(id: any) {
+    this.treinoId = id;
   }
 
 }
