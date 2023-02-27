@@ -64,7 +64,7 @@ export class TreinoCreateComponent implements OnInit {
               this.alunoService.update(this.aluno.alunoIndividual).subscribe(
                 success => console.log(),
                 error => console.error('error'),
-                () => window.location.reload()
+                // () => window.location.reload()
               )
         }
      })
