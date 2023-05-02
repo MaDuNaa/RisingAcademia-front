@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Treino } from 'src/app/models/treino';
 import { AlunoService } from 'src/app/services/aluno.service';
 import { TreinoService } from 'src/app/services/treino.service';
@@ -13,8 +13,10 @@ import { TreinoService } from 'src/app/services/treino.service';
 export class TreinoCreateComponent implements OnInit {
 
   aluno: any;
-
-  treinos: Treino[] = [];
+  treinos: Treino[];
+  searchText = '';
+  public paginaAtual = 1;
+  sortedData: Treino[];
 
   treino: Treino = {
     id: "",
@@ -27,6 +29,7 @@ export class TreinoCreateComponent implements OnInit {
   treinoId: any;
 
   constructor(private service: TreinoService, private router: Router,
+    private route: ActivatedRoute,
     private alunoService: AlunoService) {
       const nav = this.router.getCurrentNavigation();
        this.aluno = nav?.extras.state;
@@ -34,6 +37,10 @@ export class TreinoCreateComponent implements OnInit {
         console.log(resposta);
         this.treinos = resposta;
       });
+
+      this.sortedData = [];
+      this.treinos = [];
+      
   }
 
   ngOnInit(): void {
@@ -64,7 +71,6 @@ export class TreinoCreateComponent implements OnInit {
               this.alunoService.update(this.aluno.alunoIndividual).subscribe(
                 success => console.log(),
                 error => console.error('error'),
-                // () => window.location.reload()
               )
         }
      })
@@ -73,5 +79,7 @@ export class TreinoCreateComponent implements OnInit {
   setId(id: any) {
     this.treinoId = id;
   }
+  
+
 
 }

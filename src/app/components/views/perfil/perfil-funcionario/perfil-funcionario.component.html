@@ -1,0 +1,24 @@
+<div class="centralizar">
+    <h1>
+     {{ funcionario.funcionarioIndividual.nome }}
+    </h1>
+   <img class="avatar" src="assets/logoRising.png" alt="Avatar">
+ </div>
+ 
+ <div class="detalhes">
+   <p class="aumentarLetra">Informações pessoais:</p>
+ 
+     <p class="horizontal"> <mat-icon>call</mat-icon> {{  funcionario.funcionarioIndividual.telefone }} </p>
+     <p class="horizontal">  <mat-icon>room</mat-icon> {{  funcionario.funcionarioIndividual.endereco.rua }}, {{ funcionario.funcionarioIndividual.endereco.numero }} </p>
+     <p class="horizontal"> <mat-icon>forum</mat-icon> {{  funcionario.funcionarioIndividual.email }} </p>
+     <p class="horizontal"> <mat-icon>build</mat-icon> {{  funcionario.funcionarioIndividual.funcao }}</p>
+     <p class="horizontal"> <mat-icon>calendar_month</mat-icon> {{  funcionario.funcionarioIndividual.dataNasci }} </p>
+ 
+     <div class="buttons">
+       <button class="mat-elevation-z1" mat-stroked-button color="warn" routerLink="/funcionarios/delete/:id"> DELETAR </button>
+       <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/funcionarios/update/:id"> EDITAR </button>
+     </div>
+ 
+ </div>
+ 
+ 

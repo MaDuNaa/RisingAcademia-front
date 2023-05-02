@@ -4,9 +4,57 @@
     <h1>Lista de Antropometria</h1>
   </div>
 
-  <!-- <button class="mat-elevation-z8" (click)="navegarParaCategoriaCreate()" mat-stroked-button color="primary"> NOVA ALUNO </button> -->
+  <section class="section__tabela">
+    <table>
+      <tr class="header-tabela">
+        <th >Torax</th>
+        <th >Cintura</th>
+        <th >Quadril</th>
+        <th >Antebraço Direito</th>
+        <th >Antebraço Esquerdo</th>
+        <th >Braço Esquerdo</th>
+        <th >Braço Direito</th>
+        <th >Coxa Direita</th>
+        <th >Coxa Esquerda</th>
+        <th >Panturrilha Direita</th>
+        <th >Panturrilha Esquerda</th>
+        <th >Estatura</th>
+        <th >Peso</th>
+        <th >Opções</th>
+      </tr>
+      <tr class="estiloTabela"
+        *ngFor="let antropometria of antropometrias">
+       
+        <td> {{antropometria.torax}} </td>
+        <td>{{antropometria.cintura}}</td>
+        <td>{{antropometria.quadril}}</td>
+        <td>{{antropometria.antebracoDireito}}</td>
+        <td> {{antropometria.antebracoEsquerdo}} </td>
+        <td>{{antropometria.bracoDireito}}</td>
+        <td>{{antropometria.bracoEsquerdo}}</td>
+        <td>{{antropometria.coxaDireita}}</td>
+        <td> {{antropometria.coxaEsquerda}} </td>
+        <td>{{antropometria.panturrilhaDireita}}</td>
+        <td>{{antropometria.panturrilhaEsquerda}}</td>
+        <td>{{antropometria.estatura}}</td>
+        <td>{{antropometria.peso}}</td>
+        <td>
+          <div class="coluna__detalhe">
+            <a routerLink="update/{{ antropometria.id }}" class="btn__detalhes"
+              title="Editar Aluno"><mat-icon>edit</mat-icon></a>
+            <a routerLink="delete/{{ antropometria.id }}" class="btn__detalhes"
+              title="Deletar Aluno"><mat-icon>delete</mat-icon></a>
+            <a routerLink="/antropometrias/create" class="btn__detalhes"
+              title="Criar Aluno"><mat-icon>person_add</mat-icon></a>
+              
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+ 
 
-  <div class="mat-elevation-z8 content-table">
+  <!-- <div class="mat-elevation-z8 content-table">
     <table class="table" mat-table [dataSource]="antropometrias">
 
       <ng-container matColumnDef="id">
@@ -59,14 +107,14 @@
         <td mat-cell *matCellDef="let row">{{ row.coxaEsquerda }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="pantorilhaDireita">
+      <ng-container matColumnDef="panturrilhaDireita">
         <th mat-header-cell *matHeaderCellDef>PANTORILHA DIREITA</th>
-        <td mat-cell *matCellDef="let row">{{ row.pantorilhaDireita }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.panturrilhaDireita }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="pantorilhaEsquerda">
+      <ng-container matColumnDef="panturrilhaEsquerda">
         <th mat-header-cell *matHeaderCellDef>PANTORILHA ESQUERDA</th>
-        <td mat-cell *matCellDef="let row">{{ row.pantorilhaEsquerda }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.panturrilhaEsquerda }}</td>
       </ng-container>
 
 
@@ -81,7 +129,7 @@
       </ng-container>
 
 
-      <!-- Symbol Column -->
+   
       <ng-container matColumnDef="acoes">
         <th class="mat-header" mat-header-cell *matHeaderCellDef>AÇÕES</th>
         <td mat-cell *matCellDef="let row">
@@ -100,5 +148,5 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-  </div>
+  </div> -->
 </div>

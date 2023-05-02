@@ -24,8 +24,8 @@ export class AntroCreateComponent implements OnInit {
     bracoEsquerdo: " ",
     coxaDireita: " ",
     coxaEsquerda: " ",
-    pantorilhaDireita: " ",
-    pantorilhaEsquerda: " ",
+    panturrilhaDireita: " ",
+    panturrilhaEsquerda: " ",
     estatura: " ",
     peso: " ",
 

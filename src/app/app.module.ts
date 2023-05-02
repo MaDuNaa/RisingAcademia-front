@@ -47,6 +47,12 @@ import { TreinoUpdateComponent } from './components/views/treino/treino-update/t
 import { TreinoDeleteComponent } from './components/views/treino/treino-delete/treino-delete.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import { TreinoCreateGeralComponent } from './components/views/treino/treino-create-geral/treino-create-geral.component';
+import { PerfilFuncionarioComponent } from './components/views/perfil/perfil-funcionario/perfil-funcionario.component';
+import { MensagemComponent } from './components/mensagem/mensagem.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipe } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -78,6 +84,10 @@ import {MatCardModule} from '@angular/material/card';
     TreinoCreateComponent,
     TreinoUpdateComponent,
     TreinoDeleteComponent,
+    TreinoCreateGeralComponent,
+    PerfilFuncionarioComponent,
+    MensagemComponent,
+    ConfirmModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +109,7 @@ import {MatCardModule} from '@angular/material/card';
     MatPaginatorModule,
     MatSelectModule,
     MatCardModule,
+    NgxPaginationModule,
 
 
   ],

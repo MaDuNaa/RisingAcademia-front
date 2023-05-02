@@ -21,8 +21,8 @@ export class AntroUpdateComponent implements OnInit {
 	  bracoEsquerdo: " ",
 	  coxaDireita: " ",
 	  coxaEsquerda: " ",
-	  pantorilhaDireita: " ",
-	  pantorilhaEsquerda: " ",
+	  panturrilhaDireita: " ",
+	  panturrilhaEsquerda: " ",
 	  estatura: " ",
 	  peso: " ",
 
@@ -50,8 +50,8 @@ export class AntroUpdateComponent implements OnInit {
       this.antropometria.bracoEsquerdo = resposta.bracoEsquerdo;
       this.antropometria.coxaDireita = resposta.coxaDireita;
       this.antropometria.coxaEsquerda = resposta.coxaEsquerda;
-      this.antropometria.pantorilhaDireita = resposta.pantorilhaDireita;
-      this.antropometria.pantorilhaEsquerda = resposta.pantorilhaEsquerda;
+      this.antropometria.panturrilhaDireita = resposta.panturrilhaDireita;
+      this.antropometria.panturrilhaEsquerda = resposta.panturrilhaEsquerda;
       this.antropometria.estatura = resposta.estatura;
       this.antropometria.peso = resposta.peso;
 

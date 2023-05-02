@@ -11,14 +11,18 @@ import { AlunoService } from 'src/app/services/aluno.service';
   styleUrls: ['./aluno-read.component.css']
 })
 export class AlunoReadComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  alunos: Aluno[] = [];
+  alunos: Aluno[];
+  searchText = '';
+  public paginaAtual = 1;
+
   displayedColumns: string[] = ["id", "nome", "telefone",  "objetivo",
    "acoes"];
 
    dataSource!: MatTableDataSource<Aluno>;
-  constructor(private service: AlunoService, private router: Router) { }
+  constructor(private service: AlunoService, private router: Router) { 
+    this.alunos = [];
+  }
 
   ngOnInit(): void {
     this.findAll();
@@ -30,14 +34,13 @@ export class AlunoReadComponent implements OnInit {
       console.log(resposta);
       this.alunos = resposta;
     });
-    // this.dataSource.paginator = this.paginator;
   }
 
   navegarParaCategoriaCreate() {
     this.router.navigate(["alunos/create"])
   }
 
-  redirect(id: String) {
+  redirect(id: any) {
    let alunoIndividual = null;
     this.alunos.forEach(a => {
       if(a.id == id) {

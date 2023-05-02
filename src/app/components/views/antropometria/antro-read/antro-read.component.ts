@@ -13,7 +13,7 @@ export class AntroReadComponent implements OnInit {
   antropometrias: Antropometria[] = [];
   displayedColumns: string[] = ["id", "torax", "cintura",  "quadril", "antebracoDireito",
    "antebracoEsquerdo", "bracoDireito", "bracoEsquerdo", "coxaDireita", "coxaEsquerda",
-    "pantorilhaDireita", "pantorilhaEsquerda", "estatura", "peso",
+    "panturrilhaDireita", "panturrilhaEsquerda", "estatura", "peso",
    "acoes"];
 
   constructor(private service: AntropometriaService, private router: Router) { }

@@ -1,0 +1,39 @@
+form {
+    text-align: center;
+    width: 20%;
+    margin: 2rem auto 0 auto;
+  
+  }
+  
+  mat-icon {
+    color: var(--corpadrao);
+  }
+  
+  h1 {
+    color: var(--corpadrao);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    text-align: center;
+    margin: 3rem auto 2rem auto;
+  }
+  
+  .form {
+    width: 15%;
+    padding: 30px 50px 0px 70px;
+  
+  }
+  
+  .buttons {
+    width: 100%;
+    margin: 3rem auto 2rem auto;
+    text-align: start;
+    text-align: center;
+  }
+  
+  button {
+    margin-right: .5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  

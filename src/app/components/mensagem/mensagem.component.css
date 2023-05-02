@@ -1,0 +1,27 @@
+p {
+    margin: 0px;
+  }
+  
+  .message {
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+  }
+  
+  
+  .btn-close {
+    color: var(--background-menu-hover);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--header-background);
+    transition: 100ms;
+  }
+  
+  .btn-close:hover {
+    background: var(--background-menu-hover);
+    color: aliceblue;
+  }
+  

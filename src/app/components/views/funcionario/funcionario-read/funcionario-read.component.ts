@@ -10,11 +10,13 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 })
 export class FuncionarioReadComponent implements OnInit {
 
-  funcionarios: Funcionario[] = [];
+  funcionarios: Funcionario[];
   displayedColumns: string[] = ["id", "nome", "funcao", "telefone",
    "acoes"];
 
-  constructor(private service: FuncionarioService, private router: Router) { }
+  constructor(private service: FuncionarioService, private router: Router) { 
+    this.funcionarios = [];
+  }
 
   ngOnInit(): void {
     this.findAll();
@@ -30,5 +32,17 @@ export class FuncionarioReadComponent implements OnInit {
   navegarParaCategoriaCreate() {
     this.router.navigate(["funcionarios/create"])
   }
+
+  redirect(id: any) {
+    let funcionarioIndividual = null;
+     this.funcionarios.forEach(a => {
+       if(a.id == id) {
+        funcionarioIndividual = a;
+       }
+     })
+ 
+     this.router.navigateByUrl('/perfils/Funcionario', { state: {funcionarioIndividual} });
+ 
+   }
 
 }

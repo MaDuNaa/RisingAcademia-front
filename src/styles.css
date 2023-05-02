@@ -1,6 +1,17 @@
 :root {
   --corpadrao: #0571b7;
   --background-nav: #DFF2EA;
+  --background-pagination: #878d97;
+  --color-text: #2E3E4B;
+  --color-text-hover: #BAC2D5;
+  --color-text-hover-sec: #23355c;
+  --color-text-sec: #dfdfdf;
+  --color-text-dark: #1E3874;
+  --color-error: #961C1C;
+  --background-1: #bac2d5;
+  --background-menu: #e9ebf2;
+  --background-menu-hover: #4c6293;
+  --header-background: #98a5c1;
 
 }
 
@@ -8,3 +19,90 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/*Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--background-tabela-hover);
+}
+
+/*Chrome, Edge, e Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background: var(--corpadrao);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--background-nav);
+  border-radius: 20px;
+  border: 3px solid var(--corpadrao);
+}
+
+button {
+  cursor: pointer;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.pagination li {
+  font-size: 12px;
+  margin: 0 5px;
+  list-style: none;
+}
+
+.pagination li.active a {
+  background-color: var(--background-menu) !important;
+  border-color: var(--background-menu) !important;
+  border-radius: 30px;
+}
+
+li.pagination-previous.disabled {
+  font-weight: 650;
+  border: 1px solid var(--background-pagination);
+  color: var(--background-pagination);
+  border-radius: 30px;
+}
+
+li.pagination-next.disabled {
+  font-weight: 650;
+  border: 1px solid var(--background-pagination);
+  color: var(--background-pagination);
+  border-radius: 30px;
+}
+
+.ngx-pagination .current {
+  background-color: var(--background-menu-hover) !important;
+  border-color: var(--background-menu) !important;
+  border-radius: 30px;
+}
+
+.pagination li a {
+  color: var(--background-menu-hover) !important;
+  border: 1px solid var(--background-menu-hover) !important;
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+
+.pagination li a:hover {
+  background-color: var(--background-menu-hover) !important;
+  border-color: var(--background-menu-hover) !important;
+  color: var(--color-text-hover) !important;
+  border-radius: 30px;
+}
+
+.pagination-previous {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.pagination-next {
+  font-size: 12px;
+  margin-left: 10px;
+}

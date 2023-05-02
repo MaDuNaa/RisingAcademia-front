@@ -23,6 +23,8 @@ import { TreinoCreateComponent } from './components/views/treino/treino-create/t
 import { TreinoDeleteComponent } from './components/views/treino/treino-delete/treino-delete.component';
 import { TreinoReadComponent } from './components/views/treino/treino-read/treino-read.component';
 import { TreinoUpdateComponent } from './components/views/treino/treino-update/treino-update.component';
+import { TreinoCreateGeralComponent } from './components/views/treino/treino-create-geral/treino-create-geral.component';
+import { PerfilFuncionarioComponent } from './components/views/perfil/perfil-funcionario/perfil-funcionario.component';
 
 const routes: Routes = [
 
@@ -52,7 +54,11 @@ const routes: Routes = [
     {path: 'treinos/delete/:id', component: TreinoDeleteComponent},
     {path: 'treinos/update/:id',component: TreinoUpdateComponent},
 
+    {path: 'treinos/criar', component: TreinoCreateGeralComponent},
+
     {path: 'perfils', component: PerfilUsuarioComponent},
+    {path: 'perfils/Funcionario', component: PerfilFuncionarioComponent},
+
 
     {path: 'config', component: ConfigComponent},
 

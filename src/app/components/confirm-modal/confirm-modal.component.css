@@ -1,0 +1,31 @@
+.container-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--background-modal);
+    border-radius: 10px;
+  }
+  
+  .container-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 3px
+  }
+  
+  .titulo {
+    color: var(--color-text);
+    font-size: 1.3em;
+  }
+  
+  .btn {
+    background: var(--header-background);
+    color: var(--color-text);
+    transition: 100ms;
+  }
+  
+  .btn:hover {
+    background: var(--icone-nav);
+    color: var(--background-1);
+  }
+  

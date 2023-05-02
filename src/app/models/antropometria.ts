@@ -10,8 +10,8 @@ export interface Antropometria {
 	 bracoEsquerdo: String;
 	 coxaDireita: String;
 	 coxaEsquerda: String;
-	 pantorilhaDireita: String;
-	 pantorilhaEsquerda: String;
+	 panturrilhaDireita: String;
+	 panturrilhaEsquerda: String;
 	 estatura: String;
 	 peso: String;
 
