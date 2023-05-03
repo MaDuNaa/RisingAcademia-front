@@ -35,6 +35,7 @@ const routes: Routes = [
     {path: 'categorias/update/:id',component: CategoriaUpdateComponent},
 
     {path: 'alunos', component: AlunoReadComponent},
+    {path: 'alunos/:id/antropometrias', component: AntroReadComponent},
     {path: 'alunos/create', component: AlunoCreateComponent},
     {path: 'alunos/delete/:id', component: AlunoDeleteComponent},
     {path: 'alunos/update/:id',component: AlunoUpdateComponent},

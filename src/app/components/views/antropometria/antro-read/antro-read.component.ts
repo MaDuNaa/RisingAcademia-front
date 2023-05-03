@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Antropometria } from 'src/app/models/antropometria';
+import { AlunoService } from 'src/app/services/aluno.service';
 import { AntropometriaService } from 'src/app/services/antropometria.service';
 
 @Component({
@@ -10,16 +11,34 @@ import { AntropometriaService } from 'src/app/services/antropometria.service';
 })
 export class AntroReadComponent implements OnInit {
 
-  antropometrias: Antropometria[] = [];
+  antropometrias: any[] = [];
   displayedColumns: string[] = ["id", "torax", "cintura",  "quadril", "antebracoDireito",
    "antebracoEsquerdo", "bracoDireito", "bracoEsquerdo", "coxaDireita", "coxaEsquerda",
     "panturrilhaDireita", "panturrilhaEsquerda", "estatura", "peso",
    "acoes"];
 
-  constructor(private service: AntropometriaService, private router: Router) { }
+  constructor(private service: AntropometriaService, private router: Router,
+     private route: ActivatedRoute, private alunoService: AlunoService) { }
 
   ngOnInit(): void {
-    this.findAll();
+    
+    if (this.route.snapshot.params['id']) {
+       this.findOne(this.route.snapshot.params['id']);
+    } else {
+      this.findAll();
+    }
+    
+  }
+
+  findOne(id: string) {
+     this.alunoService.findById(id).subscribe({
+      next : (value) => {
+          this.antropometrias.push(value.antropometria);
+      },
+      error : (err) => {
+          
+      },
+     })
   }
 
   findAll() {

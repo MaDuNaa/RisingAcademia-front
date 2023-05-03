@@ -17,6 +17,7 @@ export class TreinoCreateComponent implements OnInit {
   searchText = '';
   public paginaAtual = 1;
   sortedData: Treino[];
+  selecionado: any;
 
   treino: Treino = {
     id: "",
@@ -33,6 +34,7 @@ export class TreinoCreateComponent implements OnInit {
     private alunoService: AlunoService) {
       const nav = this.router.getCurrentNavigation();
        this.aluno = nav?.extras.state;
+       console.log(this.aluno.alunoIndividual);
       this.service.findAll().subscribe((resposta) => {
         console.log(resposta);
         this.treinos = resposta;
@@ -64,16 +66,27 @@ export class TreinoCreateComponent implements OnInit {
   }
 
   adicionarTreino() {
-     this.treinos.forEach(t => {
-        if(t.id == this.treinoId) {
-            this.aluno.alunoIndividual.treino.push(t);
-            console.log(this.aluno);
-              this.alunoService.update(this.aluno.alunoIndividual).subscribe(
-                success => console.log(),
-                error => console.error('error'),
-              )
-        }
-     })
+
+    this.aluno.alunoIndividual.treino.push(this.selecionado);
+    this.alunoService.update(this.aluno.alunoIndividual).subscribe({
+      next : (value) => {
+          console.log(value);
+      },
+      error : (err) => {
+          console.log(err);
+      },
+    })
+    
+    //  this.treinos.forEach(t => {
+    //     if(t.id == this.treinoId) {
+    //         this.aluno.alunoIndividual.treino.push(t);
+    //         console.log(this.aluno);
+    //           this.alunoService.update(this.aluno.alunoIndividual).subscribe(
+    //             success => console.log(),
+    //             error => console.error('error'),
+    //           )
+    //     }
+    //  })
   }
 
   setId(id: any) {

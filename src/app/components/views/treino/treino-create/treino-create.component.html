@@ -11,8 +11,8 @@
 
 <form class="boxPergunta">
 <div class="box__form">
-  <select class="btnSelect">
-    <option *ngFor="let treino of treinos" [value]="treino.id" (click)="setId(treino.id)"> {{ treino.treino }} </option>
+  <select class="btnSelect" [(ngModel)]="selecionado" name="treino">
+    <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.treino }} </option>
   </select>
   <button (click)="adicionarTreino()" class="btn__adicionar"> CRIAR</button>
   <button (click)="cancel()" class="btn__remover"> CANCELAR </button>

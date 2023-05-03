@@ -16,10 +16,10 @@
 
     <div class="buttons">
       <button class="mat-elevation-z1" mat-stroked-button color="primary"> MENSALIDADES </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="warn" routerLink="/alunos/delete/:id"> DELETAR </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/alunos/update/:id"> EDITAR </button>
+      <button class="mat-elevation-z1" mat-stroked-button color="warn" routerLink="/alunos/delete/{{aluno.alunoIndividual.id}}"> DELETAR </button>
+      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/alunos/update/{{aluno.alunoIndividual.id}}"> EDITAR </button>
       <button class="mat-elevation-z1" mat-stroked-button color="primary" (click)="adicionarTreino()"> TREINOS </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/antropometrias"> ANTROPOMETRIA </button>
+      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/alunos/{{aluno.alunoIndividual.id}}/antropometrias"> ANTROPOMETRIA </button>
     </div>
 
 </div>
