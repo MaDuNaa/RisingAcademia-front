@@ -14,7 +14,7 @@
         <th >Opções</th>
       </tr>
       <tr class="estiloTabela"
-        *ngFor="let treino of treinos">
+        *ngFor="let treino of treinos | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
        
         <td> {{treino.dia}} </td>
         <td>{{treino.treino}}</td>
@@ -35,6 +35,11 @@
       </tr>
     </table>
   </section> 
+
+  <section class="pagination" *ngIf="treinos.length != 0">
+    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+      nextLabel="Próximo"></pagination-controls>
+  </section>
 
   <!-- <div class="mat-elevation-z8 content-table">
     <table class="table" mat-table [dataSource]="treinos">

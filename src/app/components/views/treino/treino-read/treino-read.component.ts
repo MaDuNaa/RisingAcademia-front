@@ -11,8 +11,9 @@ import { TreinoService } from 'src/app/services/treino.service';
 export class TreinoReadComponent implements OnInit {
 
   treinos: Treino[] = [];
-  displayedColumns: string[] = ["id", "dia", "treino",  "serie", "repeticao",
-   "acoes"];
+  searchText = '';
+  public paginaAtual = 1;
+
 
   constructor(private service: TreinoService, private router: Router) { }
 

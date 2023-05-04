@@ -25,6 +25,7 @@ import { TreinoReadComponent } from './components/views/treino/treino-read/trein
 import { TreinoUpdateComponent } from './components/views/treino/treino-update/treino-update.component';
 import { TreinoCreateGeralComponent } from './components/views/treino/treino-create-geral/treino-create-geral.component';
 import { PerfilFuncionarioComponent } from './components/views/perfil/perfil-funcionario/perfil-funcionario.component';
+import { AntroDetalheComponent } from './components/views/antropometria/antro-detalhe/antro-detalhe.component';
 
 const routes: Routes = [
 
@@ -44,6 +45,7 @@ const routes: Routes = [
     {path: 'antropometrias/create', component: AntroCreateComponent},
     {path: 'antropometrias/delete/:id', component: AntroDeleteComponent},
     {path: 'antropometrias/update/:id',component: AntroUpdateComponent},
+    {path: 'antropometrias/detalhe', component: AntroDetalheComponent},
 
     {path: 'funcionarios', component: FuncionarioReadComponent},
     {path: 'funcionarios/create', component: FuncionarioCreateComponent},

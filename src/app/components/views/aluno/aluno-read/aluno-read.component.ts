@@ -15,11 +15,7 @@ export class AlunoReadComponent implements OnInit {
   alunos: Aluno[];
   searchText = '';
   public paginaAtual = 1;
-
-  displayedColumns: string[] = ["id", "nome", "telefone",  "objetivo",
-   "acoes"];
-
-   dataSource!: MatTableDataSource<Aluno>;
+  
   constructor(private service: AlunoService, private router: Router) { 
     this.alunos = [];
   }

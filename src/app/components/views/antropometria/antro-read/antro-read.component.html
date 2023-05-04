@@ -10,14 +10,6 @@
         <th >Torax</th>
         <th >Cintura</th>
         <th >Quadril</th>
-        <th >Antebraço Direito</th>
-        <th >Antebraço Esquerdo</th>
-        <th >Braço Esquerdo</th>
-        <th >Braço Direito</th>
-        <th >Coxa Direita</th>
-        <th >Coxa Esquerda</th>
-        <th >Panturrilha Direita</th>
-        <th >Panturrilha Esquerda</th>
         <th >Estatura</th>
         <th >Peso</th>
         <th >Opções</th>
@@ -28,125 +20,21 @@
         <td> {{antropometria.torax}} </td>
         <td>{{antropometria.cintura}}</td>
         <td>{{antropometria.quadril}}</td>
-        <td>{{antropometria.antebracoDireito}}</td>
-        <td> {{antropometria.antebracoEsquerdo}} </td>
-        <td>{{antropometria.bracoDireito}}</td>
-        <td>{{antropometria.bracoEsquerdo}}</td>
-        <td>{{antropometria.coxaDireita}}</td>
-        <td> {{antropometria.coxaEsquerda}} </td>
-        <td>{{antropometria.panturrilhaDireita}}</td>
-        <td>{{antropometria.panturrilhaEsquerda}}</td>
         <td>{{antropometria.estatura}}</td>
         <td>{{antropometria.peso}}</td>
         <td>
           <div class="coluna__detalhe">
             <a routerLink="update/{{ antropometria.id }}" class="btn__detalhes"
-              title="Editar Aluno"><mat-icon>edit</mat-icon></a>
+              title="Editar Antropometria"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ antropometria.id }}" class="btn__detalhes"
-              title="Deletar Aluno"><mat-icon>delete</mat-icon></a>
-            <a routerLink="/antropometrias/create" class="btn__detalhes"
-              title="Criar Aluno"><mat-icon>person_add</mat-icon></a>
+              title="Deletar Antropometria"><mat-icon>delete</mat-icon></a>
+            <a routerLink="/antropometrias/detalhe" class="btn__detalhes"
+              title="Detalhe Antropometria"><mat-icon>assignment</mat-icon></a>
               
           </div>
         </td>
       </tr>
     </table>
   </section>
- 
 
-  <!-- <div class="mat-elevation-z8 content-table">
-    <table class="table" mat-table [dataSource]="antropometrias">
-
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="torax">
-        <th mat-header-cell *matHeaderCellDef>TORAX</th>
-        <td mat-cell *matCellDef="let row">{{ row.torax }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="cintura">
-        <th mat-header-cell *matHeaderCellDef>CINTURA</th>
-        <td mat-cell *matCellDef="let row">{{ row.cintura }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="quadril">
-        <th mat-header-cell *matHeaderCellDef>QUADRIL</th>
-        <td mat-cell *matCellDef="let row">{{ row.quadril }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="antebracoDireito">
-        <th mat-header-cell *matHeaderCellDef>ANTEBRAÇO DIREITO</th>
-        <td mat-cell *matCellDef="let row">{{ row.antebracoDireito }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="antebracoEsquerdo">
-        <th mat-header-cell *matHeaderCellDef>ANTEBRAÇO ESQUERDO</th>
-        <td mat-cell *matCellDef="let row">{{ row.antebracoEsquerdo }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="bracoDireito">
-        <th mat-header-cell *matHeaderCellDef>BRAÇO DIREITO</th>
-        <td mat-cell *matCellDef="let row">{{ row.bracoDireito }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="bracoEsquerdo">
-        <th mat-header-cell *matHeaderCellDef>BRAÇO ESQUERDO</th>
-        <td mat-cell *matCellDef="let row">{{ row.bracoEsquerdo}}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="coxaDireita">
-        <th mat-header-cell *matHeaderCellDef>COXA DIREITA</th>
-        <td mat-cell *matCellDef="let row">{{ row.coxaDireita }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="coxaEsquerda">
-        <th mat-header-cell *matHeaderCellDef>COXA ESQUERDA</th>
-        <td mat-cell *matCellDef="let row">{{ row.coxaEsquerda }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="panturrilhaDireita">
-        <th mat-header-cell *matHeaderCellDef>PANTORILHA DIREITA</th>
-        <td mat-cell *matCellDef="let row">{{ row.panturrilhaDireita }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="panturrilhaEsquerda">
-        <th mat-header-cell *matHeaderCellDef>PANTORILHA ESQUERDA</th>
-        <td mat-cell *matCellDef="let row">{{ row.panturrilhaEsquerda }}</td>
-      </ng-container>
-
-
-      <ng-container matColumnDef="estatura">
-        <th mat-header-cell *matHeaderCellDef>ESTATURA</th>
-        <td mat-cell *matCellDef="let row">{{ row.estatura }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="peso">
-        <th mat-header-cell *matHeaderCellDef>PESO</th>
-        <td mat-cell *matCellDef="let row">{{ row.peso }}</td>
-      </ng-container>
-
-
-   
-      <ng-container matColumnDef="acoes">
-        <th class="mat-header" mat-header-cell *matHeaderCellDef>AÇÕES</th>
-        <td mat-cell *matCellDef="let row">
-          <a class="edit" routerLink="update/{{ row.id }}">
-            <i class="material-icons">edit</i>
-          </a>
-          <a class="delete" routerLink="delete/{{ row.id }}">
-            <i class="material-icons">delete</i>
-          </a>
-          <a class="create" routerLink="create">
-            <i class="material-icons">person_add</i>
-          </a>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
-  </div> -->
 </div>

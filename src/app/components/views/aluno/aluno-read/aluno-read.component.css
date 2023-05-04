@@ -129,3 +129,13 @@ table {
   justify-content: center;
   gap: 0.7vw;
 }
+
+.pagination {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* .ngx-pagination {
+  margin-left: 10rem !important;
+ 
+} */

@@ -1,0 +1,40 @@
+<div class="title">
+  <h1>Detalhe de Antropometria</h1>
+</div>
+
+<section class="section__tabela">
+    <table>
+      <tr class="header-tabela">
+        <th >Torax</th>
+        <th >Cintura</th>
+        <th >Quadril</th>
+        <th >Antebraço D.</th>
+        <th >Antebraço E.</th>
+        <th >Braço D.</th>
+        <th >Braço E.</th>
+        <th >Coxa D.</th>
+        <th >Coxa E.</th>
+        <th >Panturrilha D.</th>
+        <th >Panturrilha E.</th>
+        <th >Estatura</th>
+        <th >Peso</th>
+      </tr>
+      <tr class="estiloTabela"
+        *ngFor="let antropometria of antropometrias">
+       
+        <td> {{antropometria.torax}} </td>
+        <td>{{antropometria.cintura}}</td>
+        <td>{{antropometria.quadril}}</td>
+        <td>{{antropometria.antebracoDireito}}</td>
+        <td> {{antropometria.antebracoEsquerdo}} </td>
+        <td>{{antropometria.bracoDireito}}</td>
+        <td>{{antropometria.bracoEsquerdo}}</td>
+        <td>{{antropometria.coxaDireita}}</td>
+        <td> {{antropometria.coxaEsquerda}} </td>
+        <td>{{antropometria.panturrilhaDireita}}</td>
+        <td>{{antropometria.panturrilhaEsquerda}}</td>
+        <td>{{antropometria.estatura}}</td>
+        <td>{{antropometria.peso}}</td>
+      </tr>
+    </table>
+  </section>

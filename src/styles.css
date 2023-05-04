@@ -51,6 +51,11 @@ mat-icon {
   cursor: pointer;
 }
 
+.pagination {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .pagination li {
   font-size: 12px;
   margin: 0 5px;

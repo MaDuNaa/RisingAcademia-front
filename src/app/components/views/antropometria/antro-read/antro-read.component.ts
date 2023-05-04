@@ -12,22 +12,16 @@ import { AntropometriaService } from 'src/app/services/antropometria.service';
 export class AntroReadComponent implements OnInit {
 
   antropometrias: any[] = [];
-  displayedColumns: string[] = ["id", "torax", "cintura",  "quadril", "antebracoDireito",
-   "antebracoEsquerdo", "bracoDireito", "bracoEsquerdo", "coxaDireita", "coxaEsquerda",
-    "panturrilhaDireita", "panturrilhaEsquerda", "estatura", "peso",
-   "acoes"];
 
   constructor(private service: AntropometriaService, private router: Router,
      private route: ActivatedRoute, private alunoService: AlunoService) { }
 
   ngOnInit(): void {
-    
     if (this.route.snapshot.params['id']) {
        this.findOne(this.route.snapshot.params['id']);
     } else {
       this.findAll();
     }
-    
   }
 
   findOne(id: string) {
