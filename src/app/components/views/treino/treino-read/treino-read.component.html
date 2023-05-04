@@ -4,6 +4,22 @@
     <h1>Lista de Treinos</h1>
   </div>
 
+  <section class="container__action">
+    <div class="search-box">
+      <input class="search-txt" type="text" [(ngModel)]="searchText" name="" placeholder="Faça a sua pesquisa"
+        ng2-search-filter>
+      <a class="search-btn">
+        <mat-icon>search</mat-icon>
+      </a>
+    </div>
+    <div  routerLink="/treinos/criar">
+      <button class="btn_criar" title="Criar Treino">
+        <mat-icon>bookmark_add</mat-icon>
+        Novo Treino
+      </button>
+    </div>
+  </section>
+
     <section class="section__tabela">
     <table>
       <tr class="header-tabela">
@@ -14,7 +30,7 @@
         <th >Opções</th>
       </tr>
       <tr class="estiloTabela"
-        *ngFor="let treino of treinos | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
+        *ngFor="let treino of treinos | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
        
         <td> {{treino.dia}} </td>
         <td>{{treino.treino}}</td>
@@ -26,9 +42,6 @@
               title="Editar Treino"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ treino.id }}" class="btn__detalhes"
               title="Deletar Treino"><mat-icon>delete</mat-icon></a>
-            <a routerLink="/treinos/criar" class="btn__detalhes"
-              title="Criar Treino"><mat-icon>bookmark_add</mat-icon></a>
-              
           </div>
         </td>
 

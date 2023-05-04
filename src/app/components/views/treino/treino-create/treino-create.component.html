@@ -1,31 +1,28 @@
 <h1>CRIANDO NOVO TREINO {{aluno.alunoIndividual.nome.toUpperCase()}} </h1>
 
-<!-- <mat-form-field class="boxPergunta">
-  <mat-label>Treino</mat-label>
-  <mat-select class="btnSelect">
-     <mat-option *ngFor="let treino of treinos" [value]="treino.id" (click)="setId(treino.id)"> {{ treino.treino }} </mat-option>
-  </mat-select>
-  <button (click)="adicionarTreino()" class="btn__adicionar"> CRIAR </button>
-  <button (click)="cancel()" class="btn__remover"> CANCELAR </button>
-</mat-form-field> -->
+
 
 <form class="boxPergunta">
 <div class="box__form">
   <select class="btnSelect" [(ngModel)]="selecionado" name="treino">
     <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.treino }} </option>
   </select>
-  <button (click)="adicionarTreino()" class="btn__adicionar"> CRIAR</button>
-  <button (click)="cancel()" class="btn__remover"> CANCELAR </button>
+  <button (click)="adicionarTreino()" class="btn__adicionar"> Adicionar </button>
+  <button (click)="cancel()" class="btn__remover"> Cancelar </button>
 </div>
 </form>
 
 
-<!-- <div *ngFor="let treinosAluno of aluno.alunoIndividual.treino">
-     <h5>{{ treinosAluno.dia }}</h5>
-     <h5>{{ treinosAluno.treino }}</h5>
-     <h5>{{ treinosAluno.serie }}</h5>
-     <h5>{{ treinosAluno.repeticao }}</h5>
-</div>  -->
+<section class="container__action">
+  <div class="search-box">
+    <input class="search-txt" type="text" [(ngModel)]="searchText" name="" placeholder="Faça a sua pesquisa"
+      ng2-search-filter>
+    <a class="search-btn">
+      <mat-icon>search</mat-icon>
+    </a>
+  </div>
+</section>
+
 
 <section class="section__tabela">
   <table>
@@ -36,7 +33,7 @@
       <th mat-sort-header="localizacao">Repetição</th>
     </tr>
     <tr class="estiloTabela"
-      *ngFor="let treinosAluno of aluno.alunoIndividual.treino">
+      *ngFor="let treinosAluno of aluno.alunoIndividual.treino | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
       <td>{{ treinosAluno.dia }}</td>
       <td>{{treinosAluno.treino}}</td>
       <td>{{treinosAluno.serie}}</td>
@@ -45,33 +42,7 @@
   </table>
 </section>
 
-
-
-<!-- <mat-form-field class="form">
-    <mat-label>Dia da Semana</mat-label>
-    <input matInput [(ngModel)]="treino.dia" type="text" name="nome" placeholder="Ex. Segunda-Feira">
-</mat-form-field>
-
-
-<mat-form-field class="form">
-    <mat-label>Treino</mat-label>
-    <input matInput [(ngModel)]="treino.treino" type="text" name="nome" placeholder="Ex. Supino">
-</mat-form-field>
-
-
-<mat-form-field class="form">
-  <mat-label>Serie</mat-label>
-  <input matInput [(ngModel)]="treino.serie" type="number" name="descricao" placeholder="Ex. 3">
-</mat-form-field>
-
-
-<mat-form-field class="form">
-<mat-label>Repetição</mat-label>
-<input matInput [(ngModel)]="treino.repeticao" type="number" name="descricao" placeholder="Ex. 30">
-</mat-form-field> 
--->
-
-<!-- <div class="buttons">
-    <button (click)="adicionarTreino()" class="mat-elevation-z8" mat-stroked-button color="primary"> CRIAR </button>
-    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn"> CANCELAR </button>
-</div>  -->
+<section class="pagination" *ngIf="treinos.length != 0">
+  <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+    nextLabel="Próximo"></pagination-controls>
+</section>

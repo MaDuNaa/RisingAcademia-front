@@ -52,7 +52,7 @@ import { PerfilFuncionarioComponent } from './components/views/perfil/perfil-fun
 import { MensagemComponent } from './components/mensagem/mensagem.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { Ng2SearchPipe } from 'ng2-search-filter';
+import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AntroDetalheComponent } from './components/views/antropometria/antro-detalhe/antro-detalhe.component';
 
 
@@ -112,6 +112,7 @@ import { AntroDetalheComponent } from './components/views/antropometria/antro-de
     MatSelectModule,
     MatCardModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule,
 
 
   ],

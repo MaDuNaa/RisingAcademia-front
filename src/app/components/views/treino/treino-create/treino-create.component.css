@@ -1,41 +1,16 @@
-form {
-  text-align: center;
-  width: 20%;
-  margin: 2rem auto 0 auto;
 
-}
 
-mat-icon {
-  color: var(--corpadrao);
-}
+
 
 h1 {
   color: var(--corpadrao);
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 1rem;
-  text-align: center;
-  margin: 1.5rem auto 2rem auto;
-}
-
-.form {
-  width: 20%;
-  padding: 30px 50px 0px 70px;
-
-}
-
-.buttons {
-  width: 100%;
-  margin: 1rem auto 1rem auto;
-  text-align: start;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-button {
-  margin-right: .5rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
+
 
 
 
@@ -132,7 +107,7 @@ table {
 	cursor:pointer;
 	color: var(--color-text);
 	font-size:10px;
-  margin-left: 14rem;
+  margin-left: 10rem;
 	padding:5px 5px;
 }
 
@@ -152,6 +127,75 @@ table {
   background-color: var(--header-background);
 }
 
+.container__action {
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-hover);
+  font-size: 12px;
+  padding: 6px 10px;
+}
 
+.btn_criar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  gap: 4px;
+  background: var(--background-menu-hover);
+  border: none;
+  color: var(--color-text-sec);
+  border-radius: 5px;
+  font-size: 120%;
+}
+
+.btn_criar:hover {
+  color: var(--color-text-hover);
+  background-color: var(--background-botao-hover);
+}
+
+.search-box {
+  background: var(--header-background);
+  height: 25px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-btn {
+  color: var(--background-menu-hover);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--header-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 2s;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 12px;
+  transition: 0.4s;
+  line-height: 20px;
+  width: 0px;
+}
+
+.search-box:hover>.search-txt {
+  width: 125px;
+  padding: 0 6px;
+}
+
+.search-box:hover>.search-btn {
+  background: var(--background-1);
+}
 
 

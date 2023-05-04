@@ -11,8 +11,8 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class FuncionarioReadComponent implements OnInit {
 
   funcionarios: Funcionario[];
-  displayedColumns: string[] = ["id", "nome", "funcao", "telefone",
-   "acoes"];
+  searchText = '';
+  public paginaAtual = 1;
 
   constructor(private service: FuncionarioService, private router: Router) { 
     this.funcionarios = [];

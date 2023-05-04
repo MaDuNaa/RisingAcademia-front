@@ -4,6 +4,23 @@
     <h1>Lista de Alunos</h1>
   </div>
 
+  <section class="container__action">
+    <div class="search-box">
+      <input class="search-txt" type="text" [(ngModel)]="searchText" name="" placeholder="Faça a sua pesquisa"
+        ng2-search-filter>
+      <a class="search-btn">
+        <mat-icon>search</mat-icon>
+      </a>
+    </div>
+    <div  routerLink="/alunos/create">
+      <button class="btn_criar" title="Adicionar Aluno">
+        <mat-icon>person_add</mat-icon>
+        Novo Aluno
+      </button>
+    </div>
+  </section>
+
+
   <section class="section__tabela">
     <table>
       <tr class="header-tabela">
@@ -14,7 +31,7 @@
         <th >Opções</th>
       </tr>
       <tr class="estiloTabela"
-        *ngFor="let aluno of alunos | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
+        *ngFor="let aluno of alunos | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
        
         <td> <a (click)="redirect(aluno.id)" >{{aluno.nome}}</a> </td>
         <td>{{aluno.telefone}}</td>
@@ -25,10 +42,7 @@
             <a routerLink="update/{{ aluno.id }}" class="btn__detalhes"
               title="Editar Aluno"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ aluno.id }}" class="btn__detalhes"
-              title="Deletar Aluno"><mat-icon>delete</mat-icon></a>
-            <a routerLink="/alunos/create" class="btn__detalhes"
-              title="Criar Aluno"><mat-icon>person_add</mat-icon></a>
-              
+              title="Deletar Aluno"><mat-icon>delete</mat-icon></a>     
           </div>
         </td>
       </tr>

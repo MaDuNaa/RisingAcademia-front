@@ -4,6 +4,22 @@
     <h1>Lista de Antropometria</h1>
   </div>
 
+  <section class="container__action">
+    <div class="search-box">
+      <input class="search-txt" type="text" [(ngModel)]="searchText" name="" placeholder="Faça a sua pesquisa"
+        ng2-search-filter>
+      <a class="search-btn">
+        <mat-icon>search</mat-icon>
+      </a>
+    </div>
+    <div  routerLink="/antropometrias/detalhe">
+      <button class="btn_criar" title="Detalhe Antropometria">
+        <mat-icon>accessibility</mat-icon>
+        Detalhe Antropometria
+      </button>
+    </div>
+  </section>
+
   <section class="section__tabela">
     <table>
       <tr class="header-tabela">
@@ -15,7 +31,7 @@
         <th >Opções</th>
       </tr>
       <tr class="estiloTabela"
-        *ngFor="let antropometria of antropometrias">
+        *ngFor="let antropometria of antropometrias | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
        
         <td> {{antropometria.torax}} </td>
         <td>{{antropometria.cintura}}</td>
@@ -28,13 +44,15 @@
               title="Editar Antropometria"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ antropometria.id }}" class="btn__detalhes"
               title="Deletar Antropometria"><mat-icon>delete</mat-icon></a>
-            <a routerLink="/antropometrias/detalhe" class="btn__detalhes"
-              title="Detalhe Antropometria"><mat-icon>assignment</mat-icon></a>
-              
           </div>
         </td>
       </tr>
     </table>
+  </section>
+
+  <section class="pagination" *ngIf="antropometrias.length != 0">
+    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+      nextLabel="Próximo"></pagination-controls>
   </section>
 
 </div>

@@ -11,6 +11,8 @@ import { AntropometriaService } from 'src/app/services/antropometria.service';
 export class AntroDetalheComponent implements OnInit {
 
   antropometrias: Antropometria[];
+  searchText = '';
+  public paginaAtual = 1;
 
   constructor(private service: AntropometriaService, private router: Router,) { 
     this.antropometrias = [];

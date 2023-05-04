@@ -2,6 +2,16 @@
   <h1>Detalhe de Antropometria</h1>
 </div>
 
+<section class="container__action">
+  <div class="search-box">
+    <input class="search-txt" type="text" [(ngModel)]="searchText" name="" placeholder="Faça a sua pesquisa"
+      ng2-search-filter>
+    <a class="search-btn">
+      <mat-icon>search</mat-icon>
+    </a>
+  </div>
+</section>
+
 <section class="section__tabela">
     <table>
       <tr class="header-tabela">
@@ -20,7 +30,7 @@
         <th >Peso</th>
       </tr>
       <tr class="estiloTabela"
-        *ngFor="let antropometria of antropometrias">
+        *ngFor="let antropometria of antropometrias | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
        
         <td> {{antropometria.torax}} </td>
         <td>{{antropometria.cintura}}</td>
@@ -37,4 +47,9 @@
         <td>{{antropometria.peso}}</td>
       </tr>
     </table>
+  </section>
+
+  <section class="pagination" *ngIf="antropometrias.length != 0">
+    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
+      nextLabel="Próximo"></pagination-controls>
   </section>

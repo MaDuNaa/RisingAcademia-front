@@ -5,7 +5,7 @@
   }
   
   .title h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--corpadrao);
     font-weight: 500;
   
@@ -59,4 +59,58 @@
   .estiloTabela :last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+  }
+
+
+  .container__action {
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-hover);
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  
+  .search-box {
+    background: var(--header-background);
+    height: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .search-btn {
+    color: var(--background-menu-hover);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--header-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 2s;
+  }
+  
+  .search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: var(--color-text);
+    font-size: 12px;
+    transition: 0.4s;
+    line-height: 20px;
+    width: 0px;
+  }
+  
+  .search-box:hover>.search-txt {
+    width: 125px;
+    padding: 0 6px;
+  }
+  
+  .search-box:hover>.search-btn {
+    background: var(--background-1);
   }
