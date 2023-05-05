@@ -6,7 +6,7 @@
   
   .title h1 {
     font-size: 1.8rem;
-    color: var(--corpadrao);
+    color: #415a77;
     font-weight: 500;
   
   }
@@ -17,15 +17,15 @@
   }
 
   .estiloTabela {
-    background-color: var(--header-background);
+    background-color: #415a77;
     width: 100%;
-    height: 70px;
+    height: 50px;
     border-radius: 15px;
-    color: var(--color-text);
+    color: #edf6f9;
   }
-
+  
   .estiloTabela:hover td a {
-    color: var(--background-1);
+    color: #edf6f9;
   }
   
   .estiloTabela td {
@@ -45,9 +45,9 @@
   }
   
   .estiloTabela:hover {
-    background-color: var(--background-menu-hover);
+    background-color: #4c6293;
     cursor: pointer;
-    color: var(--color-text-hover);
+    color: #edf6f9;
   }
   
   .estiloTabela :first-child {
@@ -74,8 +74,8 @@
 
   
   .search-box {
-    background: var(--header-background);
-    height: 25px;
+    background: #415a77;
+    height: 20px;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -83,11 +83,11 @@
   }
   
   .search-btn {
-    color: var(--background-menu-hover);
+    color: #415a77;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: var(--header-background);
+    background: #bac2d5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,7 +99,7 @@
     background: none;
     outline: none;
     padding: 0;
-    color: var(--color-text);
+    color: #bac2d5;
     font-size: 12px;
     transition: 0.4s;
     line-height: 20px;
@@ -112,5 +112,5 @@
   }
   
   .search-box:hover>.search-btn {
-    background: var(--background-1);
+    background: #bac2d5;
   }

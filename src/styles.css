@@ -16,9 +16,12 @@
 }
 
 
-
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+   margin: 0;
+   font-family: Roboto, "Helvetica Neue", sans-serif;
+   background-color: #1b263b;
+ }
 
 
 /*Firefox */
@@ -34,7 +37,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 *::-webkit-scrollbar-track {
   border-radius: 8px;
-  background: var(--corpadrao);
+  background: #bac2d5;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -52,8 +55,7 @@ mat-icon {
 }
 
 .pagination {
-  margin-left: auto !important;
-  margin-right: auto !important;
+  padding-left: 18.5rem !important;
 }
 
 .pagination li {

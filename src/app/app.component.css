@@ -1,6 +1,6 @@
 mat-toolbar {
     height: 42px;
-    background: #0470bc;
+    background-color: #1b263b;
     font-size: 16px;
     color: white;
     
@@ -19,8 +19,8 @@ mat-toolbar {
     margin: 16px;
     width: 200px;
     border-right: none;
-    background-color: #0077b6;
-    color: white;
+    background-color: #bac2d5;
+    color: #1b263b;
     border-radius: 10px;
     padding: 16px;
     text-align: center;
@@ -33,11 +33,15 @@ mat-toolbar {
     margin-left: 32px;
     padding: 16px;
     overflow: auto;
+    background-color: #bac2d5;
   }
   
   mat-sidenav-container {
-    height: calc(100vh - 60px);
+    height: calc(102vh - 74px);
+    background-color: #1b263b;
   }
+
+
   
   .menu-button {
     width: 100%;
@@ -66,7 +70,7 @@ mat-toolbar {
   .designation {
     margin-top: 2px;
     font-size: 0.7rem;
-    color: lightgrey;
+    color: #1b263b;
   }
   
   mat-divider {

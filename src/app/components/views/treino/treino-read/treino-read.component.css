@@ -11,14 +11,14 @@
 
 .title h1 {
   font-size: 1.8rem;
-  color: var(--corpadrao);
+  color: #415a77;
   font-weight: 500;
 
 }
 
 button {
   margin-bottom: .8rem;
-  color: var(--corpadrao);
+  color: #415a77;
   border-radius: 10px;
 }
 
@@ -54,20 +54,22 @@ button {
   width: 5rem;
 }
 
+
+
 .section__tabela {
   min-height: 80%;
 }
 
 .estiloTabela {
-  background-color: var(--header-background);
+  background-color: #415a77;
   width: 100%;
-  height: 70px;
+  height: 50px;
   border-radius: 15px;
-  color: var(--color-text);
+  color: #edf6f9;
 }
 
 .estiloTabela:hover td a {
-  color: var(--background-1);
+  color: #edf6f9;
 }
 
 .estiloTabela td {
@@ -86,9 +88,9 @@ table {
 }
 
 .estiloTabela:hover {
-  background-color: var(--background-menu-hover);
+  background-color: #4c6293;
   cursor: pointer;
-  color: var(--color-text-hover);
+  color: #edf6f9;
 }
 
 .estiloTabela :first-child {
@@ -111,7 +113,7 @@ table {
   cursor: pointer;
   color: var(--background-modal);
   font-size: 12px;
-  padding: 6px 10px;
+  padding: 4px 6px;
   text-decoration: none;
 }
 
@@ -146,21 +148,21 @@ table {
   justify-content: center;
   padding: 8px;
   gap: 4px;
-  background: var(--background-menu-hover);
+  background: #415a77;
   border: none;
-  color: var(--color-text-sec);
+  color: #edf6f9;
   border-radius: 5px;
-  font-size: 120%;
+  font-size: 110%;
 }
 
 .btn_criar:hover {
-  color: var(--color-text-hover);
-  background-color: var(--background-botao-hover);
+  color: #edf6f9;
+  background-color: #4c6293;
 }
 
 .search-box {
-  background: var(--header-background);
-  height: 25px;
+  background: #415a77;
+  height: 20px;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -168,11 +170,11 @@ table {
 }
 
 .search-btn {
-  color: var(--background-menu-hover);
+  color: #415a77;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--header-background);
+  background: #bac2d5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,7 +186,7 @@ table {
   background: none;
   outline: none;
   padding: 0;
-  color: var(--color-text);
+  color: #bac2d5;
   font-size: 12px;
   transition: 0.4s;
   line-height: 20px;
@@ -197,5 +199,5 @@ table {
 }
 
 .search-box:hover>.search-btn {
-  background: var(--background-1);
+  background: #bac2d5;
 }
