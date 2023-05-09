@@ -58,6 +58,7 @@ mat-toolbar {
   }
     mat-icon {
       margin-right: 8px;
+      color: #415a77 !important;
     }
   
   
@@ -105,4 +106,13 @@ mat-toolbar {
   .buttonHeader:hover {
     background-color:transparent;
     color:#bac2d5;
+  }
+
+  mat-menu {
+    background: #415a77 !important;
+  }
+
+  .span-alterar {
+    color: #415a77;
+    font-weight: 500;
   }
