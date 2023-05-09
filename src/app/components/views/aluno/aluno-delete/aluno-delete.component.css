@@ -13,9 +13,9 @@ h1 {
   color: #415a77;
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
-  margin: 3rem auto 3rem auto;
+  margin: 1rem auto 2rem auto;
 }
 
 .form {
@@ -26,7 +26,7 @@ h1 {
 
 .buttons {
   width: 100%;
-  margin: 3rem auto 2rem auto;
+  margin: 1rem auto 1rem auto;
   text-align: start;
   text-align: center;
 }
@@ -35,4 +35,18 @@ button {
   margin-right: .5rem;
   padding-right: 2rem;
   padding-left: 2rem;
+}
+
+.btn_criar {
+  padding: 1px;
+  background: #415a77;
+  border: none;
+  color: #edf6f9;
+  border-radius: 8px;
+  font-size: 80%;
+}
+
+.btn_criar:hover {
+  color: #edf6f9;
+  background-color: #4c6293;
 }
