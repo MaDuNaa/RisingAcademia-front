@@ -58,7 +58,6 @@ mat-toolbar {
   }
     mat-icon {
       margin-right: 8px;
-      color: #415a77 !important;
     }
   
   
@@ -115,4 +114,9 @@ mat-toolbar {
   .span-alterar {
     color: #415a77;
     font-weight: 500;
+  }
+
+  .icones-lateral {
+    font-weight: 500;
+    color: #415a77 !important;
   }
