@@ -113,3 +113,14 @@ li.pagination-next.disabled {
   font-size: 12px;
   margin-left: 10px;
 }
+
+.snackDialog {
+  background-color: #415a77;
+  color: #edf6f9;
+  border-radius: 10px !important;
+}
+
+.mat-dialog-container {
+  border-radius: 10px !important;
+  background-color: #edf6f9 !important;
+}

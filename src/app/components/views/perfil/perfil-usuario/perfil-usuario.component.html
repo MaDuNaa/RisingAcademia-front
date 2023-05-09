@@ -2,7 +2,7 @@
    <h1>
     {{ aluno.alunoIndividual.nome }}
    </h1>
-  <img class="avatar" src="assets/logoRising.png" alt="Avatar">
+  <img class="avatar" src="assets/perfil.png" alt="Avatar">
 </div>
 
 <div class="detalhes">
@@ -15,11 +15,11 @@
     <p class="horizontal"> <mat-icon>price_check</mat-icon> {{  aluno.alunoIndividual.mensalidade }} </p>
 
     <div class="buttons">
-      <button class="mat-elevation-z1" mat-stroked-button color="primary"> MENSALIDADES </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="warn" routerLink="/alunos/delete/{{aluno.alunoIndividual.id}}"> DELETAR </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/alunos/update/{{aluno.alunoIndividual.id}}"> EDITAR </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary" (click)="adicionarTreino()"> TREINOS </button>
-      <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/alunos/{{aluno.alunoIndividual.id}}/antropometrias"> ANTROPOMETRIA </button>
+      <button class="btn_criar" mat-stroked-button> MENSALIDADES </button>
+      <button class="btn_criar" mat-stroked-button routerLink="/alunos/delete/{{aluno.alunoIndividual.id}}"> DELETAR </button>
+      <button class="btn_criar" mat-stroked-button routerLink="/alunos/update/{{aluno.alunoIndividual.id}}"> EDITAR </button>
+      <button class="btn_criar" mat-stroked-button (click)="adicionarTreino()"> TREINOS </button>
+      <button class="btn_criar" mat-stroked-button routerLink="/alunos/{{aluno.alunoIndividual.id}}/antropometrias"> ANTROPOMETRIA </button>
     </div>
 
 </div>

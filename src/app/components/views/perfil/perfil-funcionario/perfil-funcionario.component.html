@@ -2,7 +2,7 @@
     <h1>
      {{ funcionario.funcionarioIndividual.nome }}
     </h1>
-   <img class="avatar" src="assets/logoRising.png" alt="Avatar">
+   <img class="avatar" src="assets/perfil.png" alt="Avatar">
  </div>
  
  <div class="detalhes">
@@ -15,8 +15,8 @@
      <p class="horizontal"> <mat-icon>calendar_month</mat-icon> {{  funcionario.funcionarioIndividual.dataNasci }} </p>
  
      <div class="buttons">
-       <button class="mat-elevation-z1" mat-stroked-button color="warn" routerLink="/funcionarios/delete/:id"> DELETAR </button>
-       <button class="mat-elevation-z1" mat-stroked-button color="primary" routerLink="/funcionarios/update/:id"> EDITAR </button>
+       <button class="btn_criar" mat-stroked-button routerLink="/funcionarios/delete/:id"> DELETAR </button>
+       <button class="btn_criar" mat-stroked-button routerLink="/funcionarios/update/:id"> EDITAR </button>
      </div>
  
  </div>

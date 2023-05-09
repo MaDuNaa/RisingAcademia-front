@@ -12,16 +12,16 @@ p {
   
   
   .btn-close {
-    color: var(--background-menu-hover);
+    color: #edf6f9;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: var(--header-background);
+    background: #415a77;
     transition: 100ms;
   }
   
   .btn-close:hover {
-    background: var(--background-menu-hover);
-    color: aliceblue;
+    background: #415a77;
+    color: #edf6f9;
   }
   

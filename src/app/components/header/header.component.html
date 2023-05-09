@@ -67,3 +67,19 @@
   </mat-menu>
 
 </mat-toolbar> -->
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  <img class="imagemLogo" src="assets/favicon.png" >
+  Rising 
+  <button mat-icon-button class="buttonHeader" aria-label="Example icon-button with heart icon">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+</mat-toolbar>

@@ -2,7 +2,7 @@ mat-toolbar {
     height: 42px;
     background-color: #1b263b;
     font-size: 16px;
-    color: white;
+    color: #edf6f9;
     
   }
 
@@ -13,6 +13,12 @@ mat-toolbar {
     border-radius: 25px;
     height: 1.8rem;
     padding: 10px;
+    cursor: pointer;
+  }
+
+  p {
+    cursor: pointer;
+    margin-top: 14px;
   }
   
   mat-sidenav {
@@ -89,7 +95,7 @@ mat-toolbar {
     display: flex;
     justify-content: center;
     cursor:pointer;
-    color:#FFFFFF;
+    color:#edf6f9;
     font-family:Arial;
     font-size:15px;
     text-decoration:none;
@@ -98,5 +104,5 @@ mat-toolbar {
   
   .buttonHeader:hover {
     background-color:transparent;
-    color:#000;
+    color:#bac2d5;
   }

@@ -47,11 +47,9 @@ export class AntroCreateComponent implements OnInit {
       this.router.navigate(['antropometrias/create'])
       this.service.mensagem('Aluno criado com sucesso!');
     }, err => {
-      // for (let i = 0; i < err.error.errors.length; i++) {
-      //   this.service.mensagem(err.error.errors[i].message)
-      // }
       console.log(err)
     })
+    this.router.navigate(['alunos'])
     // this.service.create(this.antropometria).subscribe((resposta) => {
     //   this.router.navigate(['alunos'])
     //   this.service.mensagem('Antropometria criado com sucesso!');

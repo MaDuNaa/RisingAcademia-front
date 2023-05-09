@@ -1,6 +1,3 @@
-<!-- <app-header></app-header>
-<app-nav></app-nav>
-<app-footer></app-footer> -->
 <mat-toolbar class="mat-elevation-z8">
     <button
       mat-icon-button
@@ -10,8 +7,8 @@
       <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
       <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
     </button>
-    <img class="imagemLogo" src="assets/favicon.png" >
-    Rising 
+    <img class="imagemLogo" src="assets/favicon.png" routerLink="" >
+    <p routerLink="">Rising</p> 
     <button mat-icon-button class="buttonHeader" aria-label="Example icon-button with heart icon">
         <mat-icon>account_circle</mat-icon>
       </button>
@@ -22,7 +19,7 @@
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
       <img
         class="avatar mat-elevation-z8"
-        src="assets/eu.jpg"
+        src="assets/perfil.png"
       />
   
       <h4 class="name">Matheus Nascimento</h4>
@@ -63,7 +60,7 @@
   
       <button mat-button class="menu-button" routerLink="/help">
         <mat-icon>help</mat-icon>
-        <span>Help</span>
+        <span>Ajuda</span>
       </button>
     </mat-sidenav>
     <mat-sidenav-content>

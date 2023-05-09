@@ -15,16 +15,12 @@ import { NavComponent } from './components/nav/nav.component';
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { HomeComponent } from './components/views/home/home.component';
-import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button';
 import { ConfigComponent } from './components/views/config/config.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
-import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
-import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { AlunoReadComponent } from './components/views/aluno/aluno-read/aluno-read.component';
@@ -54,6 +50,11 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AntroDetalheComponent } from './components/views/antropometria/antro-detalhe/antro-detalhe.component';
+import { LoginComponent } from './components/account/login/login.component';
+import { CreateAccountComponent } from './components/account/create-account/create-account.component';
+import { AuthenticationComponent } from './components/views/layout/authentication/authentication.component';
+
+
 
 
 @NgModule({
@@ -63,11 +64,7 @@ import { AntroDetalheComponent } from './components/views/antropometria/antro-de
     FooterComponent,
     NavComponent,
     HomeComponent,
-    CategoriaReadComponent,
     ConfigComponent,
-    CategoriaCreateComponent,
-    CategoriaDeleteComponent,
-    CategoriaUpdateComponent,
     AlunoReadComponent,
     AlunoDeleteComponent,
     AlunoCreateComponent,
@@ -90,6 +87,10 @@ import { AntroDetalheComponent } from './components/views/antropometria/antro-de
     MensagemComponent,
     ConfirmModalComponent,
     AntroDetalheComponent,
+    LoginComponent,
+    CreateAccountComponent,
+    AuthenticationComponent,
+
   ],
   imports: [
     BrowserModule,

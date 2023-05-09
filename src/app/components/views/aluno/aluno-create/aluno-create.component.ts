@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Aluno } from 'src/app/models/aluno';
 import { AlunoService } from 'src/app/services/aluno.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 
 @Component({
   selector: 'app-aluno-create',
@@ -41,7 +42,8 @@ export class AlunoCreateComponent implements OnInit {
     dataNasci: 0,
   };
 
-  constructor(private service: AlunoService, private router: Router) { }
+  constructor(private service: AlunoService, private router: Router,
+    private mensagemService: MensagemService) { }
 
   ngOnInit(): void {
   }
@@ -61,7 +63,10 @@ export class AlunoCreateComponent implements OnInit {
   }
 
   navigateByState(): void {
+    this.service.create(this.aluno).subscribe((resposta) => {
+    this.mensagemService.add("Aluno criado com sucesso!");
     this.router.navigateByUrl('/antropometrias/create', { state: this.aluno })
+  });
   }
 
   cancel(): void {

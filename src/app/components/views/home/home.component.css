@@ -1,0 +1,155 @@
+
+.container {
+  width: 100%;
+  margin-top: 5vh;
+  height: 69vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.router {
+  text-decoration: none;
+}
+
+.flex{
+  display:flex;
+  flex-wrap: wrap;
+  max-width: 840px;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction:row;
+  justify-content: center;
+}
+
+.flex > div {
+  margin: 10px;
+  flex-grow: 0;
+}
+
+.box-1 {
+  width: 360px;
+  height: 169px;
+  background: #415a77;
+  box-shadow: 6px 6px 6px  var(--shadow);
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.box-1:hover {
+  border: 1px solid #edf6f9;
+  transform: scale(1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+.box-2{
+  background: #415a77;
+  width: 170px;
+  height: 170px;
+  box-shadow: 6px 6px 6px var(--shadow);
+  border-radius: 15px;
+}
+
+.box-2:hover {
+  border: 1px solid #edf6f9;
+  transform: scale(1);
+  box-shadow: 1px 5px 15px rgba(0,0,0,0.6);
+}
+
+.font-boxes{
+ color: #edf6f9;
+ font-family: Arial;
+ font-size: 25px;
+ text-align: left;
+ padding-top: 12px;
+ padding-left: 20px;
+}
+
+.font-boxes1 {
+  color: #edf6f9;
+  font: Arial;
+  font-size: 20px;
+  margin-top: 5px;
+  text-align: left;
+  display: flex;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.box2 > mat-button{
+  width: 200px;
+  height: 200px;
+}
+
+.icons {
+  color: #edf6f9;
+  font-size: 40px;
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 60px 20px;
+  justify-content: flex-end;
+}
+
+.icons1 {
+  color: #edf6f9;
+  font-size: 40px;
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 60px 20px;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.box-disable {
+  background-color: #e3d5ca;
+  width: 170px;
+  height: 170px;
+  box-shadow: 6px 6px 6px var(--shadow);
+  border-radius: 15px;
+}
+
+.box-disable:hover {
+  border: 1px solid #edede9;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-left: 25px;
+  }
+
+  .box-1 {
+    width: 340px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-2{
+    width:  160px;
+    height: 150px;
+  }
+
+  .icons{
+    font-size: 30px;
+    padding: 60px 20px;
+  }
+
+  .icons1{
+    font-size: 30px;
+    padding: 60px 20px;
+  }
+
+  .font-box{
+    font-size: 20px;
+    padding-top:40%;
+  }
+
+  .font-box1{
+    font-size: 10px;
+    padding-top: 5%;
+  }
+}

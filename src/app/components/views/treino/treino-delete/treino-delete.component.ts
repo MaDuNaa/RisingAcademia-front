@@ -44,7 +44,7 @@ export class TreinoDeleteComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['alunos'])
+    this.router.navigate(['treinos'])
   }
 
 }

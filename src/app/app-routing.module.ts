@@ -8,10 +8,6 @@ import { AntroCreateComponent } from './components/views/antropometria/antro-cre
 import { AntroDeleteComponent } from './components/views/antropometria/antro-delete/antro-delete.component';
 import { AntroReadComponent } from './components/views/antropometria/antro-read/antro-read.component';
 import { AntroUpdateComponent } from './components/views/antropometria/antro-update/antro-update.component';
-import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
-import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
-import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
-import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { ConfigComponent } from './components/views/config/config.component';
 import { FuncionarioCreateComponent } from './components/views/funcionario/funcionario-create/funcionario-create.component';
 import { FuncionarioDeleteComponent } from './components/views/funcionario/funcionario-delete/funcionario-delete.component';
@@ -26,44 +22,55 @@ import { TreinoUpdateComponent } from './components/views/treino/treino-update/t
 import { TreinoCreateGeralComponent } from './components/views/treino/treino-create-geral/treino-create-geral.component';
 import { PerfilFuncionarioComponent } from './components/views/perfil/perfil-funcionario/perfil-funcionario.component';
 import { AntroDetalheComponent } from './components/views/antropometria/antro-detalhe/antro-detalhe.component';
+import { AuthenticationComponent } from './components/views/layout/authentication/authentication.component';
+import { LoginComponent } from './components/account/login/login.component';
+import { CreateAccountComponent } from './components/account/create-account/create-account.component';
+import { AuthGuard } from './components/account-guard/shared/auth.guard';
 
 const routes: Routes = [
 
-    {path: '', component: HomeComponent},
-    {path: 'categorias', component: CategoriaReadComponent},
-    {path: 'categorias/create', component: CategoriaCreateComponent},
-    {path: 'categorias/delete/:id', component: CategoriaDeleteComponent},
-    {path: 'categorias/update/:id',component: CategoriaUpdateComponent},
+      {path: '', component: HomeComponent},
 
-    {path: 'alunos', component: AlunoReadComponent},
-    {path: 'alunos/:id/antropometrias', component: AntroReadComponent},
-    {path: 'alunos/create', component: AlunoCreateComponent},
-    {path: 'alunos/delete/:id', component: AlunoDeleteComponent},
-    {path: 'alunos/update/:id',component: AlunoUpdateComponent},
+      {path: 'alunos', component: AlunoReadComponent},
+      {path: 'alunos/:id/antropometrias', component: AntroReadComponent},
+      {path: 'alunos/create', component: AlunoCreateComponent},
+      {path: 'alunos/delete/:id', component: AlunoDeleteComponent},
+      {path: 'alunos/update/:id',component: AlunoUpdateComponent},
+  
+      {path: 'antropometrias', component: AntroReadComponent},
+      {path: 'antropometrias/create', component: AntroCreateComponent},
+      {path: 'antropometrias/delete/:id', component: AntroDeleteComponent},
+      {path: 'antropometrias/update/:id',component: AntroUpdateComponent},
+      {path: 'antropometrias/detalhe', component: AntroDetalheComponent},
+  
+      {path: 'funcionarios', component: FuncionarioReadComponent},
+      {path: 'funcionarios/create', component: FuncionarioCreateComponent},
+      {path: 'funcionarios/delete/:id', component: FuncionarioDeleteComponent},
+      {path: 'funcionarios/update/:id',component: FuncionarioUpdateComponent},
+  
+      {path: 'treinos', component: TreinoReadComponent},
+      {path: 'treinos/create', component: TreinoCreateComponent},
+      {path: 'treinos/delete/:id', component: TreinoDeleteComponent},
+      {path: 'treinos/update/:id',component: TreinoUpdateComponent},
+  
+      {path: 'treinos/criar', component: TreinoCreateGeralComponent},
+  
+      {path: 'perfils', component: PerfilUsuarioComponent},
+      {path: 'perfils/Funcionario', component: PerfilFuncionarioComponent},
 
-    {path: 'antropometrias', component: AntroReadComponent},
-    {path: 'antropometrias/create', component: AntroCreateComponent},
-    {path: 'antropometrias/delete/:id', component: AntroDeleteComponent},
-    {path: 'antropometrias/update/:id',component: AntroUpdateComponent},
-    {path: 'antropometrias/detalhe', component: AntroDetalheComponent},
+      {path: 'config', component: ConfigComponent},
 
-    {path: 'funcionarios', component: FuncionarioReadComponent},
-    {path: 'funcionarios/create', component: FuncionarioCreateComponent},
-    {path: 'funcionarios/delete/:id', component: FuncionarioDeleteComponent},
-    {path: 'funcionarios/update/:id',component: FuncionarioUpdateComponent},
-
-    {path: 'treinos', component: TreinoReadComponent},
-    {path: 'treinos/create', component: TreinoCreateComponent},
-    {path: 'treinos/delete/:id', component: TreinoDeleteComponent},
-    {path: 'treinos/update/:id',component: TreinoUpdateComponent},
-
-    {path: 'treinos/criar', component: TreinoCreateGeralComponent},
-
-    {path: 'perfils', component: PerfilUsuarioComponent},
-    {path: 'perfils/Funcionario', component: PerfilFuncionarioComponent},
+    // {
+    //   path: '', 
+    //   component: AuthenticationComponent,
+    //   children: [
+    //     { path: '', redirectTo: 'login', pathMatch: 'full' },
+    //     { path: 'login', component: LoginComponent },
+    //     { path: 'create-account', component: CreateAccountComponent }
+    //   ]
+    // }
 
 
-    {path: 'config', component: ConfigComponent},
 
 ];
 
