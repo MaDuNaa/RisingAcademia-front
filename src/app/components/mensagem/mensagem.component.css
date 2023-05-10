@@ -1,5 +1,7 @@
 p {
     margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
   }
   
   .message {
@@ -21,7 +23,7 @@ p {
   }
   
   .btn-close:hover {
-    background: #415a77;
+    background: #4c6293;
     color: #edf6f9;
   }
   

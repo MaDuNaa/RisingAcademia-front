@@ -1,8 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { take } from 'rxjs';
 import { Treino } from 'src/app/models/treino';
 import { AlunoService } from 'src/app/services/aluno.service';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 import { TreinoService } from 'src/app/services/treino.service';
 
 @Component({
@@ -31,7 +34,8 @@ export class TreinoCreateComponent implements OnInit {
 
   constructor(private service: TreinoService, private router: Router,
     private route: ActivatedRoute,
-    private alunoService: AlunoService) {
+    private alunoService: AlunoService, 
+    private mensagemService: MensagemService, private confirmService: ConfirmDialogService) {
       const nav = this.router.getCurrentNavigation();
        this.aluno = nav?.extras.state;
        console.log(this.aluno.alunoIndividual);
@@ -76,21 +80,27 @@ export class TreinoCreateComponent implements OnInit {
           console.log(err);
       },
     })
-    
-    //  this.treinos.forEach(t => {
-    //     if(t.id == this.treinoId) {
-    //         this.aluno.alunoIndividual.treino.push(t);
-    //         console.log(this.aluno);
-    //           this.alunoService.update(this.aluno.alunoIndividual).subscribe(
-    //             success => console.log(),
-    //             error => console.error('error'),
-    //           )
-    //     }
-    //  })
   }
 
   setId(id: any) {
     this.treinoId = id;
+  }
+
+  onRemover(treino:any) {
+    if (treino.treino == '') {
+      const result$ = this.confirmService.abrir("Deseja excluir este treino?")
+      result$.asObservable()
+        .pipe(
+          take(1),
+        ).subscribe({
+          next: (value) => {
+            if (value) {
+              this.aluno.alunoIndividual.treino.splice(this.aluno.alunoIndividual.treino.indexOf(this.treinoId), 1);
+              this.mensagemService.add("Treino excluído!");
+            }
+          },
+        })
+    }
   }
   
 

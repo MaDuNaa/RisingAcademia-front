@@ -31,6 +31,7 @@
       <th mat-sort-header="familia">Treino</th>
       <th mat-sort-header="level">Série</th>
       <th mat-sort-header="localizacao">Repetição</th>
+      <th>Opção</th>
     </tr>
     <tr class="estiloTabela"
       *ngFor="let treinosAluno of aluno.alunoIndividual.treino | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
@@ -38,7 +39,9 @@
       <td>{{treinosAluno.treino}}</td>
       <td>{{treinosAluno.serie}}</td>
       <td>{{treinosAluno.repeticao}}</td>
+      <td (click)="onRemover(treino)"><mat-icon class="estilo-remover">delete</mat-icon></td>
     </tr>
+    
   </table>
 </section>
 

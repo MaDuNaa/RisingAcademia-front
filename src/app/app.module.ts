@@ -53,6 +53,7 @@ import { AntroDetalheComponent } from './components/views/antropometria/antro-de
 import { LoginComponent } from './components/account/login/login.component';
 import { CreateAccountComponent } from './components/account/create-account/create-account.component';
 import { AuthenticationComponent } from './components/views/layout/authentication/authentication.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -114,7 +115,7 @@ import { AuthenticationComponent } from './components/views/layout/authenticatio
     MatCardModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-
+    MatDialogModule,
 
   ],
   providers: [],

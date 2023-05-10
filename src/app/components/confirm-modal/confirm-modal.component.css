@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: var(--background-modal);
+    background-color: #bac2d5;
     border-radius: 10px;
   }
   
@@ -14,18 +14,23 @@
   }
   
   .titulo {
-    color: var(--color-text);
+    color: #415a77;
     font-size: 1.3em;
   }
   
   .btn {
-    background: var(--header-background);
-    color: var(--color-text);
+    border: none;
+    background: #415a77;
+    color: #edf6f9;
     transition: 100ms;
+    border-radius: 8px;
+    padding: 6px 18px;
+    font-weight: 500;
   }
   
   .btn:hover {
-    background: var(--icone-nav);
-    color: var(--background-1);
+    background: #4c6293;
+    color: #edf6f9;
+   
   }
   
