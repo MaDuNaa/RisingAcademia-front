@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { take } from 'rxjs';
 import { Treino } from 'src/app/models/treino';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 import { TreinoService } from 'src/app/services/treino.service';
 
 @Component({
@@ -18,7 +21,9 @@ export class TreinoDeleteComponent implements OnInit {
     repeticao: 0,
   };
 
-  constructor(private service: TreinoService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: TreinoService, private route: ActivatedRoute, 
+    private router: Router, private mensagemService: MensagemService,
+    private confirmService: ConfirmDialogService) { }
 
   ngOnInit(): void {
     this.treino.id = this.route.snapshot.paramMap.get('id')!
@@ -35,12 +40,23 @@ export class TreinoDeleteComponent implements OnInit {
   }
 
   delete(): void {
-    this.service.delete(this.treino.id!).subscribe((resposta) => {
-      this.router.navigate(['treinos'])
-      this.service.mensagem('Treino deletado com sucesso!')
-    }, err => {
-      this.service.mensagem(err.error.error)
-    })
+    const result$ = this.confirmService.abrir("Deseja excluir este treino?")
+    result$.asObservable()
+      .pipe(
+        take(1),
+      ).subscribe({
+        next: (value) => {
+          if (value) {
+            this.service.delete(this.treino.id!).subscribe((resposta) => {
+              this.router.navigate(['treinos'])
+              this.mensagemService.add('Treino deletado com sucesso!')
+            }, err => {
+              this.mensagemService.add(err.error.error)
+            })
+          }
+        },
+      })
+
   }
 
   cancel(): void {

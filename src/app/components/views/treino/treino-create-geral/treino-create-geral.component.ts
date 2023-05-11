@@ -36,7 +36,7 @@ export class TreinoCreateGeralComponent implements OnInit {
       this.mensagemService.add('Treino criado com sucesso!');
     }, err => {
       for(let i = 0; i < err.error.errors.length; i++) {
-        this.service.mensagem(err.error.errors[i].message)
+        this.mensagemService.add(err.error.errors[i].message)
       }
     })
   }

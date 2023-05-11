@@ -51,14 +51,12 @@ export class AlunoCreateComponent implements OnInit {
   create(): void {
     this.service.create(this.aluno).subscribe((resposta) => {
       this.router.navigate(['antropometrias/create'])
-      this.service.mensagem('Aluno criado com sucesso!');
+      this.mensagemService.add('Aluno criado com sucesso!');
     }, err => {
       for (let i = 0; i < err.error.errors.length; i++) {
         this.service.mensagem(err.error.errors[i].message)
       }
     })
-
-    // this.router.navigate(['/antropometria/create'], {state: {data:{this.aluno}}} )
 
   }
 

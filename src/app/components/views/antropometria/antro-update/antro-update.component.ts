@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Antropometria } from 'src/app/models/antropometria';
 import { AntropometriaService } from 'src/app/services/antropometria.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 
 @Component({
   selector: 'app-antro-update',
@@ -31,7 +32,8 @@ export class AntroUpdateComponent implements OnInit {
   constructor(
     private service: AntropometriaService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private mensagemService: MensagemService,
   ) { }
 
   ngOnInit(): void {
@@ -61,9 +63,9 @@ export class AntroUpdateComponent implements OnInit {
   update(): void {
     this.service.update(this.antropometria).subscribe((resposta) => {
       this.router.navigate(["antropometrias"]);
-      this.service.mensagem("Antropometria atualizada com sucesso");
+      this.mensagemService.add("Antropometria atualizada com sucesso");
     }, err => {
-      this.service.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+      this.mensagemService.add('Validar se todos os campos estão preenchidos corretamente!')
     });
   }
 

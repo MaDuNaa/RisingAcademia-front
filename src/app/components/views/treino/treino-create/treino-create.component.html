@@ -8,7 +8,6 @@
     <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.treino }} </option>
   </select>
   <button (click)="adicionarTreino()" class="btn__adicionar"> Adicionar </button>
-  <button (click)="cancel()" class="btn__remover"> Cancelar </button>
 </div>
 </form>
 
@@ -49,3 +48,9 @@
   <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
     nextLabel="Próximo"></pagination-controls>
 </section>
+
+<div class="container__btn">
+  <a class="btnDeletar" routerLink="/alunos">Cancelar</a>
+  <button class="btnSalvar" (click)="onSalvar()" [hidden]="treinos.length < 1">Salvar</button>
+</div>
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Treino } from 'src/app/models/treino';
+import { MensagemService } from 'src/app/services/mensagem.service';
 import { TreinoService } from 'src/app/services/treino.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class TreinoUpdateComponent implements OnInit {
   constructor(
     private service: TreinoService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private mensagemService: MensagemService
   ) { }
 
   ngOnInit(): void {
@@ -41,9 +43,9 @@ export class TreinoUpdateComponent implements OnInit {
   update(): void {
     this.service.update(this.treino).subscribe((resposta) => {
       this.router.navigate(["treinos"]);
-      this.service.mensagem("Treino atualizado com sucesso");
+      this.mensagemService.add("Treino atualizado com sucesso");
     }, err => {
-      this.service.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+      this.mensagemService.add('Validar se todos os campos estão preenchidos corretamente!')
     });
   }
 

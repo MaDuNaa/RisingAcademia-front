@@ -94,35 +94,19 @@ table {
   font-weight: 900;
   border: none;
   background-color: #bac2d5;
-	border-radius: 10px;
+	border-radius: 8px;
 	cursor:pointer;
 	color: #415a77;
 	font-size:10px;
-  margin-left: 10rem;
-	padding:5px 5px;
+  margin-left: 15rem;
+	padding:6px 12px;
 }
 
-.btn__remover{
-  font-weight: 900;
-  border: none;
-  background-color: #bac2d5;
-	border-radius: 10px;
-	cursor:pointer;
-	color: #415a77;
-	font-size:10px;
-	padding:5px 5px;
-}
 
 .btn__adicionar:hover {
   color: #bac2d5;
   background-color: #4c6293;
 }
-
-.btn__remover:hover {
-  color: #bac2d5;
-  background-color: #4c6293;
-}
-
 
 .container__action {
   border: none;
@@ -208,4 +192,41 @@ table {
 .estilo-remover:hover {
   color: #bac2d5;
   background-color: #415a77;
+}
+
+
+.btnSalvar {
+  border: none;
+  background-color: #415a77;
+	border-radius:5px;
+	cursor:pointer;
+	color: #bac2d5;
+	font-size:12px;
+	padding:6px 50px;
+}
+
+.btnDeletar{
+  border: none;
+  background-color: #415a77;
+	border-radius:5px;
+	cursor:pointer;
+	color: #bac2d5;
+	font-size:12px;
+	padding:6px 50px;
+  text-decoration: none;
+}
+
+.btnSalvar:hover {
+  background-color: #4c6293;
+}
+
+.btnDeletar:hover {
+  background-color: #4c6293;
+}
+
+.container__btn {
+  display: flex;
+  gap: 1vw;
+  justify-content: flex-end;
+  padding-right: 3vw;
 }

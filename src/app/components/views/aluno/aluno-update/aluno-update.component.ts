@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aluno } from 'src/app/models/aluno';
 import { AlunoService } from 'src/app/services/aluno.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 
 @Component({
   selector: 'app-aluno-update',
@@ -44,7 +45,8 @@ export class AlunoUpdateComponent implements OnInit {
   constructor(
     private service: AlunoService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private mensagemService: MensagemService
   ) { }
 
   ngOnInit(): void {
@@ -68,9 +70,9 @@ export class AlunoUpdateComponent implements OnInit {
   update(): void {
     this.service.update(this.aluno).subscribe((resposta) => {
       this.router.navigate(["alunos"]);
-      this.service.mensagem("Aluno atualizada com sucesso");
+      this.mensagemService.add("Aluno atualizado com sucesso");
     }, err => {
-      this.service.mensagem('Validar se todos os campos estão preenchidos corretamente!')
+      this.mensagemService.add('Validar se todos os campos estão preenchidos corretamente!')
     });
   }
 

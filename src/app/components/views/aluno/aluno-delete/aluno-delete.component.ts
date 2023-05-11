@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { take } from 'rxjs';
 import { Aluno } from 'src/app/models/aluno';
 import { AlunoService } from 'src/app/services/aluno.service';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 
 @Component({
   selector: 'app-aluno-delete',
@@ -41,7 +44,8 @@ export class AlunoDeleteComponent implements OnInit {
     dataNasci: 0,
   };
 
-  constructor(private service: AlunoService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: AlunoService, private route: ActivatedRoute, private router: Router,
+    private mensagemService: MensagemService,private confirmService: ConfirmDialogService) { }
 
   ngOnInit(): void {
     this.aluno.id = this.route.snapshot.paramMap.get('id')!
@@ -62,12 +66,23 @@ export class AlunoDeleteComponent implements OnInit {
   }
 
   delete(): void {
-    this.service.delete(this.aluno.id!).subscribe((resposta) => {
-      this.router.navigate(['alunos'])
-      this.service.mensagem('Aluno deletado com sucesso!')
-    }, err => {
-      this.service.mensagem(err.error.error)
-    })
+    const result$ = this.confirmService.abrir("Deseja excluir este aluno?")
+    result$.asObservable()
+      .pipe(
+        take(1),
+      ).subscribe({
+        next: (value) => {
+          if (value) {
+            this.service.delete(this.aluno.id!).subscribe((resposta) => {
+              this.router.navigate(['alunos'])
+              this.mensagemService.add('Aluno deletado com sucesso!')
+            }, err => {
+              this.mensagemService.add(err.error.error)
+            })
+          }
+        },
+      })
+    
   }
 
   cancel(): void {

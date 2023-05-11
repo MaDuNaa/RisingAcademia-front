@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
+import { Aluno } from 'src/app/models/aluno';
 import { Treino } from 'src/app/models/treino';
 import { AlunoService } from 'src/app/services/aluno.service';
 import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
@@ -57,16 +58,16 @@ export class TreinoCreateComponent implements OnInit {
   create(): void {
     this.service.create(this.treino).subscribe((resposta) => {
       this.router.navigate(['treinos'])
-      this.service.mensagem('Treino criado com sucesso!');
+      this.mensagemService.add('Treino criado com sucesso!');
     }, err => {
       for(let i = 0; i < err.error.errors.length; i++) {
-        this.service.mensagem(err.error.errors[i].message)
+        this.mensagemService.add(err.error.errors[i].message)
       }
     })
   }
 
   cancel(): void {
-    this.router.navigate(['treinos'])
+    this.router.navigate(['alunos'])
   }
 
   adicionarTreino() {
@@ -103,6 +104,33 @@ export class TreinoCreateComponent implements OnInit {
     }
   }
   
+onSalvar() {
+  const result$ = this.confirmService.abrir("Deseja salvar estes treinos?")
+  result$.asObservable()
+    .pipe(
+      take(1),
+    ).subscribe({
+      next: (value) => {
+        if (value) {
+          this.aluno.alunoIndividual.treino = this.alunoService.update(this.aluno).subscribe({
+            error: (err: any) => {
+              if (err.error.message) {
+                this.mensagemService.add(err.error.message);
+              } else {
+                this.mensagemService.add("Erro de requisição.");
+              }
+            },
+            complete: () => {
+              this.mensagemService.add("Treinos salvos com Sucesso!");
+              this.treinos = [];
+              this.router.navigate(['alunos']);
+            },
+          })
+        }
+      },
+    })
 
+
+}
 
 }

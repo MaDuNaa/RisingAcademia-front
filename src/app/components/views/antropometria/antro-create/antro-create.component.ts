@@ -4,6 +4,7 @@ import { Aluno } from 'src/app/models/aluno';
 import { Antropometria } from 'src/app/models/antropometria';
 import { AlunoService } from 'src/app/services/aluno.service';
 import { AntropometriaService } from 'src/app/services/antropometria.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 
 @Component({
   selector: 'app-antro-create',
@@ -31,7 +32,8 @@ export class AntroCreateComponent implements OnInit {
 
   };
 
-  constructor(private service: AlunoService, private router: Router) {
+  constructor(private service: AlunoService, private router: Router,
+    private mensagemService: MensagemService,) {
     const nav = this.router.getCurrentNavigation();
     console.log(nav?.extras.state);
     this.aluno = nav!.extras.state;
@@ -45,19 +47,11 @@ export class AntroCreateComponent implements OnInit {
 
     this.service.create(this.aluno).subscribe((resposta) => {
       this.router.navigate(['antropometrias/create'])
-      this.service.mensagem('Aluno criado com sucesso!');
+      this.mensagemService.add('Aluno criado com sucesso!');
     }, err => {
       console.log(err)
     })
     this.router.navigate(['alunos'])
-    // this.service.create(this.antropometria).subscribe((resposta) => {
-    //   this.router.navigate(['alunos'])
-    //   this.service.mensagem('Antropometria criado com sucesso!');
-    // }, err => {
-    //   for (let i = 0; i < err.error.errors.length; i++) {
-    //     this.service.mensagem(err.error.errors[i].message)
-    //   }
-    // })
   }
 
   cancel(): void {
