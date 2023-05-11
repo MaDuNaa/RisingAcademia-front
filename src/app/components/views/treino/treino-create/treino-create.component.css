@@ -1,9 +1,9 @@
 
 h1 {
   color: #415a77;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -85,20 +85,20 @@ table {
   height:50px;
   width: 60%;
   margin-left: 13rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   align-items: center;
   border-radius: 10px;
 }
 
 .btn__adicionar {
-  font-weight: 900;
+  font-weight: 1000;
   border: none;
   background-color: #bac2d5;
 	border-radius: 8px;
 	cursor:pointer;
 	color: #415a77;
-	font-size:10px;
-  margin-left: 15rem;
+	font-size:12px;
+  margin-left: 18rem;
 	padding:6px 12px;
 }
 
@@ -123,19 +123,20 @@ table {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 6px;
   gap: 4px;
-  background: var(--background-menu-hover);
+  background: #415a77;
   border: none;
-  color: var(--color-text-sec);
+  color: #edf6f9;
   border-radius: 5px;
-  font-size: 120%;
+  font-size: 110%;
 }
 
 .btn_criar:hover {
-  color: var(--color-text-hover);
-  background-color: var(--background-botao-hover);
+  color: #edf6f9;
+  background-color: #4c6293;
 }
+
 
 .search-box {
   background: #415a77;
@@ -195,6 +196,7 @@ table {
 }
 
 
+
 .btnSalvar {
   border: none;
   background-color: #415a77;
@@ -202,7 +204,7 @@ table {
 	cursor:pointer;
 	color: #bac2d5;
 	font-size:12px;
-	padding:6px 50px;
+	padding:6px 40px;
 }
 
 .btnDeletar{
@@ -210,9 +212,10 @@ table {
   background-color: #415a77;
 	border-radius:5px;
 	cursor:pointer;
+  margin-right: 10px;
 	color: #bac2d5;
 	font-size:12px;
-	padding:6px 50px;
+	padding:6px 40px;
   text-decoration: none;
 }
 

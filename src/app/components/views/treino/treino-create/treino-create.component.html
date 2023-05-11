@@ -7,7 +7,7 @@
   <select class="btnSelect" [(ngModel)]="selecionado" name="treino">
     <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.treino }} </option>
   </select>
-  <button (click)="adicionarTreino()" class="btn__adicionar"> Adicionar </button>
+  <button (click)="adicionarTreino()" class="btn__adicionar"> + </button>
 </div>
 </form>
 
@@ -19,6 +19,14 @@
     <a class="search-btn">
       <mat-icon>search</mat-icon>
     </a>
+  </div>
+  <div>
+    <button routerLink="/alunos" class="btnDeletar" title="Volar para lista">
+      Cancelar
+    </button>
+    <button class="btnSalvar" (click)="onSalvar()" title="Salvar treinos" [hidden]="treinos.length < 1">
+      salvar
+    </button>
   </div>
 </section>
 
@@ -49,8 +57,5 @@
     nextLabel="Próximo"></pagination-controls>
 </section>
 
-<div class="container__btn">
-  <a class="btnDeletar" routerLink="/alunos">Cancelar</a>
-  <button class="btnSalvar" (click)="onSalvar()" [hidden]="treinos.length < 1">Salvar</button>
-</div>
+
 
