@@ -20,14 +20,14 @@
       <mat-icon>search</mat-icon>
     </a>
   </div>
-  <div>
+  <!-- <div>
     <button routerLink="/alunos" class="btnDeletar" title="Volar para lista">
       Cancelar
     </button>
     <button class="btnSalvar" (click)="onSalvar()" title="Salvar treinos" [hidden]="treinos.length < 1">
       salvar
     </button>
-  </div>
+  </div> -->
 </section>
 
 
@@ -41,7 +41,7 @@
       <th>Opção</th>
     </tr>
     <tr class="estiloTabela"
-      *ngFor="let treinosAluno of aluno.alunoIndividual.treino | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
+      *ngFor="let treinosAluno of aluno.alunoIndividual.treino | filter: searchText | paginate: { itemsPerPage: 3, currentPage: paginaAtual }; let i = index">
       <td>{{ treinosAluno.dia }}</td>
       <td>{{treinosAluno.treino}}</td>
       <td>{{treinosAluno.serie}}</td>
@@ -59,3 +59,11 @@
 
 
 
+<div class="container__btn">
+  <button routerLink="/alunos" class="btnDeletar" title="Volar para lista">
+    Cancelar
+  </button>
+  <button class="btnSalvar" (click)="onSalvar()" title="Salvar treinos" [hidden]="treinos.length < 1">
+    salvar
+  </button>
+</div>

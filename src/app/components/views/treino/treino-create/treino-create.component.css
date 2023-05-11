@@ -204,7 +204,7 @@ table {
 	cursor:pointer;
 	color: #bac2d5;
 	font-size:12px;
-	padding:6px 40px;
+	padding:8px 50px;
 }
 
 .btnDeletar{
@@ -215,7 +215,7 @@ table {
   margin-right: 10px;
 	color: #bac2d5;
 	font-size:12px;
-	padding:6px 40px;
+	padding:8px 50px;
   text-decoration: none;
 }
 
@@ -229,9 +229,8 @@ table {
 
 .container__btn {
   display: flex;
-  gap: 1vw;
+  padding-top: 10px;
   justify-content: flex-end;
-  padding-right: 3vw;
 }
 
 .pagination-section {
