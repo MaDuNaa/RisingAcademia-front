@@ -54,6 +54,7 @@ import { LoginComponent } from './components/account/login/login.component';
 import { CreateAccountComponent } from './components/account/create-account/create-account.component';
 import { AuthenticationComponent } from './components/views/layout/authentication/authentication.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MensalidadesComponent } from './components/views/mensalidades/mensalidades.component';
 
 
 
@@ -91,6 +92,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     CreateAccountComponent,
     AuthenticationComponent,
+    MensalidadesComponent,
 
   ],
   imports: [

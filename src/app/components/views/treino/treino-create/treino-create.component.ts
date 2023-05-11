@@ -39,7 +39,7 @@ export class TreinoCreateComponent implements OnInit {
     private mensagemService: MensagemService, private confirmService: ConfirmDialogService) {
       const nav = this.router.getCurrentNavigation();
        this.aluno = nav?.extras.state;
-       console.log(this.aluno.alunoIndividual);
+       console.log("estou aqui" + this.aluno.alunoIndividual);
       this.service.findAll().subscribe((resposta) => {
         console.log(resposta);
         this.treinos = resposta;
@@ -103,6 +103,8 @@ export class TreinoCreateComponent implements OnInit {
         })
     }
   }
+
+  
   
 onSalvar() {
   const result$ = this.confirmService.abrir("Deseja salvar estes treinos?")
@@ -129,8 +131,6 @@ onSalvar() {
         }
       },
     })
-
-
 }
 
 }
