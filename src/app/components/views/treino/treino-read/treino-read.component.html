@@ -49,58 +49,9 @@
     </table>
   </section> 
 
-  <section class="pagination" *ngIf="treinos.length != 0">
+  <section class="pagination pagination-section" *ngIf="treinos.length != 0">
     <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
       nextLabel="Próximo"></pagination-controls>
   </section>
 
-  <!-- <div class="mat-elevation-z8 content-table">
-    <table class="table" mat-table [dataSource]="treinos">
-
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="dia">
-        <th mat-header-cell *matHeaderCellDef>DIA DA SEMANA</th>
-        <td mat-cell *matCellDef="let row">{{ row.dia }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="treino">
-        <th mat-header-cell *matHeaderCellDef>TREINOS</th>
-        <td mat-cell *matCellDef="let row">{{ row.treino }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="serie">
-        <th mat-header-cell *matHeaderCellDef>SERIES</th>
-        <td mat-cell *matCellDef="let row">{{ row.serie }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="repeticao">
-        <th mat-header-cell *matHeaderCellDef>REPETIÇÕES</th>
-        <td mat-cell *matCellDef="let row">{{ row.repeticao }}</td>
-      </ng-container>
-
-     
-      <ng-container matColumnDef="acoes">
-        <th class="mat-header" mat-header-cell *matHeaderCellDef>AÇÕES</th>
-        <td mat-cell *matCellDef="let row">
-          <a class="edit" routerLink="update/{{ row.id }}">
-            <i class="material-icons">edit</i>
-          </a>
-          <a class="delete" routerLink="delete/{{ row.id }}">
-            <i class="material-icons">delete</i>
-          </a>
-          <a class="create" routerLink="create">
-            <i class="material-icons">bookmark_add</i>
-          </a>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
-
-  </div> -->
 </div>

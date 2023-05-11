@@ -196,3 +196,13 @@ table {
   font-size: 12px;
   padding: 6px 10px;
 }
+
+.pagination-section {
+  text-align: center;
+  position: fixed;
+  margin-bottom: 40px !important;
+  bottom: 0;
+  left: 0;
+  width: 110%;
+  z-index: 1;
+}

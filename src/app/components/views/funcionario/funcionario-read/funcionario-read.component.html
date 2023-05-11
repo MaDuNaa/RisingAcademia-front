@@ -46,7 +46,7 @@
     </table>
   </section>
 
-  <section class="pagination" *ngIf="funcionarios.length != 0">
+  <section class="pagination pagination-section" *ngIf="funcionarios.length != 0">
     <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
       nextLabel="Próximo"></pagination-controls>
   </section>

@@ -114,3 +114,13 @@
   .search-box:hover>.search-btn {
     background: #bac2d5;
   }
+
+  .pagination-section {
+    text-align: center;
+    position: fixed;
+    margin-bottom: 40px !important;
+    bottom: 0;
+    left: 0;
+    width: 110%;
+    z-index: 1;
+  }

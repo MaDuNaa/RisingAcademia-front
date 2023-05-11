@@ -85,7 +85,7 @@ table {
   height:50px;
   width: 60%;
   margin-left: 13rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   align-items: center;
   border-radius: 10px;
 }
@@ -229,4 +229,14 @@ table {
   gap: 1vw;
   justify-content: flex-end;
   padding-right: 3vw;
+}
+
+.pagination-section {
+  text-align: center;
+  position: fixed;
+  margin-bottom: 40px !important;
+  bottom: 0;
+  left: 0;
+  width: 110%;
+  z-index: 1;
 }
