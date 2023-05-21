@@ -25,7 +25,6 @@ export class FuncionarioCreateComponent implements OnInit {
     funcao: " ",
   };
 
-
   constructor(private service: FuncionarioService, private router: Router,
     private mensagemService: MensagemService) { }
 

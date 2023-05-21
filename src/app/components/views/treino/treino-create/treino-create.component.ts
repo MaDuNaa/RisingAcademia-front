@@ -71,7 +71,6 @@ export class TreinoCreateComponent implements OnInit {
   }
 
   adicionarTreino() {
-
     this.aluno.alunoIndividual.treino.push(this.selecionado);
     this.alunoService.update(this.aluno.alunoIndividual).subscribe({
       next : (value) => {
@@ -114,7 +113,7 @@ onSalvar() {
     ).subscribe({
       next: (value) => {
         if (value) {
-          this.aluno.alunoIndividual.treino = this.alunoService.update(this.aluno).subscribe({
+          this.aluno.alunoIndividual.treino = this.alunoService.update(this.aluno.alunoIndividual).subscribe({
             error: (err: any) => {
               if (err.error.message) {
                 this.mensagemService.add(err.error.message);
