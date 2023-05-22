@@ -7,6 +7,8 @@ export interface Aluno {
   email: String;
   mensalidade: String;
   diaVencimento: Number;
+  quantidadeMensalidadesPagas: String;
+  dataPagamento: Number;
   antropometria: {
     torax: String;
     cintura: String;

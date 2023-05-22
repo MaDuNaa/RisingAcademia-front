@@ -1,1 +1,14 @@
-<p>mensalidades works!</p>
+<tr *ngIf="aluno">
+<td>Quantidade mensalidades pagas: {{aluno.quantidadeMensalidadesPagas}}</td>
+<td>Data Pagamento: {{aluno.dataPagamento}}</td>
+</tr>
+
+<div *ngIf="dadosMensalidade">
+    <h2>Vencimento: {{ dadosMensalidade.Vencimento }}</h2>
+    <p>Data do último pagamento: {{ dadosMensalidade.DataUltimoPagamento }}</p>
+    <p>Status: {{ dadosMensalidade.Status }}</p>
+  </div>
+
+<button (click)="atualizarMensalidades()">Atualizar</button>
+<!-- <button (click)="pagarMensalidade(aluno.id, '1')">Pagar Mensalidade</button> -->
+

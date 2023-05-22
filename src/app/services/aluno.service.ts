@@ -51,4 +51,20 @@ export class AlunoService {
     })
   }
 
+  atualizarMensalidades(): Observable<any> {
+    const url = `${this.baseUrl}/atualizar-mensalidades`;
+    return this.http.post(url, null);
+  }
+
+  pagarMensalidade(id: string, quantidadeMensalidade: string): Observable<Aluno> {
+    const url = `${this.baseUrl}/pagar-mensalidade/${id}`;
+    const body = { quantidadeMensalidade };
+    return this.http.put<Aluno>(url, body);
+  }
+
+  getDadosDeMensalidade(): Observable<Aluno> {
+    const url = `${this.baseUrl}/mensalidade/dados`;
+    return this.http.get<Aluno>(url);
+  }
+
 }

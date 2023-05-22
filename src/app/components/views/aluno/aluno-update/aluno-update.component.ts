@@ -19,6 +19,8 @@ export class AlunoUpdateComponent implements OnInit {
     email: "",
     mensalidade: "",
     diaVencimento: 0,
+    quantidadeMensalidadesPagas: " ",
+    dataPagamento: 0,
     antropometria: {
       torax: " ",
       cintura: " ",

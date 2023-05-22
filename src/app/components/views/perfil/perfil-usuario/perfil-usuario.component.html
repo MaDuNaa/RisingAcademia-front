@@ -15,7 +15,7 @@
     <p class="horizontal"> <mat-icon>price_check</mat-icon> {{  aluno.alunoIndividual.mensalidade }} </p>
 
     <div class="buttons">
-      <button class="btn_criar" mat-stroked-button routerLink="/mensalidades"> MENSALIDADES </button>
+      <button class="btn_criar" mat-stroked-button routerLink="/alunos/{{aluno.alunoIndividual.id}}/mensalidades"> MENSALIDADES </button>
       <button class="btn_criar" mat-stroked-button routerLink="/alunos/delete/{{aluno.alunoIndividual.id}}"> DELETAR </button>
       <button class="btn_criar" mat-stroked-button routerLink="/alunos/update/{{aluno.alunoIndividual.id}}"> EDITAR </button>
       <button class="btn_criar" mat-stroked-button (click)="adicionarTreino()"> TREINOS </button>
