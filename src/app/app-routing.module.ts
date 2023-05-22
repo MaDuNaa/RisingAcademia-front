@@ -26,6 +26,7 @@ import { AuthenticationComponent } from './components/views/layout/authenticatio
 import { LoginComponent } from './components/account/login/login.component';
 import { CreateAccountComponent } from './components/account/create-account/create-account.component';
 import { AuthGuard } from './components/account-guard/shared/auth.guard';
+import { MensalidadesComponent } from './components/views/mensalidades/mensalidades.component';
 
 const routes: Routes = [
 
@@ -59,6 +60,8 @@ const routes: Routes = [
       {path: 'perfils/Funcionario', component: PerfilFuncionarioComponent},
 
       {path: 'config', component: ConfigComponent},
+
+      {path: 'mensalidades', component: MensalidadesComponent},
 
     // {
     //   path: '', 
