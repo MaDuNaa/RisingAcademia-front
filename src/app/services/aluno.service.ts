@@ -35,8 +35,6 @@ export class AlunoService {
   }
 
   update(aluno: Aluno):Observable<void> {
-    console.log('dentro do service ')
-    console.log(aluno)
     if (!aluno.id) {
       throw new Error('ID do aluno não definido');
     }
