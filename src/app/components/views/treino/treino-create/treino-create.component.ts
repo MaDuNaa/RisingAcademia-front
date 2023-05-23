@@ -53,8 +53,6 @@ export class TreinoCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
   create(): void {
     this.service.create(this.treino).subscribe((resposta) => {
       this.router.navigate(['treinos'])
@@ -71,15 +69,17 @@ export class TreinoCreateComponent implements OnInit {
   }
 
   adicionarTreino() {
-    this.aluno.alunoIndividual.treino.push(this.selecionado);
-    this.alunoService.update(this.aluno.alunoIndividual).subscribe({
-      next : (value) => {
-          console.log(value);
-      },
-      error : (err) => {
-          console.log(err);
-      },
-    })
+    if(this.selecionado) {
+      this.aluno.alunoIndividual.treino.push(this.selecionado);
+      this.alunoService.update(this.aluno.alunoIndividual).subscribe({
+        next : (value) => {
+            console.log(value);
+        },
+        error : (err) => {
+            console.log(err);
+        },
+      })
+    } 
   }
 
   setId(id: any) {

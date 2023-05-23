@@ -51,19 +51,13 @@ export class AlunoService {
     })
   }
 
-  atualizarMensalidades(): Observable<any> {
-    const url = `${this.baseUrl}/atualizar-mensalidades`;
-    return this.http.post(url, null);
+  pagarMensalidade(id: String, quantidadeMensalidadePagas: Number): Observable<Aluno> {
+    const url = `${this.baseUrl}/alunos/pagarMensalidades/${id}?quantidadeMensalidadePagas=${quantidadeMensalidadePagas}`;
+    return this.http.put<Aluno>(url, quantidadeMensalidadePagas);
   }
 
-  pagarMensalidade(id: string, quantidadeMensalidade: string): Observable<Aluno> {
-    const url = `${this.baseUrl}/pagar-mensalidade/${id}`;
-    const body = { quantidadeMensalidade };
-    return this.http.put<Aluno>(url, body);
-  }
-
-  getDadosDeMensalidade(): Observable<Aluno> {
-    const url = `${this.baseUrl}/mensalidade/dados`;
+  getDadosDeMensalidade(id: String): Observable<Aluno> {
+    const url = `${this.baseUrl}/alunos/pegarDadosMensalidades/${id}`;
     return this.http.get<Aluno>(url);
   }
 

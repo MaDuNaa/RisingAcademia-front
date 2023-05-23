@@ -1,14 +1,15 @@
-<tr *ngIf="aluno">
-<td>Quantidade mensalidades pagas: {{aluno.quantidadeMensalidadesPagas}}</td>
-<td>Data Pagamento: {{aluno.dataPagamento}}</td>
-</tr>
-
+<div *ngIf="aluno">
+  <tr>Aluno(a): {{aluno.nome}}</tr>
+  <tr>Quantidade mensalidades pagas: {{aluno.quantidadeMensalidadesPagas}}</tr>
+  <tr>Data Pagamento: {{aluno.dataPagamento}}</tr>
+</div>
 <div *ngIf="dadosMensalidade">
     <h2>Vencimento: {{ dadosMensalidade.Vencimento }}</h2>
     <p>Data do último pagamento: {{ dadosMensalidade.DataUltimoPagamento }}</p>
     <p>Status: {{ dadosMensalidade.Status }}</p>
   </div>
 
-<button (click)="atualizarMensalidades()">Atualizar</button>
-<!-- <button (click)="pagarMensalidade(aluno.id, '1')">Pagar Mensalidade</button> -->
+<input matInput [(ngModel)]="quantidade" min="0" type="Number" name="quantidade" placeholder="10">
+<button (click)="pagarMensalidade(quantidade)">Pagar Mensalidade</button>
+<h3 *ngIf="errorNumeroInvalido" class="erro">{{errorNumeroInvalido}}</h3>
 

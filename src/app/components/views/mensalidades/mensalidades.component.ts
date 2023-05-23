@@ -13,6 +13,8 @@ export class MensalidadesComponent implements OnInit {
 
   alunos: Aluno[];
   dadosMensalidade: any;
+  quantidade: 0;
+  errorNumeroInvalido = '';
 
   aluno: Aluno = {
     id: "",
@@ -53,12 +55,13 @@ export class MensalidadesComponent implements OnInit {
     private mensagemService: MensagemService) {
 
       this.alunos = [];
+      this.quantidade = 0;
      }
 
   ngOnInit(): void {
     this.aluno.id = this.route.snapshot.paramMap.get("id")!;
     this.findById();
-    this.carregarDadosMensalidade();
+    this.carregarDadosMensalidade(this.aluno.id);
     // this.carregarAluno('id');
   }
 
@@ -88,35 +91,35 @@ export class MensalidadesComponent implements OnInit {
     });
   }
 
-  atualizarMensalidades(): void {
-    this.alunoService.atualizarMensalidades().subscribe(
-      response => {
-        // Lógica para tratar a resposta do serviço Java
-        console.log('Mensalidades atualizadas com sucesso!');
-      },
-      error => {
-        // Lógica para tratar erros
-        console.error('Erro ao atualizar as mensalidades:', error);
+  pagarMensalidade( quantidadeMensalidade: number): void {
+    if(quantidadeMensalidade > 0) {
+      if(this.aluno.id) {
+        this.alunoService.pagarMensalidade(this.aluno.id, quantidadeMensalidade).subscribe(
+          aluno => {
+            // Lógica para tratar a resposta do serviço Java
+            console.log(`Aluno ${aluno.nome} pagou ${quantidadeMensalidade} parcelas`);
+            if (aluno.id) {
+              this.carregarDadosMensalidade(aluno.id);
+              this.findById();
+            }
+          },
+          error => {
+            // Lógica para tratar erros
+            console.error('Erro ao pagar a mensalidade:', error);
+          }
+        );
+        this.errorNumeroInvalido = "";
+      } else {
+        console.error('Erro ao pagar a mensalidade, aluno desconhecido:');
       }
-    );
+    } else {
+      this.errorNumeroInvalido = "Quantidade não pode ser menor ou igual a 0.";
+    }
+
   }
 
-
-  pagarMensalidade(id: string, quantidadeMensalidade: string): void {
-    this.alunoService.pagarMensalidade(id, quantidadeMensalidade).subscribe(
-      aluno => {
-        // Lógica para tratar a resposta do serviço Java
-        console.log(`Aluno ${aluno.nome} pagou ${quantidadeMensalidade} parcelas`);
-      },
-      error => {
-        // Lógica para tratar erros
-        console.error('Erro ao pagar a mensalidade:', error);
-      }
-    );
-  }
-
-  carregarDadosMensalidade(): void {
-    this.alunoService.getDadosDeMensalidade().subscribe(
+  carregarDadosMensalidade(id: String): void {
+    this.alunoService.getDadosDeMensalidade(id).subscribe(
       dados => {
         this.dadosMensalidade = dados;
       },
