@@ -1,5 +1,5 @@
-<div *ngIf="aluno">
-  <tr>Aluno(a): {{aluno.nome}}</tr>
+<!-- <div *ngIf="aluno">
+  <h1>{{aluno.nome}}</h1>
   <tr>Quantidade mensalidades pagas: {{aluno.quantidadeMensalidadesPagas}}</tr>
   <tr>Data Pagamento: {{aluno.dataPagamento}}</tr>
 </div>
@@ -10,6 +10,49 @@
   </div>
 
 <input matInput [(ngModel)]="quantidade" min="0" type="Number" name="quantidade" placeholder="10">
-<button (click)="pagarMensalidade(quantidade)">Pagar Mensalidade</button>
-<h3 *ngIf="errorNumeroInvalido" class="erro">{{errorNumeroInvalido}}</h3>
+<button (click)="pagarMensalidade(quantidade)" class="btn_criar">Pagar Mensalidade</button>
+<h3 *ngIf="errorNumeroInvalido" class="erro">{{errorNumeroInvalido}}</h3> -->
+<div class="title">
+  <h1>{{aluno.nome}}</h1>
+</div>
 
+<section class="section__tabela">
+  <table>
+    <tr class="header-tabela">
+      <th >Vencimento</th>
+      <th >Data do último pagamento</th>
+      <th >Status</th>
+    </tr>
+    <tr class="estiloTabela"
+    *ngIf="dadosMensalidade">
+     
+    <td>{{ dadosMensalidade.Vencimento }}</td>
+    <td>{{ dadosMensalidade.DataUltimoPagamento }}</td>
+    <td>{{ dadosMensalidade.Status }}</td>
+    </tr>
+  </table>
+</section>
+
+
+
+<section class="section__tabela_two">
+  <table>
+    <tr class="header-tabela">
+      <th >Quantidade mensalidades pagas</th>
+      <th >Data Pagamento</th>
+    </tr>
+    <tr class="estiloTabela"
+    *ngIf="aluno">
+     
+    <td>{{aluno.quantidadeMensalidadesPagas}}</td>
+    <td>{{aluno.dataPagamento}}</td>
+    </tr>
+  </table>
+</section>
+
+<section class="boxPergunta">
+  <div class="box__form">
+  <input matInput [(ngModel)]="quantidade" min="0" type="Number" name="quantidade" placeholder="10" class="btnSelect">
+  <button (click)="pagarMensalidade(quantidade)" class="btn__adicionar">Pagar Mensalidade</button>
+  </div>
+  </section>

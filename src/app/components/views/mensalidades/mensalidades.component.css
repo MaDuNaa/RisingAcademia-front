@@ -1,3 +1,121 @@
 .erro {
     color: red;
 }
+
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.title h1 {
+    font-size: 1.8rem;
+    color: #415a77;
+    font-weight: 500;
+}
+
+.btn__adicionar {
+    font-weight: 800;
+    border: none;
+    background-color: #bac2d5;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #415a77;
+    font-size: 10px;
+    margin-left: 2rem;
+    padding: 8px 10px;
+}
+
+
+.btn__adicionar:hover {
+    color: #bac2d5;
+    background-color: #4c6293;
+}
+
+.section__tabela {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.section__tabela_two {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.estiloTabela {
+    background-color: #415a77;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    color: #edf6f9;
+}
+
+.estiloTabela:hover td a {
+    color: #edf6f9;
+}
+
+.estiloTabela td {
+    width: calc(100% / 6);
+    text-align: center !important;
+}
+
+.header-tabela th {
+    text-align: center !important;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    width: 80%;
+}
+
+.estiloTabela:hover {
+    background-color: #4c6293;
+    cursor: pointer;
+    color: #edf6f9;
+}
+
+.estiloTabela :first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.estiloTabela :last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.boxPergunta {
+    display: flex;
+    justify-content: space-between;
+    background-color: #415a77;
+    height: 50px;
+    width: 38%;
+    margin-left: 20rem;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.box__form {
+    display: flex;
+    gap: 1vw;
+    margin-right: 3vw;
+}
+
+.btnSelect {
+    border: none;
+    background-color: #bac2d5;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #415a77;
+    margin-left: 24px;
+    padding: 4px;
+}
+
+.btnSelect:hover {
+    color: #415a77;
+    background-color: #bac2d5;
+}
