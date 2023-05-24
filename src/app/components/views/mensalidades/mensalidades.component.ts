@@ -99,6 +99,7 @@ export class MensalidadesComponent implements OnInit {
             // Lógica para tratar a resposta do serviço Java
             console.log(`Aluno ${aluno.nome} pagou ${quantidadeMensalidade} parcelas`);
             if (aluno.id) {
+              this.mensagemService.add("Mensalidade paga com sucesso");
               this.carregarDadosMensalidade(aluno.id);
               this.findById();
             }
