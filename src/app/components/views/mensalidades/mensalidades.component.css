@@ -22,7 +22,7 @@
     cursor: pointer;
     color: #415a77;
     font-size: 10px;
-    margin-left: 1.5rem;
+    margin-left: 10rem;
     padding: 8px 10px;
 }
 
@@ -93,8 +93,8 @@ table {
     justify-content: space-between;
     background-color: #415a77;
     height: 50px;
-    width: 38%;
-    margin-left: 20rem;
+    width: 50%;
+    margin-left: 17rem;
     align-items: center;
     border-radius: 10px;
 }
