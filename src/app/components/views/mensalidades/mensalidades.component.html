@@ -56,3 +56,5 @@
   <button (click)="pagarMensalidade(quantidade)" class="btn__adicionar">Pagar Mensalidade</button>
   </div>
   </section>
+
+  <h3 *ngIf="errorNumeroInvalido" class="erro">{{errorNumeroInvalido}}</h3>

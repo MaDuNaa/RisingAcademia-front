@@ -1,5 +1,9 @@
 .erro {
-    color: red;
+    color: #415a77;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .title {
@@ -22,7 +26,7 @@
     cursor: pointer;
     color: #415a77;
     font-size: 10px;
-    margin-left: 10rem;
+    margin-left: 7rem;
     padding: 8px 10px;
 }
 

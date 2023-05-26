@@ -43,7 +43,7 @@ mat-toolbar {
   }
   
   mat-sidenav-container {
-    height: calc(102vh - 74px);
+    height: calc(102vh - 78px);
     background-color: #1b263b;
   }
 
