@@ -12,4 +12,9 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  reload() {
+    window.location.reload()
+  }
+
+  
 }

@@ -62,19 +62,8 @@ export class MensalidadesComponent implements OnInit {
     this.aluno.id = this.route.snapshot.paramMap.get("id")!;
     this.findById();
     this.carregarDadosMensalidade(this.aluno.id);
-    // this.carregarAluno('id');
   }
 
-  // carregarAluno(id: string): void {
-  //   this.alunoService.findById(id).subscribe(
-  //     aluno => {
-  //       this.aluno = aluno;
-  //     },
-  //     error => {
-  //       console.error('Erro ao carregar aluno:', error);
-  //     }
-  //   );
-  // }
 
   findById(): void {
     this.alunoService.findById(this.aluno.id!).subscribe((resposta) => {
@@ -96,7 +85,6 @@ export class MensalidadesComponent implements OnInit {
       if(this.aluno.id) {
         this.alunoService.pagarMensalidade(this.aluno.id, quantidadeMensalidade).subscribe(
           aluno => {
-            // Lógica para tratar a resposta do serviço Java
             console.log(`Aluno ${aluno.nome} pagou ${quantidadeMensalidade} parcelas`);
             if (aluno.id) {
               this.mensagemService.add("Mensalidade paga com sucesso");
@@ -105,16 +93,18 @@ export class MensalidadesComponent implements OnInit {
             }
           },
           error => {
-            // Lógica para tratar erros
+            this.mensagemService.add("Erro ao pagar a mensalidade");
             console.error('Erro ao pagar a mensalidade:', error);
           }
         );
         this.errorNumeroInvalido = "";
       } else {
+        this.mensagemService.add("Erro ao pagar a mensalidade, aluno desconhecido");
         console.error('Erro ao pagar a mensalidade, aluno desconhecido:');
       }
     } else {
-      this.errorNumeroInvalido = "Quantidade não pode ser menor ou igual a 0.";
+      this.mensagemService.add("Quantidade não pode ser menor ou igual a 0.");
+      
     }
 
   }

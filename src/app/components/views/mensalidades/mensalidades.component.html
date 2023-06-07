@@ -39,22 +39,22 @@
   <table>
     <tr class="header-tabela">
       <th >Quantidade mensalidades pagas</th>
+      <th >Valor Mensalidade</th>
       <th >Data Pagamento</th>
     </tr>
     <tr class="estiloTabela"
     *ngIf="aluno">
      
     <td>{{aluno.quantidadeMensalidadesPagas}}</td>
+    <td>{{aluno.mensalidade}}</td>
     <td>{{aluno.dataPagamento}}</td>
     </tr>
   </table>
 </section>
 
-<section class="boxPergunta">
+<section>
   <div class="box__form">
   <input matInput [(ngModel)]="quantidade" min="0" type="Number" name="quantidade" placeholder="10" class="btnSelect">
   <button (click)="pagarMensalidade(quantidade)" class="btn__adicionar">Pagar Mensalidade</button>
   </div>
   </section>
-
-  <h3 *ngIf="errorNumeroInvalido" class="erro">{{errorNumeroInvalido}}</h3>

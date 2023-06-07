@@ -13,36 +13,36 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
-  title = 'bookstore-front';
+  // @ViewChild(MatSidenav)
+  // sidenav!: MatSidenav;
+  title = 'rising-front';
 
   constructor(private observer: BreakpointObserver, private router: Router) {}
 
-  ngAfterViewInit() {
-    this.observer
-      .observe(['(max-width: 800px)'])
-      .pipe(delay(1), untilDestroyed(this))
-      .subscribe((res) => {
-        if (res.matches) {
-          this.sidenav.mode = 'over';
-          this.sidenav.close();
-        } else {
-          this.sidenav.mode = 'side';
-          this.sidenav.open();
-        }
-      });
+  // ngAfterViewInit() {
+  //   this.observer
+  //     .observe(['(max-width: 800px)'])
+  //     .pipe(delay(1), untilDestroyed(this))
+  //     .subscribe((res) => {
+  //       if (res.matches) {
+  //         this.sidenav.mode = 'over';
+  //         this.sidenav.close();
+  //       } else {
+  //         this.sidenav.mode = 'side';
+  //         this.sidenav.open();
+  //       }
+  //     });
 
-    this.router.events
-      .pipe(
-        untilDestroyed(this),
-        filter((e) => e instanceof NavigationEnd)
-      )
-      .subscribe(() => {
-        if (this.sidenav.mode === 'over') {
-          this.sidenav.close();
-        }
-      });
-  }
+  //   this.router.events
+  //     .pipe(
+  //       untilDestroyed(this),
+  //       filter((e) => e instanceof NavigationEnd)
+  //     )
+  //     .subscribe(() => {
+  //       if (this.sidenav.mode === 'over') {
+  //         this.sidenav.close();
+  //       }
+  //     });
+  // }
 }
 

@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  /* padding-top: 5px; */
+  padding-top: 20px;
   font-size: 1.5rem;
   color: #415a77;
   font-weight: 500;
@@ -8,7 +8,6 @@ h1 {
 
  p {
 	padding-top: 5px;
-	/* padding-bottom: 5px; */
   text-align: center;
   font-weight: 400;
   color: #415a77;
@@ -18,7 +17,7 @@ h1 {
 .aumentarLetra {
   display: flex;
   justify-content: flex-start;
-  margin-left: 130px;
+  margin-left: 200px;
   font-weight: 550;
   font-size: 1.5rem;
 
@@ -27,7 +26,7 @@ h1 {
 .horizontal {
   display: flex;
   justify-content: flex-start;
-  margin-left: 120px;
+  margin-left: 200px;
 }
 
  .detalhes {
@@ -47,7 +46,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-top: 10px; */
 	padding-bottom: 50px;
   flex-direction: column;
 }
@@ -75,7 +73,7 @@ img:hover {
   position: fixed;
   width: 20%;
   justify-content: flex-end;
-  margin-left: 50vw !important;
+  margin-left: 60vw !important;
   margin-top: 5vw !important;
   display: flex;
   flex-direction: column;

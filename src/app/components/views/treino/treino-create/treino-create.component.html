@@ -1,4 +1,4 @@
-<h1>CRIANDO NOVO TREINO {{aluno.alunoIndividual.nome.toUpperCase()}} </h1>
+<h1>CRIANDO NOVO TREINO PARA {{aluno.alunoIndividual.nome.toUpperCase()}} </h1>
 
 
 
@@ -7,7 +7,7 @@
   <select class="btnSelect" [(ngModel)]="selecionado" name="treino">
     <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.treino }} </option>
   </select>
-  <button (click)="adicionarTreino()" class="btn__adicionar"> + </button>
+  <button (click)="adicionarTreino()" class="btn__adicionar"> <mat-icon>queue</mat-icon> </button>
 </div>
 </form>
 
@@ -20,24 +20,16 @@
       <mat-icon>search</mat-icon>
     </a>
   </div>
-  <!-- <div>
-    <button routerLink="/alunos" class="btnDeletar" title="Volar para lista">
-      Cancelar
-    </button>
-    <button class="btnSalvar" (click)="onSalvar()" title="Salvar treinos" [hidden]="treinos.length < 1">
-      salvar
-    </button>
-  </div> -->
 </section>
 
 
 <section class="section__tabela">
   <table>
     <tr class="header-tabela">
-      <th mat-sort-header="nome">Dia</th>
-      <th mat-sort-header="familia">Treino</th>
-      <th mat-sort-header="level">Série</th>
-      <th mat-sort-header="localizacao">Repetição</th>
+      <th >Dia</th>
+      <th >Treino</th>
+      <th >Série</th>
+      <th >Repetição</th>
       <th>Opção</th>
     </tr>
     <tr class="estiloTabela"

@@ -87,7 +87,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #bac2d5;
+    background: #d8d8d8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,7 +99,7 @@
     background: none;
     outline: none;
     padding: 0;
-    color: #bac2d5;
+    color: #d8d8d8;
     font-size: 12px;
     transition: 0.4s;
     line-height: 20px;
@@ -112,7 +112,7 @@
   }
   
   .search-box:hover>.search-btn {
-    background: #bac2d5;
+    background: #d8d8d8;
   }
 
   .pagination-section {
@@ -121,6 +121,6 @@
     margin-bottom: 40px !important;
     bottom: 0;
     left: 0;
-    width: 110%;
+    width: 100%;
     z-index: 1;
   }

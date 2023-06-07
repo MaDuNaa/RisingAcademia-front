@@ -1,15 +1,8 @@
-.erro {
-    color: #415a77;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
 
 .title {
     text-align: center;
     margin-bottom: 3rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .title h1 {
@@ -21,18 +14,18 @@
 .btn__adicionar {
     font-weight: 800;
     border: none;
-    background-color: #bac2d5;
+    background-color: #415a77;
     border-radius: 4px;
     cursor: pointer;
-    color: #415a77;
+    color: #edf6f9;
     font-size: 10px;
-    margin-left: 7rem;
+    margin-left: 1rem;
     padding: 8px 10px;
 }
 
 
 .btn__adicionar:hover {
-    color: #bac2d5;
+    color: #edf6f9;
     background-color: #4c6293;
 }
 
@@ -43,7 +36,7 @@
 }
 
 .section__tabela_two {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
 }
@@ -98,25 +91,25 @@ table {
     background-color: #415a77;
     height: 50px;
     width: 50%;
-    margin-left: 17rem;
+    margin-left: 40rem;
     align-items: center;
     border-radius: 10px;
 }
 
 .box__form {
     display: flex;
-    gap: 1vw;
-    margin-right: 3vw;
+    position: fixed;
+    margin-left: 60.5rem;
 }
 
 .btnSelect {
-    border: none;
     background-color: #bac2d5;
     border-radius: 5px;
     cursor: pointer;
+    width: 10%;
     color: #415a77;
-    margin-left: 24px;
-    padding: 4px;
+    padding: 3px;
+    border: 1px solid #415a77;
 }
 
 .btnSelect:hover {
