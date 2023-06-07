@@ -51,7 +51,8 @@ export class TreinoDeleteComponent implements OnInit {
               this.router.navigate(['treinos'])
               this.mensagemService.add('Treino deletado com sucesso!')
             }, err => {
-              this.mensagemService.add(err.error.error)
+              // this.mensagemService.add(err.error.error)
+              this.mensagemService.add("Treino não pode ser excluido! Esta vinculado em um aluno.")
             })
           }
         },

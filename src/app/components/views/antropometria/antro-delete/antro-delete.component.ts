@@ -75,7 +75,7 @@ export class AntroDeleteComponent implements OnInit {
                 this.router.navigate(["antropometrias"]);
                 this.mensagemService.add("Antropometria deletada com sucesso");
               }, err => {
-                this.mensagemService.add(err.error.error)
+                this.mensagemService.add("Antropometria não pode ser excluida! Esta vinculada em um aluno.")
               });
             }
           },
