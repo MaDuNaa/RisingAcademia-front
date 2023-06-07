@@ -1,4 +1,10 @@
 
+.content {
+  width: 90%;
+  margin: 1.4rem auto auto auto;
+
+}
+
 h1 {
   color: #415a77;
   font-size: 1.3rem;
@@ -84,7 +90,7 @@ table {
   background-color: #415a77;
   height:50px;
   width: 30%;
-  margin-left: 27.5rem;
+  margin-left: 24.5rem;
   margin-bottom: 1.5rem;
   align-items: center;
   border-radius: 10px;
@@ -97,7 +103,7 @@ table {
 	cursor:pointer;
 	color: #415a77;
 	font-size:12px;
-  margin-left: 7rem;
+  margin-left: 5.5rem;
 	padding:4px 8px;
 }
 
@@ -203,7 +209,7 @@ table {
 	cursor:pointer;
 	color: #bac2d5;
 	font-size:12px;
-	padding:8px 50px;
+	padding:8px 30px;
 }
 
 .btnDeletar{
@@ -214,7 +220,7 @@ table {
   margin-right: 10px;
 	color: #bac2d5;
 	font-size:12px;
-	padding:8px 50px;
+	padding:8px 30px;
   text-decoration: none;
 }
 
@@ -234,7 +240,7 @@ table {
   margin-bottom: 6rem !important;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 95%;
   z-index: 1;
 }
 
