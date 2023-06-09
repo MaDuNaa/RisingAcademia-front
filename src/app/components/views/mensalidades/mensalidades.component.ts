@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { take } from 'rxjs';
 import { Aluno } from 'src/app/models/aluno';
 import { AlunoService } from 'src/app/services/aluno.service';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
 import { MensagemService } from 'src/app/services/mensagem.service';
 
 @Component({
@@ -52,7 +54,8 @@ export class MensalidadesComponent implements OnInit {
   constructor(private alunoService: AlunoService,
     private route: ActivatedRoute,
     private router: Router,
-    private mensagemService: MensagemService) {
+    private mensagemService: MensagemService,
+    private confirmService: ConfirmDialogService) {
 
       this.alunos = [];
       this.quantidade = 0;
@@ -81,32 +84,44 @@ export class MensalidadesComponent implements OnInit {
   }
 
   pagarMensalidade( quantidadeMensalidade: number): void {
-    if(quantidadeMensalidade > 0) {
-      if(this.aluno.id) {
-        this.alunoService.pagarMensalidade(this.aluno.id, quantidadeMensalidade).subscribe(
-          aluno => {
-            console.log(`Aluno ${aluno.nome} pagou ${quantidadeMensalidade} parcelas`);
-            if (aluno.id) {
-              this.mensagemService.add("Mensalidade paga com sucesso");
-              this.carregarDadosMensalidade(aluno.id);
-              this.findById();
+    const result$ = this.confirmService.abrir("Deseja realmente pagar a mensalidade?")
+    result$.asObservable()
+      .pipe(
+        take(1),
+      ).subscribe({
+        next: (value) => {
+         if(value) {
+          if(quantidadeMensalidade > 0) {
+            if(this.aluno.id) {
+              this.alunoService.pagarMensalidade(this.aluno.id, quantidadeMensalidade).subscribe(
+                aluno => {
+                  console.log(`Aluno ${aluno.nome} pagou ${quantidadeMensalidade} parcelas`);
+                  if (aluno.id) {
+                    this.mensagemService.add("Mensalidade paga com sucesso");
+                    this.carregarDadosMensalidade(aluno.id);
+                    this.findById();
+                  }
+                },
+                error => {
+                  this.mensagemService.add("Erro ao pagar a mensalidade");
+                  console.error('Erro ao pagar a mensalidade:', error);
+                }
+              );
+              this.errorNumeroInvalido = "";
+            } else {
+              this.mensagemService.add("Erro ao pagar a mensalidade, aluno desconhecido");
+              console.error('Erro ao pagar a mensalidade, aluno desconhecido:');
             }
-          },
-          error => {
-            this.mensagemService.add("Erro ao pagar a mensalidade");
-            console.error('Erro ao pagar a mensalidade:', error);
+          } else {
+            this.mensagemService.add("Quantidade não pode ser menor ou igual a 0.");
+            
           }
-        );
-        this.errorNumeroInvalido = "";
-      } else {
-        this.mensagemService.add("Erro ao pagar a mensalidade, aluno desconhecido");
-        console.error('Erro ao pagar a mensalidade, aluno desconhecido:');
-      }
-    } else {
-      this.mensagemService.add("Quantidade não pode ser menor ou igual a 0.");
-      
-    }
+         }
+        },
+        complete: () => {
 
+        },
+      })
   }
 
   carregarDadosMensalidade(id: String): void {

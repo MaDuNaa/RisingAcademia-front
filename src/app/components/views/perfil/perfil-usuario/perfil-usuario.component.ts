@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Aluno } from 'src/app/models/aluno';
-import { AlunoService } from 'src/app/services/aluno.service';
 
 @Component({
   selector: 'app-perfil-usuario',

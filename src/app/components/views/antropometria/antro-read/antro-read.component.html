@@ -23,6 +23,7 @@
   <section class="section__tabela">
     <table>
       <tr class="header-tabela">
+        <th >Aluno</th>
         <th >Torax</th>
         <th >Cintura</th>
         <th >Quadril</th>
@@ -30,23 +31,25 @@
         <th >Peso</th>
         <th >Opções</th>
       </tr>
+      <ng-container *ngIf="antropometrias.length > 0">
       <tr class="estiloTabela"
-        *ngFor="let antropometria of antropometrias | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
-       
-        <td> {{antropometria.torax}} </td>
-        <td>{{antropometria.cintura}}</td>
-        <td>{{antropometria.quadril}}</td>
-        <td>{{antropometria.estatura}}</td>
-        <td>{{antropometria.peso}}</td>
+        *ngFor="let aluno of alunos | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
+        <td>{{aluno.nome}}</td>
+        <td> {{aluno.antropometria.torax}} </td>
+        <td>{{aluno.antropometria.cintura}}</td>
+        <td>{{aluno.antropometria.quadril}}</td>
+        <td>{{aluno.antropometria.estatura}}</td>
+        <td>{{aluno.antropometria.peso}}</td>
         <td>
           <div class="coluna__detalhe">
-            <a routerLink="update/{{ antropometria.id }}" class="btn__detalhes"
+            <a routerLink="update/{{ aluno.id }}" class="btn__detalhes"
               title="Editar Antropometria"><mat-icon>edit</mat-icon></a>
-            <a routerLink="delete/{{ antropometria.id }}" class="btn__detalhes"
+            <a routerLink="delete/{{ aluno.id }}" class="btn__detalhes"
               title="Deletar Antropometria"><mat-icon>delete</mat-icon></a>
           </div>
         </td>
       </tr>
+    </ng-container>
     </table>
   </section>
 

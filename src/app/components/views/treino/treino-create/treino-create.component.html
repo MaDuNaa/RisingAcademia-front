@@ -6,7 +6,7 @@
 <form class="boxPergunta">
 <div class="box__form">
   <select class="btnSelect" [(ngModel)]="selecionado" name="treino">
-    <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.treino }} </option>
+    <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.dia }} - {{ treino.treino }} </option>
   </select>
   <button (click)="adicionarTreino()" class="btn__adicionar"> <mat-icon>queue</mat-icon> </button>
 </div>
