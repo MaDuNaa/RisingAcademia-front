@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ConfigComponent } from './components/views/config/config.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { AlunoReadComponent } from './components/views/aluno/aluno-read/aluno-read.component';
 import { AlunoDeleteComponent } from './components/views/aluno/aluno-delete/aluno-delete.component';
@@ -50,11 +50,9 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AntroDetalheComponent } from './components/views/antropometria/antro-detalhe/antro-detalhe.component';
-import { LoginComponent } from './components/account/login/login.component';
-import { CreateAccountComponent } from './components/account/create-account/create-account.component';
-import { AuthenticationComponent } from './components/views/layout/authentication/authentication.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MensalidadesComponent } from './components/views/mensalidades/mensalidades.component';
+;
 
 
 
@@ -89,10 +87,8 @@ import { MensalidadesComponent } from './components/views/mensalidades/mensalida
     MensagemComponent,
     ConfirmModalComponent,
     AntroDetalheComponent,
-    LoginComponent,
-    CreateAccountComponent,
-    AuthenticationComponent,
     MensalidadesComponent,
+
 
   ],
   imports: [
@@ -118,9 +114,12 @@ import { MensalidadesComponent } from './components/views/mensalidades/mensalida
     NgxPaginationModule,
     Ng2SearchPipeModule,
     MatDialogModule,
+    ReactiveFormsModule,
+    
 
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
