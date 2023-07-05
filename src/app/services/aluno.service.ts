@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
@@ -15,8 +15,12 @@ export class AlunoService {
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
   findAll():Observable<Aluno[]> {
+    const token = sessionStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}` 
+    })
     const url = `${this.baseUrl}/alunos`
-    return this.http.get<Aluno[]>(url)
+    return this.http.get<Aluno[]>(url, {headers: headers})
   }
 
   findById(id: String): Observable<Aluno> {

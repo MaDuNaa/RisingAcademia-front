@@ -1,0 +1,50 @@
+
+<div class="container">
+    <section class="container-form">
+       
+        <form class="login" [formGroup]="loginForm" (ngSubmit)="logar()">
+            <img class="img-caixa" src="assets/rising-remove.png">
+            <!-- <h2> Bem-vindo a RISING</h2> -->
+            <div class="mb-3 caixa-usuario ">
+                <div class="input-icone">
+                    <input formControlName="login" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Email" [(ngModel)]="login" (ngModelChange)="limparMensagemDeErro()" required>
+                </div>
+                <div class="validation-error"
+                    *ngIf="loginForm.get('login')?.invalid && (loginForm.get('login')?.dirty || loginForm.get('login')?.touched)">
+                    <div *ngIf="loginForm.get('login')?.errors?.['required']">
+                        Usuário obrigatório
+                    </div>
+                    <div *ngIf="loginForm.get('login')?.errors?.['minlength']">
+                        Usuário deve ter no mínimo 4 letras
+                    </div>
+                    <div *ngIf="loginForm.get('login')?.errors?.['maxlength']">
+                        Usuário deve ter no máximo 4 letras
+                    </div>
+                    <div *ngIf="loginForm.get('login')?.errors?.['pattern']">
+                        Usuário deve conter apenas letras
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-auto caixa-usuario">
+                <div class="input-icone">
+                    <input formControlName="senha" type="password" class="form-control" id="inputPassword2"
+                        placeholder="Senha" >
+                </div>
+                <div class="validation-error"
+                    *ngIf="loginForm.get('senha')?.invalid && (loginForm.get('senha')?.dirty || loginForm.get('senha')?.touched)">
+                    <div *ngIf="loginForm.get('senha')?.errors?.['required']">
+                        Senha obrigatória
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary botao-entrar" [disabled]="!loginForm.valid">Entrar</button>
+                
+                <div *ngIf="respostaValidacaoErro" class="alert alert-danger validation" role="alert">{{mensagem}}</div>
+                <a routerLink="" class="forget-input"> Esqueceu a senha? </a>
+                <a routerLink="" class="forget-input"> Crie uma conta </a>
+            </div>
+        </form>
+    </section>
+</div>
+

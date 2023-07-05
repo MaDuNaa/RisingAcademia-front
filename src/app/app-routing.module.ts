@@ -23,6 +23,8 @@ import { TreinoCreateGeralComponent } from './components/views/treino/treino-cre
 import { PerfilFuncionarioComponent } from './components/views/perfil/perfil-funcionario/perfil-funcionario.component';
 import { AntroDetalheComponent } from './components/views/antropometria/antro-detalhe/antro-detalhe.component';
 import { MensalidadesComponent } from './components/views/mensalidades/mensalidades.component';
+import { AuthGuard } from './services/auth.guard';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -31,40 +33,41 @@ const routes: Routes = [
 
 
           
-          // {path: '', component: LoginComponent},
-          {path: 'home', component: HomeComponent},
+          {path: 'login', component: LoginComponent},
+          { path: '', redirectTo: 'login', pathMatch: "full" },
+          {path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     
-          {path: 'alunos', component: AlunoReadComponent},
-          {path: 'alunos/:id/antropometrias', component: AntroReadComponent},
-          {path: 'alunos/:id/mensalidades', component: MensalidadesComponent},
-          {path: 'alunos/create', component: AlunoCreateComponent},
-          {path: 'alunos/delete/:id', component: AlunoDeleteComponent},
-          {path: 'alunos/update/:id',component: AlunoUpdateComponent},
+          {path: 'alunos', component: AlunoReadComponent, canActivate: [AuthGuard]},
+          {path: 'alunos/:id/antropometrias', component: AntroReadComponent , canActivate: [AuthGuard]},
+          {path: 'alunos/:id/mensalidades', component: MensalidadesComponent , canActivate: [AuthGuard]},
+          {path: 'alunos/create', component: AlunoCreateComponent, canActivate: [AuthGuard]},
+          {path: 'alunos/delete/:id', component: AlunoDeleteComponent, canActivate: [AuthGuard]},
+          {path: 'alunos/update/:id',component: AlunoUpdateComponent, canActivate: [AuthGuard]},
       
-          {path: 'antropometrias', component: AntroReadComponent},
-          {path: 'antropometrias/create', component: AntroCreateComponent},
-          {path: 'antropometrias/delete/:id', component: AntroDeleteComponent},
-          {path: 'antropometrias/update/:id',component: AntroUpdateComponent},
-          {path: 'antropometrias/detalhe', component: AntroDetalheComponent},
+          {path: 'antropometrias', component: AntroReadComponent, canActivate: [AuthGuard]},
+          {path: 'antropometrias/create', component: AntroCreateComponent, canActivate: [AuthGuard]},
+          {path: 'antropometrias/delete/:id', component: AntroDeleteComponent, canActivate: [AuthGuard]},
+          {path: 'antropometrias/update/:id',component: AntroUpdateComponent, canActivate: [AuthGuard]},
+          {path: 'antropometrias/detalhe', component: AntroDetalheComponent, canActivate: [AuthGuard]},
       
-          {path: 'funcionarios', component: FuncionarioReadComponent},
-          {path: 'funcionarios/create', component: FuncionarioCreateComponent},
-          {path: 'funcionarios/delete/:id', component: FuncionarioDeleteComponent},
-          {path: 'funcionarios/update/:id',component: FuncionarioUpdateComponent},
+          {path: 'funcionarios', component: FuncionarioReadComponent, canActivate: [AuthGuard]},
+          {path: 'funcionarios/create', component: FuncionarioCreateComponent, canActivate: [AuthGuard]},
+          {path: 'funcionarios/delete/:id', component: FuncionarioDeleteComponent, canActivate: [AuthGuard]},
+          {path: 'funcionarios/update/:id',component: FuncionarioUpdateComponent, canActivate: [AuthGuard]},
       
-          {path: 'treinos', component: TreinoReadComponent},
-          {path: 'treinos/create', component: TreinoCreateComponent},
-          {path: 'treinos/delete/:id', component: TreinoDeleteComponent},
-          {path: 'treinos/update/:id',component: TreinoUpdateComponent},
+          {path: 'treinos', component: TreinoReadComponent, canActivate: [AuthGuard]},
+          {path: 'treinos/create', component: TreinoCreateComponent, canActivate: [AuthGuard]},
+          {path: 'treinos/delete/:id', component: TreinoDeleteComponent, canActivate: [AuthGuard]},
+          {path: 'treinos/update/:id',component: TreinoUpdateComponent, canActivate: [AuthGuard]},
       
-          {path: 'treinos/criar', component: TreinoCreateGeralComponent},
+          {path: 'treinos/criar', component: TreinoCreateGeralComponent, canActivate: [AuthGuard]},
       
-          {path: 'perfils', component: PerfilUsuarioComponent},
-          {path: 'perfils/Funcionario', component: PerfilFuncionarioComponent},
+          {path: 'perfils', component: PerfilUsuarioComponent, canActivate: [AuthGuard]},
+          {path: 'perfils/Funcionario', component: PerfilFuncionarioComponent, canActivate: [AuthGuard]},
     
-          {path: 'config', component: ConfigComponent},
+          {path: 'config', component: ConfigComponent, canActivate: [AuthGuard]},
     
-          {path: 'mensalidades', component: MensalidadesComponent},
+          {path: 'mensalidades', component: MensalidadesComponent, canActivate: [AuthGuard]},
 
 
 ];

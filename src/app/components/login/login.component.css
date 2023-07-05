@@ -1,0 +1,172 @@
+
+.container{
+    /* background-image: url('src/assets/rising-circulo.png'); */
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80vh;
+    flex-direction:row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.container-form {
+    margin-top: 5%;
+    display: flex;
+}
+
+.img-caixa {
+    width: 80%;
+    height: 50%;
+    margin-top: -80px;
+}
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #415a77;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 350px;
+    min-width: 250px;
+    padding: 35px;
+    justify-content: center;
+}
+
+.login .caixa-usuario{
+    position: relative;
+    width: 100%;
+}
+
+.login .caixa-usuario input{
+    width: 85%;
+    padding: 6px;
+    margin-bottom: 15px;
+    outline: none;
+    border: 0;
+    background-color: #f2f4f6;
+    font-size: 18px;
+    border-radius: 6px;
+    padding-left: 33px;
+    padding-right:16px;
+}
+
+.container-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 1%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #98A5C1;
+}
+
+.toolbar_logo {
+    width: 100%;
+    height: max-content;
+}
+
+.toolbar_ancora{
+    display: flex;
+    align-items: center;
+    width: 12vw;
+    padding: 1%;
+}
+
+.form-label {
+    color: #4C6293;
+}
+
+.form-control{
+    color: #4C6293;
+    z-index: -1;
+}
+
+.form-control::placeholder{
+    color: #D9D9D9;
+}
+
+.forget {
+    position:relative;
+    right: 10px;
+    color: #15316e;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.forget:hover {
+    color: #4C6293;
+}
+
+.form-check-label {
+    color: #4C6293;
+}
+
+.forget-input {
+    color: #f2f4f6;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+
+.forget-input:hover {
+    color: #15316e;
+}
+
+.botao-entrar {
+    color: #f2f4f6;
+    outline: none;
+    border: 0;
+    width: 100%;
+    height: 35px;
+    margin-top: 25px;
+    border-radius: 20px;
+    background: #213E7F;
+}
+
+.botao-entrar:hover {
+    transform: scale(0.98);
+    background: #15316e;
+    transition: all 0.5s;
+}
+
+
+
+.col-12{
+    padding-top: 10px;
+}
+
+.validation-error  {
+    color: #f2f4f6;
+    font-size: 12px;
+    padding-top: 5px;
+
+}
+
+.validation{
+    padding: 0px;
+    font-size: 12px;
+    outline: none;
+    margin-top: 12px;
+    color: #f2f4f6;
+}
+
+.primeiro-acesso{
+    justify-content: center;
+}
+
+.input-icone {
+    position: relative;
+}

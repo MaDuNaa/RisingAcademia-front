@@ -52,6 +52,10 @@ import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AntroDetalheComponent } from './components/views/antropometria/antro-detalhe/antro-detalhe.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MensalidadesComponent } from './components/views/mensalidades/mensalidades.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginService } from './services/login.service';
+import { AuthGuard } from './services/auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 ;
 
 
@@ -88,6 +92,7 @@ import { MensalidadesComponent } from './components/views/mensalidades/mensalida
     ConfirmModalComponent,
     AntroDetalheComponent,
     MensalidadesComponent,
+    LoginComponent,
 
 
   ],
@@ -119,6 +124,10 @@ import { MensalidadesComponent } from './components/views/mensalidades/mensalida
 
   ],
   providers: [
+    LoginService,
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
+
   ],
   bootstrap: [AppComponent]
 })
