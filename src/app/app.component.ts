@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
@@ -14,10 +14,10 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // @ViewChild(MatSidenav)
-  // sidenav!: MatSidenav;
+
   title = 'rising-front';
-  
+
+
 
   constructor() {}
 

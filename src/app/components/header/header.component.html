@@ -1,72 +1,4 @@
-<!-- <mat-toolbar>
 
-  <span routerLink=""> <img src="assets/logoRising.png" alt=""> </span>
-  <span class="example-spacer"></span>
-
-
-  <button mat-icon-button class="buttonHeader" aria-label="Example icon-button with heart icon">
-    <mat-icon>account_circle</mat-icon>
-    <p class="MoverTextoIcone">Entrar/Cadastrar</p>
-  </button>
-
-
-  <button class="buttonHeader" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-    <mat-icon>menu</mat-icon>
-    <p>Menu</p>
-  </button>
-
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </button>
-    <button mat-menu-item routerLink="">
-      <mat-icon>notifications_off</mat-icon>
-      <span>Produtos</span>
-    </button>
-    <button mat-menu-item routerLink="/alunos">
-      <mat-icon>manage_accounts</mat-icon>
-      <span>Alunos</span>
-    </button>
-    <button mat-menu-item routerLink="/alunos/create">
-      <mat-icon>add</mat-icon>
-      <span>Matricular Alunos</span>
-    </button>
-    <button mat-menu-item routerLink="">
-      <mat-icon>offline_bolt</mat-icon>
-      <span>Treinos</span>
-    </button>
-    <button mat-menu-item routerLink="">
-      <mat-icon>bookmark_add</mat-icon>
-      <span>Adicionar Treinos</span>
-    </button>
-    <button mat-menu-item routerLink="/funcionarios">
-      <mat-icon>perm_identity</mat-icon>
-      <span>Funcionario</span>
-    </button>
-    <button mat-menu-item routerLink="/funcionarios/create">
-      <mat-icon>supervisor_account</mat-icon>
-      <span>Novo Funcionario</span>
-    </button>
-    <button mat-menu-item routerLink="">
-      <mat-icon>shopping_cart</mat-icon>
-      <span>Carinho</span>
-    </button>
-    <button mat-menu-item routerLink="/perfils">
-      <mat-icon>account_circle</mat-icon>
-      <span>Perfil</span>
-    </button>
-    <button mat-menu-item routerLink="">
-      <mat-icon>output</mat-icon>
-      <span>Sair</span>
-    </button>
-    <button mat-menu-item routerLink="/config">
-      <mat-icon>settings</mat-icon>
-      <span>Configuração</span>
-    </button>
-  </mat-menu>
-
-</mat-toolbar> -->
 <mat-toolbar>
 
    
@@ -78,11 +10,12 @@
   </div>
  
   
-  <button routerLink="" mat-icon-button class="buttonHeader" aria-label="Example icon-button with share icon">
-      <!-- <mat-icon>notifications_none</mat-icon> -->
+  <button mat-icon-button class="buttonHeader" aria-label="Example icon-button with share icon">
+     <mat-icon (click)="logout()">logout_none</mat-icon>
     </button>
 
     <button class="btn">ACESSE SEU PERFIL</button>
+    
 
     <button routerLink="" mat-icon-button class="buttonHeader" aria-label="Example icon-button with share icon">
       <img src="assets/usuario.jpg" alt="">

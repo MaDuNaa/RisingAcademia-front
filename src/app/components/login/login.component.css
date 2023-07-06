@@ -1,6 +1,5 @@
 
 .container{
-    /* background-image: url('src/assets/rising-circulo.png'); */
     background-size: cover;
     height: 80vh;
     display: flex;
@@ -16,7 +15,7 @@
 }
 
 .container-form {
-    margin-top: 5%;
+    margin-top:4%;
     display: flex;
 }
 

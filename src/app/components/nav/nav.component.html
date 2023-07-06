@@ -1,96 +1,13 @@
-<!-- 
-<mat-sidenav-container class="container">
-
-  <mat-sidenav class="side" mode="side" opened>
-
-      <div class="mat-list__navegacao">
-
-        <a class="mat-list-item" routerLink="">
-          <mat-icon>home</mat-icon>
-          <span> Home </span>
-        </a>
-
-        <a class="mat-list-item"  [matMenuTriggerFor]="menu">
-          <mat-icon>manage_accounts</mat-icon>
-          <span> Alunos </span>
-        </a>
-
-        <a class="mat-list-item"  [matMenuTriggerFor]="menu1">
-          <mat-icon>bolt</mat-icon>
-          <span> Treinos </span>
-        </a>
-
-        <a class="mat-list-item"  [matMenuTriggerFor]="menu2">
-          <mat-icon>content_paste_search</mat-icon>
-          <span> Administração </span>
-        </a>
-
-        <a class="mat-list-item" routerLink="/config">
-          <mat-icon>output</mat-icon>
-          <span> Sair </span>
-        </a>
-
-        <a class="mat-list-item" routerLink="/config">
-          <mat-icon>settings</mat-icon>
-          <span> Config </span>
-        </a>
-      </div>
-
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-      <router-outlet></router-outlet>
-  </mat-sidenav-content>
-
-</mat-sidenav-container>
-
-<mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/alunos/create">
-    <mat-icon>add</mat-icon>
-    <span>Matricular Aluno</span>
-  </button>
-  <button mat-menu-item routerLink="/alunos">
-    <mat-icon>list</mat-icon>
-    <span>Mostrar Alunos</span>
-  </button>
-</mat-menu>
-
-<mat-menu #menu1="matMenu">
-  <button mat-menu-item routerLink="/treinos">
-    <mat-icon>offline_bolt</mat-icon>
-    <span>Ver Treinos</span>
-  </button>
-  <button mat-menu-item routerLink="/treinos/create">
-    <mat-icon>bookmark_add</mat-icon>
-    <span>Adicionar Treino</span>
-  </button>
-</mat-menu>
-
-<mat-menu #menu2="matMenu">
-  <button mat-menu-item routerLink="">
-    <mat-icon>description</mat-icon>
-    <span>Relatorios</span>
-  </button>
-  <button mat-menu-item routerLink="/funcionarios">
-    <mat-icon>perm_identity</mat-icon>
-    <span>Funcionario</span>
-  </button>
-  <button mat-menu-item routerLink="/funcionarios/create">
-    <mat-icon>supervisor_account</mat-icon>
-    <span>Novo Funcionario</span>
-  </button>
-</mat-menu> -->
-
 
 <mat-sidenav-container class="container">
 
-  <mat-sidenav class="side" mode="side" opened>
+  <mat-sidenav class="side" mode="side"  [ngClass]="location === '/' ? 'inativo' : 'side' " opened>
 
-      <span routerLink=""> <img src="assets/rising-remove.png" alt=""> </span>
+      <span routerLink="/home"> <img src="assets/rising-remove.png" alt=""> </span>
 
       <div class="mat-list__navegacao">
 
-        <a class="mat-list-item" routerLink="">
+        <a class="mat-list-item" routerLink="/home">
           <mat-icon>home</mat-icon>
         </a>
 
@@ -129,7 +46,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-      <router-outlet></router-outlet>
+      <router-outlet *ngIf="!isIframe"></router-outlet>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

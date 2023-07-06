@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -6,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  isIframe = false;
+  location!: string
 
-  
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private route: Router) {
+    route.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.location = val.url
+      }
+    })
   }
 
-  reload() {
-    window.location.reload()
+
+  ngOnInit(): void {
+    this.isIframe = window !== window.parent && !window.opener;
   }
 
   

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
@@ -13,7 +13,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
 
   public loginForm !: FormGroup;
-
+  @Output() loggedIn = new EventEmitter<boolean>();
   mensagem = ""
   respostaValidacaoErro = false
   login = ''
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         token => {
           var nossoToken = token?.token;
           if (this.loginService.validacaoToken(nossoToken)) {
-            sessionStorage.setItem('token', nossoToken);
+            sessionStorage.setItem('token', nossoToken); 
             location.href = "/home"
           } else {
             this.respostaValidacaoErro = true;
