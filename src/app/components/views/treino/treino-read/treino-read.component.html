@@ -13,7 +13,7 @@
       </a>
     </div>
     <div  routerLink="/treinos/criar">
-      <button class="btn_criar" title="Criar Treino">
+      <button class="btn_criar" matTooltip ="Adicionar treino">
         <mat-icon>bookmark_add</mat-icon>
         Novo Treino
       </button>
@@ -39,9 +39,9 @@
         <td>
           <div class="coluna__detalhe">
             <a routerLink="update/{{ treino.id }}" class="btn__detalhes"
-              title="Editar Treino"><mat-icon>edit</mat-icon></a>
+            matTooltip ="Editar treino"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ treino.id }}" class="btn__detalhes"
-              title="Deletar Treino"><mat-icon>delete</mat-icon></a>
+            matTooltip ="Deletar treino"><mat-icon>delete</mat-icon></a>
           </div>
         </td>
 

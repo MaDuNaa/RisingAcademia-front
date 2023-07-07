@@ -54,7 +54,7 @@
 
 <section>
   <div class="box__form">
-  <input matInput [(ngModel)]="quantidade" min="0" type="Number" name="quantidade" placeholder="10" class="btnSelect">
-  <button (click)="pagarMensalidade(quantidade)" class="btn__adicionar">Pagar Mensalidade</button>
+  <input matInput [(ngModel)]="quantidade" min="0" matTooltip ="Selecione a quantidade" type="Number" name="quantidade" placeholder="10" class="btnSelect">
+  <button (click)="pagarMensalidade(quantidade)" class="btn__adicionar" matTooltip ="Pagar mensalidade">Pagar Mensalidade</button>
   </div>
   </section>

@@ -13,7 +13,7 @@
       </a>
     </div>
     <div  routerLink="/alunos/create">
-      <button class="btn_criar" title="Adicionar Aluno">
+      <button class="btn_criar" matTooltip ="Adicionar aluno">
         <mat-icon>person_add</mat-icon>
         Novo Aluno
       </button>
@@ -33,16 +33,16 @@
       <tr class="estiloTabela"
         *ngFor="let aluno of alunos | filter: searchText | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
        
-        <td> <a (click)="redirect(aluno.id)" >{{aluno.nome}}</a> </td>
+        <td matTooltip ="Ir para perfil"> <a (click)="redirect(aluno.id)" >{{aluno.nome}}</a> </td>
         <td>{{aluno.telefone}}</td>
         <td>{{aluno.objetivo}}</td>
         <td>{{aluno.mensalidade}}</td>
         <td>
           <div class="coluna__detalhe">
             <a routerLink="update/{{ aluno.id }}" class="btn__detalhes"
-              title="Editar Aluno"><mat-icon>edit</mat-icon></a>
+            matTooltip ="Editar aluno"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ aluno.id }}" class="btn__detalhes"
-              title="Deletar Aluno"><mat-icon>delete</mat-icon></a>     
+            matTooltip ="Deletar Aluno"><mat-icon>delete</mat-icon></a>     
           </div>
         </td>
       </tr>

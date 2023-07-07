@@ -56,7 +56,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './services/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-;
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { AjudaComponent } from './components/views/ajuda/ajuda.component';
+
 
 
 
@@ -93,6 +95,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     AntroDetalheComponent,
     MensalidadesComponent,
     LoginComponent,
+    AjudaComponent,
 
 
   ],
@@ -120,7 +123,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     Ng2SearchPipeModule,
     MatDialogModule,
     ReactiveFormsModule,
-    
+    MatTooltipModule,
 
   ],
   providers: [

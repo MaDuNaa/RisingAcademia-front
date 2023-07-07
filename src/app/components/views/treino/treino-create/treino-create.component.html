@@ -5,10 +5,10 @@
 
 <form class="boxPergunta">
 <div class="box__form">
-  <select class="btnSelect" [(ngModel)]="selecionado" name="treino">
+  <select class="btnSelect" [(ngModel)]="selecionado" name="treino" matTooltip ="Selecione um treino">
     <option *ngFor="let treino of treinos" [ngValue]="treino"> {{ treino.dia }} - {{ treino.treino }} </option>
   </select>
-  <button (click)="adicionarTreino()" class="btn__adicionar"> <mat-icon>queue</mat-icon> </button>
+  <button (click)="adicionarTreino()" class="btn__adicionar" matTooltip ="Adicionar treino"> <mat-icon>queue</mat-icon> </button>
 </div>
 </form>
 
@@ -39,7 +39,7 @@
       <td>{{treinosAluno.treino}}</td>
       <td>{{treinosAluno.serie}}</td>
       <td>{{treinosAluno.repeticao}}</td>
-      <td (click)="onRemover(treino)"><mat-icon class="estilo-remover">delete</mat-icon></td>
+      <td (click)="onRemover(treino)"><mat-icon class="estilo-remover" matTooltip ="Deletar treino">delete</mat-icon></td>
     </tr>
     
   </table>
@@ -53,10 +53,10 @@
 
 
 <div class="container__btn">
-  <button routerLink="/alunos" class="btnDeletar" title="Volar para lista">
+  <button routerLink="/alunos" class="btnDeletar" matTooltip ="Volar para lista">
     Cancelar
   </button>
-  <button class="btnSalvar" (click)="onSalvar()" title="Salvar treinos" [hidden]="treinos.length < 1">
+  <button class="btnSalvar" (click)="onSalvar()" matTooltip ="Salvar treinos" [hidden]="treinos.length < 1">
     salvar
   </button>
 </div>

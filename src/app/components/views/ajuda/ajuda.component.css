@@ -1,0 +1,178 @@
+.faqs {
+    text-align: center;
+    margin: 2rem 2rem 2rem;
+}
+
+.faqs_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;  
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+.title h1 {
+    font-size: 1.8rem;
+    color: #415a77;
+    font-weight: 500;
+}
+
+.faq {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: fit-content;
+    background-color: #415a77;
+    color: #DFF2EA;
+    text-align: justify;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.faq h4 {
+    font-size: 1rem;
+    line-height: 2.23;
+}
+
+.faq_icon {
+    align-self: flex-start;
+    color: #DFF2EA;
+    font-size: 1rem;
+}
+
+.faq p {
+    margin-top: 0.8rem;
+    display: none;
+}
+
+.faq.open p {
+    display: block;
+}
+
+.card {
+    background-color: #415a77;
+    border-radius: 10px;
+    width: 60%;
+    margin-top: 30px;
+    margin-left: 20%;
+}
+
+.heading span{
+    color: #DFF2EA;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.none {
+    color: #DFF2EA;
+    font-size: 12px;
+}
+
+  
+  #cta {
+    height: 450px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #DFF2EA;
+  }
+  
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 17px;
+    background:  #98a5c1; 
+    padding-left: 10px;
+    border: 1px solid #DFF2EA;
+    border-radius: 8px;
+  }
+
+  .right form input{
+    height: 30px;
+    width: 400px;
+  }
+
+   /* mudar tamanho das caixas de textos */
+  .right form textarea {
+    border-radius: 8px;
+    height: 70px;
+    width: 400px;
+  }
+  
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #415a77;
+  }
+
+  .right form .text{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* cor dos nomes em cima dos campos  */
+    color: #DFF2EA;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+
+  .right form .btn button{
+    height: 30px;
+    width: 8%; 
+     /* cor do botao de enviar  */
+    background: #415a77;
+    color: #DFF2EA;
+    border-radius: 6px;
+    border: 1px solid #DFF2EA;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .right form .btn button:hover{
+    background: #98a5c1;
+    color: #415a77;
+  }
+
+  
+ 
+  @media (max-width: 450px) {
+    #cta .btn {
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 900px){
+
+     .none {
+      display: none;
+     }
+     .heading {
+      margin-top: -155px;
+      font-size: 32px;
+     }
+
+    .right form textarea {
+      height: 70px;
+      width: 310px;
+    }
+
+    .right form input{
+      height: 30px;
+      width: 310px;
+    }
+
+    .right form .btn button{
+        height: 30px;
+        width: 8%; 
+      
+    }
+
+  }

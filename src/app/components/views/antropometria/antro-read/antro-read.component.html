@@ -13,7 +13,7 @@
       </a>
     </div>
     <div  routerLink="/antropometrias/detalhe">
-      <button class="btn_criar" title="Detalhe Antropometria">
+      <button class="btn_criar" matTooltip ="Detalhe antropometria">
         <mat-icon>accessibility</mat-icon>
         Detalhe Antropometria
       </button>
@@ -43,9 +43,9 @@
         <td>
           <div class="coluna__detalhe">
             <a routerLink="update/{{ aluno.id }}" class="btn__detalhes"
-              title="Editar Antropometria"><mat-icon>edit</mat-icon></a>
+            matTooltip="Editar Antropometria"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ aluno.id }}" class="btn__detalhes"
-              title="Deletar Antropometria"><mat-icon>delete</mat-icon></a>
+            matTooltip="Deletar Antropometria"><mat-icon>delete</mat-icon></a>
           </div>
         </td>
       </tr>

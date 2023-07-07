@@ -8,36 +8,36 @@
       <div class="mat-list__navegacao">
 
         <a class="mat-list-item" routerLink="/home">
-          <mat-icon>home</mat-icon>
+          <mat-icon class ="title" matTooltip ="Home">home</mat-icon>
         </a>
 
         <a class="mat-list-item"  [matMenuTriggerFor]="menu">
-          <mat-icon>manage_accounts</mat-icon>
+          <mat-icon matTooltip ="Alunos">manage_accounts</mat-icon>
          
         </a>
 
         <a class="mat-list-item"  [matMenuTriggerFor]="menu1">
-          <mat-icon>bolt</mat-icon>
+          <mat-icon matTooltip ="Treinos">bolt</mat-icon>
           
         </a>
 
         <a class="mat-list-item" routerLink="/antropometrias" >
-          <mat-icon> accessibility</mat-icon>
+          <mat-icon matTooltip ="Antropometrias">accessibility</mat-icon>
           
         </a>
 
         <a class="mat-list-item"  [matMenuTriggerFor]="menu2">
-          <mat-icon>content_paste_search</mat-icon>
+          <mat-icon matTooltip ="Administação">content_paste_search</mat-icon>
           
         </a>
 
         <a class="mat-list-item" routerLink="/config">
-          <mat-icon>settings</mat-icon>
+          <mat-icon matTooltip ="Configuração">settings</mat-icon>
           
         </a>
   
-        <a class="mat-list-item" routerLink="/help">
-          <mat-icon>help</mat-icon>
+        <a class="mat-list-item" routerLink="/ajuda">
+          <mat-icon matTooltip ="Ajuda">help</mat-icon>
           
         </a>
 
@@ -75,7 +75,7 @@
 </mat-menu>
 
 <mat-menu #menu2="matMenu">
-  <button mat-menu-item routerLink="">
+  <button mat-menu-item routerLink="/home">
     <mat-icon class="icones-lateral">description</mat-icon>
     <span class="span-alterar">Relatorios</span>
   </button>

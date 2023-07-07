@@ -25,6 +25,7 @@ import { AntroDetalheComponent } from './components/views/antropometria/antro-de
 import { MensalidadesComponent } from './components/views/mensalidades/mensalidades.component';
 import { AuthGuard } from './services/auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import { AjudaComponent } from './components/views/ajuda/ajuda.component';
 
 
 
@@ -68,6 +69,8 @@ const routes: Routes = [
           {path: 'config', component: ConfigComponent, canActivate: [AuthGuard]},
     
           {path: 'mensalidades', component: MensalidadesComponent, canActivate: [AuthGuard]},
+
+          {path: 'ajuda', component: AjudaComponent, canActivate: [AuthGuard]},
 
 
 ];

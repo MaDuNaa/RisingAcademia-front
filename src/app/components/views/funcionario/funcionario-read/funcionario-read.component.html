@@ -13,7 +13,7 @@
       </a>
     </div>
     <div  routerLink="/funcionarios/create">
-      <button class="btn_criar" title="Adicionar Funcionario">
+      <button class="btn_criar" matTooltip ="Adicionar Funcionario">
         <mat-icon>person_add</mat-icon>
         Novo Funcionario
       </button>
@@ -37,9 +37,9 @@
         <td>
           <div class="coluna__detalhe">
             <a routerLink="update/{{ funcionario.id }}" class="btn__detalhes"
-              title="Editar Funcionario"><mat-icon>edit</mat-icon></a>
+            matTooltip ="Editar Funcionario"><mat-icon>edit</mat-icon></a>
             <a routerLink="delete/{{ funcionario.id }}" class="btn__detalhes"
-              title="Deletar Funcionario"><mat-icon>delete</mat-icon></a>
+            matTooltip ="Deletar Funcionario"><mat-icon>delete</mat-icon></a>
           </div>
         </td>
       </tr>
