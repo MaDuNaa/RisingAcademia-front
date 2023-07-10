@@ -1,0 +1,123 @@
+.card {
+    background-color: #415a77;
+    color: #edf6f9;
+    width: 70%;
+    height: 65vh;
+    border-radius: 8px;
+    margin-left: 30vh;
+    padding-top: 2rem;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .title h1 {
+    font-size: 1.8rem;
+    color: #415a77;
+    font-weight: 500;
+  }
+
+  .menu {
+    background-color: #f2f4f6;
+    width: 80%;
+    height: 50vh;
+    border-radius: 8px;
+    margin-left: 15vh;
+  }
+
+  .container__action {
+  background-color: #98a5c1;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 6px 20%;
+  margin: 8px 2rem;
+}
+
+.btn_criar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  gap: 4px;
+  background:   #4c6293;
+  border: none;
+  color: #edf6f9;
+  border-radius: 5px;
+  font-size: 110%;
+}
+
+.btn_criar:hover {
+  color:  #edf6f9;
+  background-color: #4c6293;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    padding: 6px;
+    background:  transparent;
+    border: 1px solid #edf6f9;
+    color: #f2f4f6;
+    border-radius: 5px;
+    font-size: 95%;
+  }
+  
+  .btn:hover {
+    color:  #edf6f9;
+    background-color: #4c6293;
+  }
+
+.titulo {
+    display: inline;
+  font-size: 18px;
+  color: #415a77;
+  font-weight: 500;
+}
+
+.imagem {
+    position: relative;
+}
+
+img {
+    box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    width: 10%;
+    border-radius: 60%;
+    margin-right: 40vh;
+    margin-bottom: 2rem;
+}
+
+img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    border-radius: 10%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+
+.text {
+    font-size: 15px;
+    color: #edf6f9;
+    margin-left: 20px;
+}
+
+.text-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

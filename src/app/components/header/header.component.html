@@ -1,24 +1,22 @@
 
-<mat-toolbar>
-
-   
+<mat-toolbar>  
   <span class="example-spacer"></span>
 
   <div class="text"> 
       <h3>RISING - GESTÃO DE ACADEMIAS</h3>
       <p>Cadastros / Administração / Controles / Treinos / Antropometria </p>
   </div>
- 
-  
-  <button mat-icon-button class="buttonHeader" aria-label="Example icon-button with share icon">
+
+
+  <button class="buttonHeader">
      <mat-icon (click)="logout()" matTooltip ="Sair">logout_none</mat-icon>
     </button>
 
     <button class="btn">ACESSE SEU PERFIL</button>
-    
 
-    <button routerLink="" mat-icon-button class="buttonHeader" aria-label="Example icon-button with share icon">
-      <img src="assets/usuario.jpg" alt="">
+    <button routerLink="/perfil" class="buttonHeader" 
+    matTooltip="Ver perfil">
+      <img src="assets/perfil.png" alt="">
     </button>
 
 </mat-toolbar>

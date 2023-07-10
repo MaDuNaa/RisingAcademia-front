@@ -58,6 +58,8 @@ import { AuthGuard } from './services/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AjudaComponent } from './components/views/ajuda/ajuda.component';
+import { PerfilComponent } from './components/login/perfil/perfil.component';
+import { AlterarSenhaComponent } from './components/login/alterar-senha/alterar-senha.component';
 
 
 
@@ -96,6 +98,8 @@ import { AjudaComponent } from './components/views/ajuda/ajuda.component';
     MensalidadesComponent,
     LoginComponent,
     AjudaComponent,
+    PerfilComponent,
+    AlterarSenhaComponent,
 
 
   ],

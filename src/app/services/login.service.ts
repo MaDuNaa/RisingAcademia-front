@@ -69,6 +69,13 @@ export class LoginService {
     return '';
   }
 
+  alterarSenha(senhaAtual: string, novaSenha: string, confirmacaoNovaSenha: string) {
+    const url = `${this.baseUrl}/usuarios/redefinir-senha-usuario-logado`
+    const dto = { senhaAtual, novaSenha, confirmacaoNovaSenha }
+    return this.httpClient.put(url, dto)
+  }
+
+
   atualizarToken() {
     const refreshToken = sessionStorage.getItem('refreshToken')
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + refreshToken);

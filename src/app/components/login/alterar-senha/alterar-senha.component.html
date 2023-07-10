@@ -1,0 +1,68 @@
+<div class="container">
+    <form class="alterar-senha"(ngSubmit)="alterarSenha()" [formGroup]="alterarSenhaForm" #formDir="ngForm">
+        <h1>Alterar senha</h1>
+        <h3 *ngIf="!formularioSubmetido && !formularioNaoSubmetido">Olá {{nomeDoUsuario}}, altere sua senha</h3>
+        <div class="mb-3 caixa-senha ">
+            <div  *ngIf="!formularioSubmetido && !formularioNaoSubmetido">
+                <div class="input-icone">
+                    <input formControlName="senhaAtual" type="password" class="form-control" id="inputPassword"
+                        placeholder="Senha Atual">
+                    <!-- <span class="material-symbols-outlined"> lock </span> -->
+                </div>
+                <div class="validation-error" 
+                *ngIf="senhaAtual?.errors?.['required'] && (alterarSenhaForm.get('senhaAtual')?.dirty || alterarSenhaForm.get('senhaAtual')?.touched)">
+                Campo Obrigatório</div>
+            </div>
+            <div *ngIf="!formularioSubmetido && !formularioNaoSubmetido">
+                <div class="input-icone">
+                    <input formControlName="novaSenha" type="password" class="form-control" id="inputPassword2"
+                            placeholder="Nova Senha" (focus)="exibirLista = true">
+                    <!-- <span class="material-symbols-outlined"> lock </span> -->
+                </div>
+                <div class="validation-error" 
+                *ngIf="senhaAtual?.errors?.['required'] && (alterarSenhaForm.get('senhaAtual')?.dirty || alterarSenhaForm.get('senhaAtual')?.touched)">
+                Campo Obrigatório</div>
+                <div>
+                    <ul *ngIf="exibirLista">Sua senha deve conter:
+                        <li [class]="senhaComprimento ? 'text-success' : 'text-danger'">{{ senhaComprimento? ' 10 a 20
+                            caracteres' : ' 10 a 20 caracteres' }}</li>
+                        <li [class]="senhaLetraMaiuscula ? 'text-success' : 'text-danger'">{{senhaLetraMaiuscula ? 'Letra
+                            maiúscula' : 'Letra maiúscula'}}</li>
+                        <li [class]="senhaLetraMinuscula ? 'text-success' : 'text-danger'">{{ senhaLetraMinuscula ? 'Letra
+                            minúscula' : 'Letra minúscula'}}</li>
+                        <li [class]="senhaNumero ? 'text-success' : 'text-danger'">{{ senhaNumero ? 'Número' : 'Número'}}
+                        </li>
+                        <li [class]="senhaSimbolo ? 'text-success' : 'text-danger'">{{ senhaSimbolo ? 'Simbolo (ex: !@#%$)'
+                            : 'Simbolo (ex: !@#%$)'}} </li>
+                    </ul>
+                </div>
+            </div>
+            <div *ngIf="!formularioSubmetido && !formularioNaoSubmetido">
+                <div>
+                    <div class="input-icone">
+                        <input formControlName="confirmacaoNovaSenha" type="password" class="form-control" id="inputPassword3"
+                            placeholder="Confirmar Senha" >
+                        <!-- <span class="material-symbols-outlined"> lock </span> -->
+                    </div>
+                    <div class="validation-error" 
+                    *ngIf="confirmacaoNovaSenha?.errors?.['required'] && (alterarSenhaForm.get('confirmacaoNovaSenha')?.dirty || alterarSenhaForm.get('confirmacaoNovaSenha')?.touched)">
+                    Campo Obrigatório</div>
+                    <div class="validation-error" *ngIf="!!senhaErrada">
+                        Senhas Diferentes
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!formularioSubmetido && !formularioNaoSubmetido" >
+                <button class="btn btn-primary botao-cadastrar"  type="submit" >Alterar</button>
+                <a routerLink="/config" class="forget-input">Cancelar</a>
+            </div>
+            <div *ngIf="formularioSubmetido">
+                <p class="alert alert-primary">{{mensagem}} Voltar ao <a class="foco" routerLink="/home">menu principal</a></p>
+            </div>
+            <div *ngIf="formularioNaoSubmetido">
+                <p class="alert alert-danger validation">{{mensagem}} Voltar ao <a class="foco" routerLink="/home">menu principal</a></p>
+            </div>
+        </div>
+    </form>
+</div>
+

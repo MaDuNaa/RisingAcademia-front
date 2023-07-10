@@ -26,6 +26,8 @@ import { MensalidadesComponent } from './components/views/mensalidades/mensalida
 import { AuthGuard } from './services/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { AjudaComponent } from './components/views/ajuda/ajuda.component';
+import { PerfilComponent } from './components/login/perfil/perfil.component';
+import { AlterarSenhaComponent } from './components/login/alterar-senha/alterar-senha.component';
 
 
 
@@ -71,6 +73,10 @@ const routes: Routes = [
           {path: 'mensalidades', component: MensalidadesComponent, canActivate: [AuthGuard]},
 
           {path: 'ajuda', component: AjudaComponent, canActivate: [AuthGuard]},
+
+          {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
+
+          {path: 'alterar-senha', component: AlterarSenhaComponent},
 
 
 ];

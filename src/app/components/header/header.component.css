@@ -1,80 +1,72 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
-  
-  mat-toolbar {
-    height: 12%;
-    background-color: #f2f4f6;
-    /* border-bottom: 1px solid #415a77; */
-    
-  }
+  flex: 1 1 auto;
+}
 
-  .inativo {
-    display: none;
-  }
+mat-toolbar {
+  height: 12%;
+  background-color: #f2f4f6;
+}
 
-  h3 {
-    font-size: 20px;
-    font-weight: 700;
-  }
+.inativo {
+  display: none;
+}
 
- .text p {
-    font-size: 10px;
-  }
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
 
- .text {
-    justify-content: center;
-    margin-left: 100px;
-    margin-top: 10px;
-    position: absolute;
-    color: #415a77;
- }
- 
-  span {
-    cursor: pointer;
-  }
-  
-  img {
-    height: 1.9rem;
-    border-radius: 100px;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  
-  p {
-    font-size: 8px;
-    margin-top: -20px;
-  
-  }
-  
-  .MoverTextoIcone {
-    margin-left: -9px;
-  }
-  
-  
-  .buttonHeader {
-    align-items: center;
-    margin-left: 8px;
-    background-color:transparent;
-      border-radius:50px;
-      border: none;
-      display:inline-block;
-      cursor:pointer;
-      color: #125D79;
-      font-family:Arial;
-      font-size:15px;
-      text-decoration:none;
-  
-  }
-  
-  .buttonHeader:hover {
-      background-color:transparent;
-    color:#0571b7;
-  }
-  
+.text p {
+  font-size: 10px;
+}
 
-  .btn {
+.text {
+  justify-content: center;
+  margin-left: 100px;
+  margin-top: 10px;
+  position: absolute;
+  color: #415a77;
+}
+
+span {
+  cursor: pointer;
+}
+
+img {
+  height: 1.9rem;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+p {
+  font-size: 8px;
+  margin-top: -15px;
+
+}
+
+.buttonHeader {
+  align-items: center;
+  margin-left: 8px;
+  background-color: transparent;
+  border-radius: 50px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  color: #125D79;
+  font-family: Arial;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.buttonHeader:hover {
+  background-color: transparent;
+  color: #0571b7;
+}
+
+
+.btn {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -86,8 +78,8 @@
   font-weight: 800;
   text-decoration: none;
   background-color: transparent;
-  }
+}
 
-  .btn:hover {
-    text-decoration: none;
-  }
+.btn:hover {
+  text-decoration: none;
+}
