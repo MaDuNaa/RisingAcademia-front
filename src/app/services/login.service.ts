@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { Perfil } from '../models/perfil';
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,11 @@ export class LoginService {
       return false;
     }
   }
+
+  buscarPerfil() {
+    return this.httpClient.get<Perfil>(`${this.baseUrl}/usuarios/usuario-logado`);
+  }
+
 
   getNome(): string {
     const token = sessionStorage.getItem('token');

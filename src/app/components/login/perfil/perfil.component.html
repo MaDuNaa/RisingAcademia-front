@@ -1,3 +1,21 @@
 <div class="title">
     <h1>Perfil do usuário</h1>
   </div>
+
+  <article class="container">
+
+    <section class="box box-informacoes">
+      <p>Meu Perfil</p>
+    </section>
+    <section class="conteudo conteudo-informacoes">
+      <p><b>Nome Completo:</b> {{perfil.nomePerfil}}</p>
+    </section>
+    
+    <section routerLink="/alterar-senha" class="conteudo conteudo-permissoes">
+      <a>Alterar senha</a>
+      <span class="material-symbols-outlined"> lock </span>
+    </section>
+  
+    <button class="btn_voltar" (click)="voltarPaginaAnterior()">Voltar</button>
+  
+</article>

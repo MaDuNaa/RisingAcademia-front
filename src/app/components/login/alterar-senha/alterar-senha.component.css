@@ -40,7 +40,7 @@
     padding: 6px ;
     outline: none;
     border: 0;
-    background-color: #d8d8d8;
+    background-color: #98a5c1;
     font-size: 18px;
     margin-bottom: 12px;
     border-radius: 6px;
@@ -72,21 +72,22 @@
 
 
 .botao-cadastrar {
-    color: #415a77;
+    color: #d8d8d8;
     outline: none;
-    border: 0;
-    width: 100%;
-    height: 35px;
-    border-radius: 20px;
-    background: #213E7F;
-    background: #d8d8d8;
+    width: 40%;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    background: transparent;
     margin-top: 25px;
+    margin-left: 29%;
 
 }
 
 .botao-cadastrar:hover {
     transform: scale(0.98);
-    background: #d8d8d8;
+    background: #98a5c1;
+    color: #415a77;
     transition: all 0.5s;
 } 
 
@@ -139,7 +140,8 @@ span {
 }
 
 .forget-input {
-    color: #7f8fb1;
+    color: #98a5c1;
+    text-decoration: none;
     font-size: 15px;
     display: flex;
     justify-content: center;
