@@ -1,7 +1,8 @@
 <div class="container">
     <form class="alterar-senha"(ngSubmit)="alterarSenha()" [formGroup]="alterarSenhaForm" #formDir="ngForm">
+        <img class="img-caixa" src="assets/rising-remove.png">
         <h1>Alterar senha</h1>
-        <h3 *ngIf="!formularioSubmetido && !formularioNaoSubmetido">Olá {{nomeDoUsuario}}, altere sua senha</h3>
+        
         <div class="mb-3 caixa-senha ">
             <div  *ngIf="!formularioSubmetido && !formularioNaoSubmetido">
                 <div class="input-icone">
@@ -53,7 +54,7 @@
                 </div>
             </div>
             <div *ngIf="!formularioSubmetido && !formularioNaoSubmetido" >
-                <button class="btn btn-primary botao-cadastrar"  type="submit" >Alterar</button>
+                <button class="btn btn-primary botao-entrar"  type="submit" >Alterar</button>
                 <a routerLink="/config" class="forget-input">Cancelar</a>
             </div>
             <div *ngIf="formularioSubmetido">

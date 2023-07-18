@@ -42,8 +42,10 @@ export class LoginComponent implements OnInit {
     this.loginService.loginUsuario(dadosLogin)
       .subscribe(
         token => {
+          var refreshToken = token?.refreshToken
           var nossoToken = token?.token;
-          if (this.loginService.validacaoToken(nossoToken)) {
+          if (this.loginService.validacaoToken(nossoToken) && this.loginService.validacaoToken(refreshToken)) {
+            sessionStorage.setItem('refreshToken', refreshToken);
             sessionStorage.setItem('token', nossoToken); 
             location.href = "/home"
           } else {

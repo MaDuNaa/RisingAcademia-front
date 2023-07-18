@@ -38,6 +38,12 @@ export class LoginService {
     return '';
   }
 
+  validarToken(token: string) {
+    const url = `${this.baseUrl}/token-senha/validar/${token}`
+    return this.httpClient.get(url)
+  }
+
+
 
   validacaoToken(token: string): boolean {
     try {
@@ -59,7 +65,9 @@ export class LoginService {
     }
   }
 
+  //aqui esta com problemas
   buscarPerfil() {
+    console.log('entrei aqui')
     return this.httpClient.get<Perfil>(`${this.baseUrl}/usuarios/usuario-logado`);
   }
 
@@ -75,6 +83,8 @@ export class LoginService {
     return '';
   }
 
+
+  //aqui esta com problemas
   alterarSenha(senhaAtual: string, novaSenha: string, confirmacaoNovaSenha: string) {
     const url = `${this.baseUrl}/usuarios/redefinir-senha-usuario-logado`
     const dto = { senhaAtual, novaSenha, confirmacaoNovaSenha }
@@ -82,6 +92,7 @@ export class LoginService {
   }
 
 
+  //aqui esta com problemas
   atualizarToken() {
     const refreshToken = sessionStorage.getItem('refreshToken')
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + refreshToken);
