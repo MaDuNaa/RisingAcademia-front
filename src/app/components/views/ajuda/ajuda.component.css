@@ -55,10 +55,11 @@
 }
 
 .card {
+  border: 1px solid #415a77;
     background-color: transparent;
     border-radius: 10px;
     width: 60%;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-left: 20%;
 }
 

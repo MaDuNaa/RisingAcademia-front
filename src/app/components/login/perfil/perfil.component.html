@@ -5,16 +5,18 @@
   <article class="container">
 
     <section class="box box-informacoes">
-      <p>Meu Perfil</p>
+      <img src="/assets/perfil.png">
     </section>
     <section class="conteudo conteudo-informacoes">
-      <p><b>Nome Completo:</b> {{perfil.nomePerfil}}</p>
+      <p>Nome Completo: {{ nomeUsuario }}</p>
+      <p>Email: admin@hotmail.com</p>
+      <p>Telefone: 9999-9999</p>
+      <p>Permissão: admin</p>
     </section>
     
-    <section routerLink="/alterar-senha" class="conteudo conteudo-permissoes">
+    <!-- <section routerLink="/alterar-senha" class="conteudo conteudo-permissoes">
       <a>Alterar senha</a>
-      <span class="material-symbols-outlined"> lock </span>
-    </section>
+    </section> -->
   
     <button class="btn_voltar" (click)="voltarPaginaAnterior()">Voltar</button>
   

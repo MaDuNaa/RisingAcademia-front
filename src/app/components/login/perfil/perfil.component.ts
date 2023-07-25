@@ -3,6 +3,7 @@ import { Perfil } from 'src/app/models/perfil';
 import { LoginService } from 'src/app/services/login.service';
 import { MensagemService } from 'src/app/services/mensagem.service';
 import { Location } from '@angular/common';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-perfil',
@@ -11,17 +12,20 @@ import { Location } from '@angular/common';
 })
 export class PerfilComponent implements OnInit {
 
-  perfil!: Perfil; 
+  perfil!: Usuario;
+  nomeUsuario = ""; 
 
   constructor( private loginService: LoginService, private location: Location,private mensagemService: MensagemService) {
     this.perfil = {
-      nomePerfil: '',
+      login: '',
+      senha: '',
     };
    }
 
 
   ngOnInit(): void {
-    this.perfilUsuario();
+    this.nomeUsuario = this.loginService.getNome();
+    //this.perfilUsuario();
   }
 
 
@@ -33,7 +37,7 @@ export class PerfilComponent implements OnInit {
   this.loginService.buscarPerfil().subscribe(
     
       response => {
-        this.perfil.nomePerfil = response.nomePerfil;
+        this.perfil.login = response.login;
       },
       error => {
         this.mensagemService.add("Erro de Conexão!"),error;

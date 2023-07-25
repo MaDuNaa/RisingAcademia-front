@@ -15,7 +15,8 @@ export class TokenInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.url.includes('/login') ||
     req.url.includes('/token-senha/validar') ||
-    req.url.includes('/redefinir-senha/') ||
+    req.url.includes('/redefinir-senha') ||
+    req.url.includes('/recuperar-senha') ||
     req.url.includes('/refresh-token')
     ){
       return next.handle(req);

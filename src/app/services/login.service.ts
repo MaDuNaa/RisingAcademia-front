@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Perfil } from '../models/perfil';
+import { Usuario } from '../models/usuario';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +12,14 @@ import { Perfil } from '../models/perfil';
 export class LoginService {
 
   baseUrl: String = environment.baseUrl;
+  // private loggedIn = false;
+  // loginStatusSubject = new BehaviorSubject<boolean>(false);
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   loginUsuario(objeto: any) {
+    // this.loggedIn = true;
+    // this.loginStatusSubject.next(true);
     return this.httpClient.post<any>(`${this.baseUrl}/login`, objeto);
   }
 
@@ -25,6 +31,8 @@ export class LoginService {
   deslogar() {
     sessionStorage.removeItem('token');
     this.router.navigate(['login']);
+    // this.loggedIn = false;
+    // this.loginStatusSubject.next(false);
   }
 
   getRole(): string {
@@ -68,7 +76,7 @@ export class LoginService {
   //aqui esta com problemas
   buscarPerfil() {
     console.log('entrei aqui')
-    return this.httpClient.get<Perfil>(`${this.baseUrl}/usuarios/usuario-logado`);
+    return this.httpClient.get<Usuario>(`${this.baseUrl}/usuarios/usuario-logado`);
   }
 
 
@@ -78,7 +86,7 @@ export class LoginService {
       const payload = token.split('.')[1];
       const decodedPayload = new TextDecoder('utf-8').decode(Uint8Array.from(atob(payload), c => c.charCodeAt(0)));
       const payloadObj = JSON.parse(decodedPayload);
-      return payloadObj.nome;
+      return payloadObj.sub;
     }
     return '';
   }

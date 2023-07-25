@@ -11,9 +11,9 @@
   <button class="buttonHeader">
      <mat-icon (click)="logout()" matTooltip ="Sair">logout_none</mat-icon>
     </button>
-
-    <button class="btn">OLÁ, MATHEUS</button>
-
+    <!-- *ngIf="!isLoggedIn" -->
+    <button class="btn" >Olá {{ nomeUsuario }}</button>
+  
     <button routerLink="/perfil" class="buttonHeader" 
     matTooltip="Ver perfil">
       <img src="assets/perfil.png" alt="">

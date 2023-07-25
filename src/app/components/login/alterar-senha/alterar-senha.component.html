@@ -8,7 +8,7 @@
                 <div class="input-icone">
                     <input formControlName="senhaAtual" type="password" class="form-control" id="inputPassword"
                         placeholder="Senha Atual">
-                    <!-- <span class="material-symbols-outlined"> lock </span> -->
+                    
                 </div>
                 <div class="validation-error" 
                 *ngIf="senhaAtual?.errors?.['required'] && (alterarSenhaForm.get('senhaAtual')?.dirty || alterarSenhaForm.get('senhaAtual')?.touched)">
@@ -18,7 +18,7 @@
                 <div class="input-icone">
                     <input formControlName="novaSenha" type="password" class="form-control" id="inputPassword2"
                             placeholder="Nova Senha" (focus)="exibirLista = true">
-                    <!-- <span class="material-symbols-outlined"> lock </span> -->
+                   
                 </div>
                 <div class="validation-error" 
                 *ngIf="senhaAtual?.errors?.['required'] && (alterarSenhaForm.get('senhaAtual')?.dirty || alterarSenhaForm.get('senhaAtual')?.touched)">

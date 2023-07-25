@@ -8,8 +8,9 @@
     <div class="imagem">
         <img src="/assets/perfil.png">
         <div class="text-container">
-            <p class="text">Matheus Nascimento</p>
-            <button class="btn" routerLink="/perfil">Editar perfil de usuário</button>
+            <p class="text">{{ nomeUsuario }}</p>
+            <p class="text">admin@hotmail.com</p>
+            <!-- <button class="btn" routerLink="/perfil">Editar perfil de usuário</button> -->
         </div>
     </div> 
 
@@ -19,7 +20,29 @@
         </div>
         <div>
             <button class="btn_criar" matTooltip="Alterar senha" routerLink="/alterar-senha">
-                Editar
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+    </section>
+
+    <section class="container__action">
+        <div>
+            <h3 class="titulo">Editar perfil do usuário</h3>
+        </div>
+        <div>
+            <button class="btn_criar" matTooltip="Alterar senha" routerLink="/perfil">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+    </section>
+
+    <section class="container__action">
+        <div>
+            <h3 class="titulo">Mandar pergunta</h3>
+        </div>
+        <div>
+            <button class="btn_criar" matTooltip="Alterar senha" routerLink="/ajuda">
+                <mat-icon>edit</mat-icon>
             </button>
         </div>
     </section>
@@ -29,8 +52,8 @@
             <h3 class="titulo">Remoção de conta</h3>
         </div>
         <div>
-            <button class="btn_criar" matTooltip="Excluir conta" routerLink="/alterar-senha">
-                Excluir
+            <button class="btn_criar" matTooltip="Excluir conta" routerLink="/home">
+                <mat-icon>delete</mat-icon>
             </button>
         </div>
     </section>

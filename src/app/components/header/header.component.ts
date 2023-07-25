@@ -19,48 +19,35 @@ export class HeaderComponent implements OnInit {
   sidenav!: MatSidenav;
   title = 'bookstore-front';
 
+  nomeUsuario = "";
+  isAdmin: boolean = false;
+  isUser: boolean = false;
+  //isLoggedIn = false;
+
+
   constructor(private observer: BreakpointObserver, private router: Router,
     private loginService: LoginService, 
     private confirmService: ConfirmDialogService, 
     private mensagemService: MensagemService, 
-) { }
-  menu_icon_variable: boolean = false;
-  menuVariable: boolean = false;
+) {
+  // this.loginService.loginStatusSubject.subscribe((status) => {
+  //   this.isLoggedIn = status;
+  // });
+ }
+
 
   ngOnInit(): void {
-   
-  }
+    this.nomeUsuario = this.loginService.getNome();
 
-  openMenu() {
-    this.menuVariable =! this.menuVariable;
-    this.menu_icon_variable =! this.menu_icon_variable;
-  }
+    const userRole = this.loginService.getRole();
 
-  ngAfterViewInit() {
-    this.observer
-      .observe(['(max-width: 800px)'])
-      .pipe(delay(1), untilDestroyed(this))
-      .subscribe((res) => {
-        if (res.matches) {
-          this.sidenav.mode = 'over';
-          this.sidenav.close();
-        } else {
-          this.sidenav.mode = 'side';
-          this.sidenav.open();
-        }
-      });
+    if (userRole === 'ROLE_ADMN') {
+      this.isAdmin = true;
+    } else if (userRole === 'ROLE_USER') {
+      this.isUser = true;
+    } 
 
-    this.router.events
-      .pipe(
-        untilDestroyed(this),
-        filter((e) => e instanceof NavigationEnd)
-      )
-      .subscribe(() => {
-        if (this.sidenav.mode === 'over') {
-          this.sidenav.close();
-        }
-      });
-  }
+  } 
 
   logout() {
     const result$ = this.confirmService.abrir("Deseja se desconectar?")
@@ -71,6 +58,7 @@ export class HeaderComponent implements OnInit {
         take(1),
         switchMap((result) =>
           result ? of(this.loginService.deslogar()).pipe(map(() => null)) : EMPTY
+          
         )
       )
       .subscribe({
