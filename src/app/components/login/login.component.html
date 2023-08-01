@@ -41,8 +41,8 @@
                 <button type="submit" class="btn btn-primary botao-entrar" [disabled]="!loginForm.valid">Entrar</button>
                 
                 <div *ngIf="respostaValidacaoErro" class="alert alert-danger validation" role="alert">{{mensagem}}</div>
-                <a routerLink="" class="forget-input"> Esqueceu a senha? </a>
-                <a routerLink="" class="forget-input"> Crie uma conta </a>
+                <a routerLink="/alterar-senha" class="forget-input"> Esqueceu a senha? </a>
+                <a routerLink="/alterar-senha" class="forget-input"> Crie uma conta </a>
             </div>
         </form>
     </section>

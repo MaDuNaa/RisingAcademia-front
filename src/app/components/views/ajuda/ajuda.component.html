@@ -6,28 +6,29 @@
       </div>
       <div class="right box">
         <div class="content">
-          <form action="https://formsubmit.co/ma_eduard@hotmail.com" method="POST">
-            <input type="hidden" name="acessKey" value="68ff2727-9a67-453e-b0ee-06183cc3ece1" >
-            <input type="hidden" name="text" value="http://localhost:4200/ajuda/" >
-            <input type="hidden" name="redirectTo" value="http://localhost:4200/ajuda" >
-  
+          <form>
             <div>
               <div class="email">Email (obrigatório)</div>
-              <input type="text"  name="email" required placeholder="exemplo@hotmail.com">
+              <input type="text"  name="email" [(ngModel)]="email.emailFrom" required placeholder="exemplo@hotmail.com">
             </div>
+
+            <div>
+                <div class="email">Email 2 (obrigatório)</div>
+                <input type="text"  name="email" [(ngModel)]="email.emailTo" required placeholder="exemplo@hotmail.com">
+              </div>
   
             <div class="email">
               <div class="text">Nome (obrigatório)</div>
-              <input type="text" name="name" required placeholder="Seu nome">
+              <input type="text" name="name" [(ngModel)]="email.subject" required placeholder="Seu nome">
             </div>
 
             <div class="msg">
               <div class="text">Faça sua pergunta</div>
-              <textarea  name="message" type="text" required maxlength="200" placeholder="Digite sua pergunta"></textarea>
+              <textarea  name="message" type="text" [(ngModel)]="email.text" required maxlength="200" placeholder="Digite sua pergunta"></textarea>
             </div>
             
             <div class="btn">
-              <button type="submit" value="Submit" matTooltip="Enviar pergunta">Enviar</button>
+              <button type="submit" value="Submit" matTooltip="Enviar pergunta" (click)="enviarEmail()">Enviar</button>
             </div>
           </form>
         </div>

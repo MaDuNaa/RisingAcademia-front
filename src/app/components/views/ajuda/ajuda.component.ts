@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { take } from 'rxjs';
+import { Email } from 'src/app/models/email';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
+import { EmailService } from 'src/app/services/email.service';
+import { MensagemService } from 'src/app/services/mensagem.service';
 
 @Component({
   selector: 'app-ajuda',
@@ -6,9 +12,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajuda.component.css'],
 })
 export class AjudaComponent implements OnInit {
+  email: Email = {
+    emailFrom: '',
+    emailTo: '',
+    subject: '',
+    text: ''
+  };
   
 
-  constructor() { }
+  constructor(private emailService: EmailService,
+    private router: Router,
+    private mensagemService: MensagemService,
+    private confirmService: ConfirmDialogService) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +44,35 @@ export class AjudaComponent implements OnInit {
         }
       });
     });
+  }
+
+  enviarEmail() {
+    const result$ = this.confirmService.abrir("Deseja enviar esta pergunta?")
+    result$.asObservable()
+      .pipe(
+        take(1),
+      ).subscribe({
+        next: (value) => {
+          this.emailService.sendEmail(this.email).subscribe(
+            (response) => {
+              console.log('Email sent successfully:', response);
+              this.mensagemService.add('Pergunta enviada com sucesso!')
+              // Redefine o formulário após o envio bem-sucedido do e-mail, se necessário
+              this.email = {
+                emailFrom: '',
+                emailTo: '',
+                subject: '',
+                text: ''
+              };
+            },
+            (error) => {
+              console.error('Error sending email:', error);
+            }
+          );
+          
+          }
+        },
+      )
   }
 
 }
