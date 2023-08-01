@@ -12,9 +12,9 @@
               <input type="text"  name="email" [(ngModel)]="email.emailFrom" required placeholder="exemplo@hotmail.com">
             </div>
 
-            <div>
-                <div class="email">Email 2 (obrigatório)</div>
-                <input type="text"  name="email" [(ngModel)]="email.emailTo" required placeholder="exemplo@hotmail.com">
+              <div class="email">
+                <!-- <div class="text">Email que vai receber</div> -->
+                <input type="hidden" name="emailTwo" [(ngModel)]="email.emailTo" required placeholder="exemplo@hotmail.com">
               </div>
   
             <div class="email">

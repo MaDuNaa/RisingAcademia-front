@@ -14,7 +14,7 @@ import { MensagemService } from 'src/app/services/mensagem.service';
 export class AjudaComponent implements OnInit {
   email: Email = {
     emailFrom: '',
-    emailTo: '',
+    emailTo: 'ma_eduard@hotmail.com',
     subject: '',
     text: ''
   };
@@ -55,18 +55,18 @@ export class AjudaComponent implements OnInit {
         next: (value) => {
           this.emailService.sendEmail(this.email).subscribe(
             (response) => {
-              console.log('Email sent successfully:', response);
+              console.log('Email enviado com sucesso:', response);
               this.mensagemService.add('Pergunta enviada com sucesso!')
               // Redefine o formulário após o envio bem-sucedido do e-mail, se necessário
               this.email = {
                 emailFrom: '',
-                emailTo: '',
+                emailTo: 'ma_eduard@hotmail.com',
                 subject: '',
                 text: ''
               };
             },
             (error) => {
-              console.error('Error sending email:', error);
+              console.error('Erro ao enviar email:', error);
             }
           );
           
