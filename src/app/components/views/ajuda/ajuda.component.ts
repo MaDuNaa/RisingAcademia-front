@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { take } from 'rxjs';
+import { EMPTY, catchError, map, switchMap, take, tap } from 'rxjs';
 import { Email } from 'src/app/models/email';
 import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
 import { EmailService } from 'src/app/services/email.service';
@@ -47,16 +47,18 @@ export class AjudaComponent implements OnInit {
   }
 
   enviarEmail() {
-    const result$ = this.confirmService.abrir("Deseja enviar esta pergunta?")
-    result$.asObservable()
-      .pipe(
-        take(1),
-      ).subscribe({
-        next: (value) => {
-          this.emailService.sendEmail(this.email).subscribe(
-            (response) => {
+  
+    const result$ = this.confirmService.abrir("Deseja enviar esta pergunta?");
+  result$
+    .asObservable()
+    .pipe(
+      take(1),
+      switchMap((result) => {
+        if (result) {
+          return this.emailService.sendEmail(this.email).pipe(
+            tap((response) => {
               console.log('Email enviado com sucesso:', response);
-              this.mensagemService.add('Pergunta enviada com sucesso!')
+              this.mensagemService.add('Pergunta enviada com sucesso!');
               // Redefine o formulário após o envio bem-sucedido do e-mail, se necessário
               this.email = {
                 emailFrom: '',
@@ -64,15 +66,26 @@ export class AjudaComponent implements OnInit {
                 subject: '',
                 text: ''
               };
-            },
-            (error) => {
+            }),
+            catchError((error) => {
               console.error('Erro ao enviar email:', error);
-            }
+              return EMPTY;
+            })
           );
-          
-          }
-        },
-      )
+        } else {
+          return EMPTY;
+        }
+      })
+    )
+    .subscribe({
+      next: (value) => {
+        // Alguma lógica adicional que precisa ser executada após o envio do email (se necessário)
+      },
+      error: (err) => {
+        // Lógica para lidar com erros (se necessário)
+      },
+    });
+
   }
 
 }
