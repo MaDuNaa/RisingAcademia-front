@@ -38,7 +38,7 @@ export class AjudaComponent implements OnInit {
         // Troca do ícone
         const icon = faq.querySelector('.faq_icon i');
         if (icon!.className === 'fa-solid fa-plus') {
-          icon!.className = 'fa-solid fa-minus';
+          icon!.className = 'fa-solid fa-plus';
         } else {
           icon!.className = 'fa-solid fa-plus';
         }
