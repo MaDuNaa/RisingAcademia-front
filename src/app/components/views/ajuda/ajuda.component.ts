@@ -79,6 +79,7 @@ export class AjudaComponent implements OnInit {
     )
     .subscribe({
       next: (value) => {
+        this.mensagemService.add('Pergunta enviada com sucesso!');
         // Alguma lógica adicional que precisa ser executada após o envio do email (se necessário)
       },
       error: (err) => {
