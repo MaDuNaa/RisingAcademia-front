@@ -65,4 +65,9 @@ export class AlunoService {
     return this.http.get<Aluno>(url);
   }
 
+  obterContagemAlunosPorMes(): Observable<number> {
+    const url = `${this.baseUrl}/alunos/contagem`
+    return this.http.get<number>(url)
+  }
+
 }

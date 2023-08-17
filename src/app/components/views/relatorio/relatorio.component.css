@@ -1,0 +1,53 @@
+
+.content {
+    width: 90%;
+    margin: 1.4rem auto auto auto;
+  
+  }
+
+.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .title h1 {
+    font-size: 1.8rem;
+    color: #415a77;
+    font-weight: 500;
+  }
+
+  .card {
+    width: 15%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #415a77;
+    margin: 20px;
+    color: #edf6e4;
+    font-size: 12px;
+    margin-top: 2.5rem !important;
+  }
+
+  .center_cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn_criar {
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    gap: 4px;
+    background-color: var(--background-menu-hover);
+    border: none;
+    color: var(--background-modal);
+    border-radius: 5px;
+    font-size: 100%;
+  }
+  
+  .btn_criar:hover {
+    color: var(--background-modal) !important;
+    background-color: var( --background-botao-hover-sec) !important;
+  }
+  

@@ -61,7 +61,7 @@
 
 .btn_criar:hover {
   color: var(--color-text-hover-sec) !important;
-  background-color: var( --background-botao-hover-sec) !important;
+  background-color: var(--background-menu-hover);
 }
 
 .btn {

@@ -28,6 +28,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AjudaComponent } from './components/views/ajuda/ajuda.component';
 import { PerfilComponent } from './components/login/perfil/perfil.component';
 import { AlterarSenhaComponent } from './components/login/alterar-senha/alterar-senha.component';
+import { RelatorioComponent } from './components/views/relatorio/relatorio.component';
 
 
 
@@ -77,6 +78,8 @@ const routes: Routes = [
           {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
 
           {path: 'alterar-senha', component: AlterarSenhaComponent},
+
+          {path: 'relatorio', component: RelatorioComponent, canActivate: [AuthGuard]},
 
 
 ];

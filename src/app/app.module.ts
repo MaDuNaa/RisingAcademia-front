@@ -60,6 +60,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { AjudaComponent } from './components/views/ajuda/ajuda.component';
 import { PerfilComponent } from './components/login/perfil/perfil.component';
 import { AlterarSenhaComponent } from './components/login/alterar-senha/alterar-senha.component';
+import { RelatorioComponent } from './components/views/relatorio/relatorio.component';
 
 
 
@@ -101,6 +102,7 @@ import { AlterarSenhaComponent } from './components/login/alterar-senha/alterar-
     AjudaComponent,
     PerfilComponent,
     AlterarSenhaComponent,
+    RelatorioComponent,
 
 
   ],
