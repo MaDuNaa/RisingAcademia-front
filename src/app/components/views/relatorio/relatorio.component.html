@@ -15,21 +15,21 @@
 
     <div class="card">
         <h4>Lucros Previsto</h4>
-        <p>Contagem Lucro: ----</p>
+        <p>Contagem Lucro: {{ lucroPrevisto | currency:'BRL':'symbol':'1.2-2' }}</p>
         <button class="btn_criar" matTooltip ="Atualizar Contagem Aluno" 
         (click)="atualizarContagem()">Atualizar Lucro</button>
     </div>
 
     <div class="card">
         <h4>Lucro Obtido</h4>
-        <p>Contagem Lucro: ----</p>
+        <p>Contagem Lucro: {{ lucroMensal | currency:'BRL':'symbol':'1.2-2' }}</p>
         <button class="btn_criar" matTooltip ="Atualizar Contagem Aluno" 
         (click)="atualizarContagem()">Atualizar Lucro</button>
     </div>
 
     <div class="card">
         <h4>Mensalidades Pagas</h4>
-        <p>Contagem atual: ----</p>
+        <p>Contagem atual: {{ porcentagemMensalidades }}</p>
         <button class="btn_criar" matTooltip ="Atualizar Contagem Aluno" 
         (click)="atualizarContagem()">Atualizar Contagem</button>
     </div>
