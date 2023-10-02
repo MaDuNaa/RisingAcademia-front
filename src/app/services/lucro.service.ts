@@ -26,4 +26,9 @@ export class LucroService {
     return this.http.get<string>(url)
   }
 
+  getMensalidadesStatus(): Observable<any[]> {
+    const url = `${this.baseUrl}/lucro/mensalidadesStatus`
+    return this.http.get<any[]>(url);
+  }
+
 }

@@ -13,6 +13,9 @@ export class RelatorioComponent implements OnInit {
   lucroPrevisto: number | undefined;
   lucroMensal: number | undefined;
   porcentagemMensalidades: string | undefined;
+  data: any[] = [];
+  view: any[] = [700, 400];
+
 
   constructor(private alunoService: AlunoService, private lucroService: LucroService) { }
 
@@ -21,6 +24,7 @@ export class RelatorioComponent implements OnInit {
     this.getLucroPrevisto();
     this.getLucroMensal();
     this.getPorcentagemMensalidadesPagas();
+    
   }
 
   carregarContagem(): void {

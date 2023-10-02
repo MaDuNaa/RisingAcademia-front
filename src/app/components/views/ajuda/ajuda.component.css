@@ -55,7 +55,7 @@
 }
 
 .card {
-  border: 1px solid #415a77;
+  border:none;
     background-color: transparent;
     border-radius: 10px;
     width: 60%;

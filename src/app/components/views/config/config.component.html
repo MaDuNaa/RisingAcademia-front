@@ -1,63 +1,54 @@
 <div class="container">
-
-<div class="title">
-    <h1>Configurações</h1>
+    <section class="flex">
+  
+      <div class="box-1" >
+       <a class='router' routerLink="/perfil">
+         <p class="font-boxes">Editar perfil do usuario</p>
+         <mat-icon class="icons">manage_accounts</mat-icon>
+       </a>
+      </div>
+  
+      <div class="box-2">
+       <a class='router' routerLink="/alterar-senha">
+         <p class="font-boxes1">Alterar senha</p>
+         <mat-icon class="icons1">build</mat-icon>
+       </a>
+      </div>
+  
+      <div class="box-2">
+        <a class='router' routerLink="/ajuda">
+          <p class="font-boxes1">Mandar pergunta</p>
+          <mat-icon class="icons1">assignment</mat-icon>
+        </a>
+       </div>
+  
+     <div class="box-2">
+      <a class='router' routerLink="/alunos">
+        <p class="font-boxes1">Alunos</p>
+        <mat-icon class="icons1">manage_accounts</mat-icon>
+      </a>
+     </div>
+  
+     <div class="box-2">
+      <a class='router' routerLink="/relatorio">
+        <p class="font-boxes1">Relatorio</p>
+        <mat-icon class="icons1">content_paste_search</mat-icon>
+      </a>
+     </div>
+  
+     <div class="box-2">
+      <a class='router' routerLink="/ajuda">
+        <p class="font-boxes1">Ajuda</p>
+        <mat-icon class="icons1">help</mat-icon>
+      </a>
+    </div>
+  
+    <div class="box-2">
+      <a class='router' routerLink="/config">
+        <p class="font-boxes1">Remoção de conta</p>
+        <mat-icon class="icons1">settings</mat-icon>
+      </a>
+    </div>
+  
+   </section>
   </div>
-
-  <div class="card">
-    <div class="imagem">
-        <img src="/assets/perfil.png">
-        <div class="text-container">
-            <p class="text">{{ nomeUsuario }}</p>
-            <p class="text">admin@hotmail.com</p>
-            <!-- <button class="btn" routerLink="/perfil">Editar perfil de usuário</button> -->
-        </div>
-    </div> 
-
-    <section class="container__action">
-        <div>
-            <h3 class="titulo">Alterar senha</h3>
-        </div>
-        <div>
-            <button class="btn_criar" matTooltip="Alterar senha" routerLink="/alterar-senha">
-                <mat-icon>edit</mat-icon>
-            </button>
-        </div>
-    </section>
-
-    <section class="container__action">
-        <div>
-            <h3 class="titulo">Editar perfil do usuário</h3>
-        </div>
-        <div>
-            <button class="btn_criar" matTooltip="Alterar senha" routerLink="/perfil">
-                <mat-icon>edit</mat-icon>
-            </button>
-        </div>
-    </section>
-
-    <section class="container__action">
-        <div>
-            <h3 class="titulo">Mandar pergunta</h3>
-        </div>
-        <div>
-            <button class="btn_criar" matTooltip="Alterar senha" routerLink="/ajuda">
-                <mat-icon>edit</mat-icon>
-            </button>
-        </div>
-    </section>
-
-    <section class="container__action">
-        <div>
-            <h3 class="titulo">Remoção de conta</h3>
-        </div>
-        <div>
-            <button class="btn_criar" matTooltip="Excluir conta" routerLink="/home">
-                <mat-icon>delete</mat-icon>
-            </button>
-        </div>
-    </section>
-
-</div>
-
-</div>

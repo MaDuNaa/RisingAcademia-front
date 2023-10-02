@@ -61,6 +61,7 @@ import { AjudaComponent } from './components/views/ajuda/ajuda.component';
 import { PerfilComponent } from './components/login/perfil/perfil.component';
 import { AlterarSenhaComponent } from './components/login/alterar-senha/alterar-senha.component';
 import { RelatorioComponent } from './components/views/relatorio/relatorio.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -131,6 +132,7 @@ import { RelatorioComponent } from './components/views/relatorio/relatorio.compo
     MatDialogModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    NgxChartsModule,
 
   ],
   providers: [
