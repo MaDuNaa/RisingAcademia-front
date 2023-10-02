@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlunoService } from 'src/app/services/aluno.service';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
 import { LucroService } from 'src/app/services/lucro.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class RelatorioComponent implements OnInit {
   view: any[] = [700, 400];
 
 
-  constructor(private alunoService: AlunoService, private lucroService: LucroService) { }
+  constructor(private alunoService: AlunoService, private lucroService: LucroService,
+    private confirmService: ConfirmDialogService) { }
 
   ngOnInit(): void {
     this.carregarContagem();
@@ -34,7 +36,14 @@ export class RelatorioComponent implements OnInit {
   }
 
   atualizarContagem(): void {
-    this.carregarContagem();
+    const result$ = this.confirmService.abrir("Deseja realmente Atualizar contagem?");
+    result$.subscribe((result: boolean) => {
+      if (result === true) {
+        this.carregarContagem();
+      } else {
+        
+      }
+    });
   }
 
   getLucroPrevisto() {
@@ -63,3 +72,4 @@ export class RelatorioComponent implements OnInit {
   }
 
 }
+
